@@ -29,6 +29,8 @@ method will be able to pick them up when the activity gets recreated!
 
 public class Graph1 extends AppCompatActivity {
 
+    public int q = 0;
+
     public EditText xcoordinate;
     public EditText ycoordinate;
     public int X = 0;
