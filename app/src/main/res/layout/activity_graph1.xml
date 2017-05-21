@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="com.shane_taylor.truthtables.Graph1"
+    android:orientation="vertical"
+    >
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph"
+        android:layout_width="362dp"
+        android:layout_height="200dp"
+        android:layout_margin="5dp"
+        android:layout_gravity="top|center_horizontal"
+        android:gravity="center"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+
+    <TextView
+        android:id="@+id/EnterXtextView"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/EnterXTextView" />
+
+    <EditText
+        android:id="@+id/xplot"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_margin="2dp"
+        android:gravity="top|center_horizontal"
+        android:inputType="number|numberSigned" />
+
+    <TextView
+        android:id="@+id/EnterYtextView"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/EnterYTextView" />
+
+    <EditText
+        android:id="@+id/yplot"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_margin="2dp"
+        android:gravity="top|center_horizontal"
+        android:inputType="number|numberSigned" />
+
+    <Button
+        android:id="@+id/btnPlot"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_margin="10dp"
+        android:onClick="onClickPlot"
+        android:text="@string/Plot" />
+        />
+
+</LinearLayout>

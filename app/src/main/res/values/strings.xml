@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Truth Tables</string>
+    <string name="TruthOrNot">True or not true?</string>
+    <string name="explained">"If you get an A, then I will give you a dollar."
+The statement will be true if I keep my promise and false if I don"'"t."
+
+"Suppose it"'"s true that you get an A and it"'"s true that I give you a dollar. Since I kept my promise, the implication is {\it true}. This corresponds to the first line in the table."
+
+"Suppose it"'"s true that you get an A but it"'"s false that I give you a dollar. Since I didn"'"t keep my promise, the implication is false. This corresponds to the second line in the table."
+
+"What if it"'"s false that you get an A? Whether or not I give you a dollar, I haven"'"t broken my promise. Thus, the implication can"'"t be false, so (since this is a two-valued logic) it must be true. This explains the last two lines of the table.
+
+    </string>
+    <string name="title_activity_graph1">Graph1</string>
+    <string name="Plot">Plot</string>
+    <string name="EnterXTextView">Enter X coordinate</string>
+    <string name="EnterYTextView">Enter Y coordinate</string>
+</resources>
