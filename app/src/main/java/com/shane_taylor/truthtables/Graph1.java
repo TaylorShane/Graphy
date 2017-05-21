@@ -15,6 +15,17 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.DataPointInterface;
 import com.jjoe64.graphview.series.PointsGraphSeries;
 
+/*
+implement the onSaveInstanceState() method
+
+The onSaveInstanceState() method takes one parameter, a Bundle.
+
+A Bundle allows you to gather together different types of data into a single object:
+
+Add the values of the running and seconds variables to the Bundle, then the onCreate()
+method will be able to pick them up when the activity gets recreated!
+
+*/
 
 public class Graph1 extends AppCompatActivity {
 
