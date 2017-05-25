@@ -6,6 +6,8 @@
     android:layout_height="wrap_content"
     tools:context="com.shane_taylor.truthtables.Graph1"
     android:orientation="vertical"
+
+
     >
 
     <com.jjoe64.graphview.GraphView
@@ -29,7 +31,7 @@
 
     <EditText
         android:id="@+id/xplot"
-        android:layout_width="50dp"
+        android:layout_width="75dp"
         android:layout_height="50dp"
         android:layout_gravity="top|center_horizontal"
         android:layout_margin="2dp"
@@ -46,7 +48,7 @@
 
     <EditText
         android:id="@+id/yplot"
-        android:layout_width="50dp"
+        android:layout_width="75dp"
         android:layout_height="50dp"
         android:layout_gravity="top|center_horizontal"
         android:layout_margin="2dp"
@@ -60,7 +62,7 @@
         android:layout_gravity="top|center_horizontal"
         android:layout_margin="10dp"
         android:onClick="onClickPlot"
-        android:text="@string/Plot" />
+        android:text="@string/Plot"
         />
 
 </LinearLayout>

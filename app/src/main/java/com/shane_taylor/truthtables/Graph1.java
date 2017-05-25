@@ -1,11 +1,14 @@
 package com.shane_taylor.truthtables;
 
+import android.app.Activity;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -27,7 +30,7 @@ method will be able to pick them up when the activity gets recreated!
 
 */
 
-public class Graph1 extends AppCompatActivity {
+public class Graph1 extends Activity {
 
     public EditText xcoordinate;
     public EditText ycoordinate;
@@ -38,45 +41,64 @@ public class Graph1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_graph1);
-
-        createGraph();
+        createGraphScale();
     }
 
     private void createGraph() {
         // Blue Dots
         GraphView graph = (GraphView) findViewById(R.id.graph);
-        /*
+
         PointsGraphSeries<DataPoint> series = new PointsGraphSeries<>(new DataPoint[] {
-                new DataPoint(X, Y)
+                new DataPoint(-10, 10)
         });
         graph.addSeries(series);
         series.setShape(PointsGraphSeries.Shape.POINT);
-        */
+
 
         // Black Rectangles
         PointsGraphSeries<DataPoint> series2 = new PointsGraphSeries<DataPoint>(new DataPoint[] {
-                new DataPoint(-20, -20),
-                new DataPoint(20, 20)
+                new DataPoint(10, 10)
+
         });
         graph.addSeries(series2);
         series2.setShape(PointsGraphSeries.Shape.RECTANGLE);
         series2.setColor(Color.BLACK);
-        series2.setSize(0001);
 
-        /*
         // Yellow Triangles
         PointsGraphSeries<DataPoint> series3 = new PointsGraphSeries<>(new DataPoint[] {
-                new DataPoint(0, 0)
+                new DataPoint(-10, -10)
         });
         graph.addSeries(series3);
         series3.setShape(PointsGraphSeries.Shape.TRIANGLE);
         series3.setColor(Color.YELLOW);
-    */
+
+        // Black Rectangles
+        PointsGraphSeries<DataPoint> graphScale = new PointsGraphSeries<DataPoint>(new DataPoint[] {
+                new DataPoint(10, 10)
+        });
+        graph.addSeries(graphScale);
+        graphScale.setShape(PointsGraphSeries.Shape.POINT);
+        graphScale.setColor(Color.BLACK);
 
     }
 
+    private void createGraphScale() {
+        GraphView graph = (GraphView) findViewById(R.id.graph);
+
+        PointsGraphSeries<DataPoint> graphScale = new PointsGraphSeries<DataPoint>(new DataPoint[] {
+                new DataPoint(-20, -20),
+                new DataPoint(20, 20)
+        });
+        graph.addSeries(graphScale);
+        graphScale.setShape(PointsGraphSeries.Shape.POINT);
+        graphScale.setColor(Color.BLACK);
+        graphScale.setSize(0001);
+    }
+
     public void onClickPlot(View v) {
+
         getCoordinates();
     }
 

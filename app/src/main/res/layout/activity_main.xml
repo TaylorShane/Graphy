@@ -7,7 +7,6 @@
     android:background="#454545"
     android:isScrollContainer="true"
     android:orientation="vertical"
-
     android:scrollbars="vertical"
     tools:context="com.shane_taylor.truthtables.MainActivity">
 
@@ -30,7 +29,8 @@
         android:layout_margin="10dp"
         android:layout_gravity="top|center_horizontal"
         android:gravity="top|center_horizontal"
-        android:src="@drawable/truth_table" />
+        android:src="@drawable/truth_table"
+        android:contentDescription="" />
 
     <ScrollView
         android:id="@+id/MainScrollView"
@@ -62,5 +62,5 @@
         android:layout_margin="10dp"
         android:layout_gravity="center_horizontal"
         android:onClick="graphActivity"
-        android:text="See Graph" />
+        android:text="@string/see_graph" />
 </LinearLayout>
