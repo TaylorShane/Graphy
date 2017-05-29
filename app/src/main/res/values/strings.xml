@@ -16,4 +16,5 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="EnterXTextView">Enter X coordinate</string>
     <string name="EnterYTextView">Enter Y coordinate</string>
     <string name="see_graph">See Graph</string>
+    <string name="reset">Reset</string>
 </resources>
