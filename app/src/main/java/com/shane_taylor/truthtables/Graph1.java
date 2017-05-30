@@ -1,14 +1,18 @@
 package com.shane_taylor.truthtables;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -36,7 +40,7 @@ public class Graph1 extends Activity {
     public EditText ycoordinate;
     public int X = 0;
     public int Y = 0;
-    private Button plot;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,7 +107,7 @@ public class Graph1 extends Activity {
     }
 
     private void getCoordinates() {
-        plot = (Button) findViewById(R.id.btnPlot);
+
         xcoordinate = (EditText) findViewById(R.id.xplot);
         ycoordinate = (EditText) findViewById(R.id.yplot);
 
@@ -130,5 +134,30 @@ public class Graph1 extends Activity {
         });
 
         createGraph();
+    }
+
+    public void onClickLineGraph(View view){
+        Intent intent = new Intent(this, Graph2.class);
+
+        startActivity(intent);
+    }
+
+    /**
+     * Hides the soft keyboard
+     */
+    public void hideSoftKeyboard() {
+        if(getCurrentFocus()!=null) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+    }
+
+    /**
+     * Shows the soft keyboard
+     */
+    public void showSoftKeyboard(View view) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        view.requestFocus();
+        inputMethodManager.showSoftInput(view, 0);
     }
 }

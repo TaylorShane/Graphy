@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Truth Tables</string>
-    <string name="TruthOrNot">True or not true?</string>
+    <string name="TruthTables">Truth Tables</string>
     <string name="explained">"If you get an A, then I will give you a dollar."
 The statement will be true if I keep my promise and false if I don"'"t."
 
@@ -13,8 +13,13 @@ The statement will be true if I keep my promise and false if I don"'"t."
     </string>
     <string name="title_activity_graph1">Graph1</string>
     <string name="Plot">Plot</string>
-    <string name="EnterXTextView">Enter X coordinate</string>
-    <string name="EnterYTextView">Enter Y coordinate</string>
+    <string name="EnterXTextView">X: </string>
+    <string name="EnterYTextView">Y: </string>
     <string name="see_graph">See Graph</string>
     <string name="reset">Reset</string>
+    <string name="line_graphs">Line Graphs</string>
+    <string name="line_start_coordinates">Line Start Coordinates</string>
+    <string name="pointGraphs">Point Graphs</string>
+    <string name="lineGraphs">Line Graphs</string>
+    <string name="line_end_coordinates">Line End Coordinates</string>
 </resources>

@@ -5,20 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#454545"
-    android:isScrollContainer="true"
     android:orientation="vertical"
-    android:scrollbars="vertical"
     tools:context="com.shane_taylor.truthtables.MainActivity">
+
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="150dp"
         android:layout_height="25dp"
-        android:layout_margin="10dp"
         android:layout_gravity="top|center_horizontal"
+        android:layout_margin="10dp"
         android:gravity="center"
         android:padding="2dp"
-        android:text="@string/TruthOrNot"
+        android:text="@string/TruthTables"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp" />
 
@@ -26,16 +25,16 @@
         android:id="@+id/truthTableImageView"
         android:layout_width="150dp"
         android:layout_height="100dp"
-        android:layout_margin="10dp"
         android:layout_gravity="top|center_horizontal"
+        android:layout_margin="10dp"
+        android:contentDescription=""
         android:gravity="top|center_horizontal"
-        android:src="@drawable/truth_table"
-        android:contentDescription="" />
+        android:src="@drawable/truth_table" />
 
     <ScrollView
         android:id="@+id/MainScrollView"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="350dp"
         android:fillViewport="true"
         android:scrollbars="vertical">
 
@@ -59,8 +58,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_margin="10dp"
         android:layout_gravity="center_horizontal"
+        android:layout_margin="15dp"
         android:onClick="graphActivity"
         android:text="@string/see_graph" />
 </LinearLayout>
