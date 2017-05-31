@@ -35,12 +35,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-
+        android:layout_gravity="center"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
             android:columnCount="2"
             android:rowCount="8">
 

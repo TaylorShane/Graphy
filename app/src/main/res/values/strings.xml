@@ -9,17 +9,16 @@ The statement will be true if I keep my promise and false if I don"'"t."
 "Suppose it"'"s true that you get an A but it"'"s false that I give you a dollar. Since I didn"'"t keep my promise, the implication is false. This corresponds to the second line in the table."
 
 "What if it"'"s false that you get an A? Whether or not I give you a dollar, I haven"'"t broken my promise. Thus, the implication can"'"t be false, so (since this is a two-valued logic) it must be true. This explains the last two lines of the table.
-
     </string>
     <string name="title_activity_graph1">Graph1</string>
     <string name="Plot">Plot</string>
     <string name="EnterXTextView">X: </string>
     <string name="EnterYTextView">Y: </string>
-    <string name="see_graph">See Graph</string>
     <string name="reset">Reset</string>
     <string name="line_graphs">Line Graphs</string>
     <string name="line_start_coordinates">Line Start Coordinates</string>
-    <string name="pointGraphs">Point Graphs</string>
-    <string name="lineGraphs">Line Graphs</string>
+    <string name="pointGraphs">Point Graph</string>
+    <string name="lineGraphs">Line Graph</string>
     <string name="line_end_coordinates">Line End Coordinates</string>
+    <string name="PthenQ">image of a conditional if P then Q truth table</string>
 </resources>

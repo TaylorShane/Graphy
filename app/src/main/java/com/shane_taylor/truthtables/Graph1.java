@@ -48,12 +48,14 @@ public class Graph1 extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_graph1);
         createGraphScale();
+        hideSoftKeyboard();
     }
 
     private void createGraph() {
         // Blue Dots
         GraphView graph = (GraphView) findViewById(R.id.graph);
 
+        /*
         PointsGraphSeries<DataPoint> series = new PointsGraphSeries<>(new DataPoint[] {
                 new DataPoint(-10, 10)
         });
@@ -85,7 +87,7 @@ public class Graph1 extends Activity {
         graph.addSeries(graphScale);
         graphScale.setShape(PointsGraphSeries.Shape.POINT);
         graphScale.setColor(Color.BLACK);
-
+        */
     }
 
     private void createGraphScale() {

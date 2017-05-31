@@ -32,6 +32,7 @@ public class Graph2 extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_graph2);
         setGraphScale();
+        hideSoftKeyboard();
     }
 
     public void setGraphScale(){
