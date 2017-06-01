@@ -37,45 +37,37 @@ public class Graph2 extends Activity {
 
     public void setGraphScale(){
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
+        LineGraphSeries<DataPoint> Xaxis = new LineGraphSeries<>(new DataPoint[] {
                 new DataPoint(-20, 0),
                 new DataPoint(20, 0)
         });
-        LineGraphSeries<DataPoint> series2 = new LineGraphSeries<>(new DataPoint[] {
+
+        LineGraphSeries<DataPoint> Yaxis = new LineGraphSeries<>(new DataPoint[] {
                 new DataPoint(0, -20),
                 new DataPoint(0, 20)
         });
-        graph.addSeries(series);
-        series.setTitle("Random Curve 1");
-        series.setColor(Color.GREEN);
-        series.setDrawDataPoints(false);
-        series.setDataPointsRadius(0);
-        series.setThickness(0);
+        graph.addSeries(Xaxis);
+        Xaxis.setTitle("Random Curve 1");
+        Xaxis.setColor(Color.BLACK);
+        Xaxis.setDrawDataPoints(false);
+        Xaxis.setDataPointsRadius(0);
+        Xaxis.setThickness(0);
 
-        graph.addSeries(series2);
-        series2.setTitle("Random Curve 1");
-        series2.setColor(Color.GREEN);
-        series2.setDrawDataPoints(false);
-        series2.setDataPointsRadius(0);
-        series2.setThickness(0);
+        graph.addSeries(Yaxis);
+        Yaxis.setTitle("Random Curve 1");
+        Yaxis.setColor(Color.GREEN);
+        Yaxis.setDrawDataPoints(false);
+        Yaxis.setDataPointsRadius(0);
+        Yaxis.setThickness(0);
     }
 
     public void onClickPlot(View v) {
 
         getCoordinates();
+        createLine();
     }
 
-    public void getCoordinates(){
-        x1 = (EditText) findViewById(R.id.x1);
-        y1 = (EditText) findViewById(R.id.y1);
-        x2 = (EditText) findViewById(R.id.x2);
-        y2 = (EditText) findViewById(R.id.y2);
-
-        A = Integer.parseInt(x1.getText().toString());
-        B = Integer.parseInt(y1.getText().toString());
-        C = Integer.parseInt(x2.getText().toString());
-        D = Integer.parseInt(y2.getText().toString());
-
+    public void createLine(){
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
         LineGraphSeries<DataPoint> series2 = new LineGraphSeries<>(new DataPoint[] {
                 new DataPoint(A, B),
@@ -83,6 +75,22 @@ public class Graph2 extends Activity {
         });
 
         graph.addSeries(series2);
+    }
+    public void getCoordinates(){
+        x1 = (EditText) findViewById(R.id.x1);
+        y1 = (EditText) findViewById(R.id.y1);
+        x2 = (EditText) findViewById(R.id.x2);
+        y2 = (EditText) findViewById(R.id.y2);
+
+        try{
+            A = Integer.parseInt(x1.getText().toString());
+            B = Integer.parseInt(y1.getText().toString());
+            C = Integer.parseInt(x2.getText().toString());
+            D = Integer.parseInt(y2.getText().toString());
+        }
+        catch(Exception e){
+            Toast.makeText(this, "Please enter integer values", Toast.LENGTH_SHORT).show();
+        }
     }
 
     /**

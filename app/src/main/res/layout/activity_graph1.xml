@@ -43,9 +43,25 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
-            android:columnCount="2"
-            android:rowCount="8">
+            android:columnCount="5"
+            android:rowCount="7">
 
+
+            <TextView
+                android:id="@+id/pointInstructionsOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/PointYreflection" />
+
+            <TextView
+                android:id="@+id/enterXY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_margin="5dp"
+                android:layout_row="2"
+                android:text="Enter X and Y" />
 
             <TextView
                 android:id="@+id/EnterXtextView"
@@ -53,9 +69,8 @@
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:layout_gravity="right"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_row="0"
+                android:layout_margin="10dp"
+                android:layout_row="3"
                 android:gravity="center_horizontal"
                 android:text="@string/EnterXTextView" />
 
@@ -64,21 +79,19 @@
                 android:layout_width="75dp"
                 android:layout_height="50dp"
                 android:layout_column="1"
-                android:layout_gravity="top|left"
-                android:layout_margin="2dp"
-                android:layout_row="0"
-                android:gravity="top|center_horizontal"
+                android:layout_gravity="left"
+                android:layout_margin="10dp"
+                android:layout_row="3"
                 android:inputType="number|numberSigned" />
 
             <TextView
                 android:id="@+id/EnterYtextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="0"
+                android:layout_column="3"
                 android:layout_gravity="right"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_row="1"
+                android:layout_margin="10dp"
+                android:layout_row="3"
                 android:gravity="center_horizontal"
                 android:text="@string/EnterYTextView" />
 
@@ -86,11 +99,10 @@
                 android:id="@+id/yplot"
                 android:layout_width="75dp"
                 android:layout_height="50dp"
-                android:layout_column="1"
-                android:layout_gravity="top|left"
-                android:layout_margin="2dp"
-                android:layout_row="1"
-                android:gravity="top|center_horizontal"
+                android:layout_column="4"
+                android:layout_gravity="left"
+                android:layout_margin="10dp"
+                android:layout_row="3"
                 android:inputType="number|numberSigned" />
 
             <Button
@@ -98,20 +110,30 @@
                 android:layout_width="80dp"
                 android:layout_height="50dp"
                 android:layout_column="0"
-                android:layout_gravity="top|center_horizontal"
+                android:layout_columnSpan="5"
+                android:layout_gravity="center_vertical|fill_horizontal"
                 android:layout_margin="10dp"
-                android:layout_row="2"
+                android:layout_row="4"
+                android:maxLength="400"
                 android:onClick="onClickPlot"
                 android:text="@string/Plot" />
+
+            <Space
+                android:layout_column="0"
+                android:layout_columnSpan="5"
+                android:layout_gravity="fill_horizontal"
+                android:layout_margin="20dp"
+                android:layout_row="5" />
 
             <Button
                 android:id="@+id/btnLineGraph"
                 android:layout_width="85dp"
                 android:layout_height="65dp"
-                android:layout_column="0"
-                android:layout_gravity="top|center_horizontal"
+                android:layout_column="3"
+                android:layout_columnSpan="2"
+                android:layout_gravity="bottom|center_horizontal"
                 android:layout_margin="10dp"
-                android:layout_row="3"
+                android:layout_row="6"
                 android:onClick="onClickLineGraph"
                 android:text="@string/line_graphs" />
         </GridLayout>

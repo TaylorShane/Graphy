@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:weightSum="10"
+
         android:layout_gravity="center"
         android:gravity="center"
         android:scaleType="centerInside">
@@ -45,7 +45,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="top|center_horizontal"
             android:layout_margin="10dp"
-            android:layout_weight="10"
+            android:layout_weight="1"
             android:contentDescription="@string/PthenQ"
             android:gravity="top|center_horizontal"
             android:src="@drawable/truth_table_large" />
@@ -82,11 +82,21 @@
     </ScrollView>
 
     </LinearLayout>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="15dp"
-        android:onClick="graphActivity"
-        android:text="@string/pointGraphs" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:columnCount="2"
+        android:rowCount="1">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_columnSpan="2"
+            android:layout_gravity="bottom|fill_horizontal"
+            android:layout_margin="15dp"
+            android:onClick="graphActivity"
+            android:text="@string/pointGraphs" />
+    </GridLayout>
 </LinearLayout>
