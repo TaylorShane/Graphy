@@ -22,4 +22,5 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="line_end_coordinates">Line End Coordinates</string>
     <string name="PthenQ">image of a conditional if P then Q truth table</string>
     <string name="PointYreflection">Plot the blue point\'s reflection across the Y axis.</string>
+    <string name="enter_x_and_y">Enter X and Y</string>
 </resources>

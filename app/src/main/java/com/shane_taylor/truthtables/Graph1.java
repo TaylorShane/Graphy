@@ -29,15 +29,8 @@ import com.jjoe64.graphview.series.PointsGraphSeries;
 
 import static android.content.ContentValues.TAG;
 
-/*
-implement the onSaveInstanceState() method
-
-The onSaveInstanceState() method takes one parameter, a Bundle.
-
-A Bundle allows you to gather together different types of data into a single object:
-
-Add the values of the running and seconds variables to the Bundle, then the onCreate()
-method will be able to pick them up when the activity gets recreated!
+/**
+implement the onSaveInstanceState() method - see implementation completed on TapCloud app
 
 */
 
@@ -62,8 +55,8 @@ public class Graph1 extends Activity {
 
     private void randomPoints(){
         Random generator = new Random();
-        Xrand = -20 + generator.nextInt(40);
-        Yrand = -20 + generator.nextInt(40);
+        Xrand = -10 + generator.nextInt(20);
+        Yrand = -10 + generator.nextInt(20);
 
     }
 
@@ -71,8 +64,8 @@ public class Graph1 extends Activity {
         GraphView graph = (GraphView) findViewById(R.id.graph);
 
         PointsGraphSeries<DataPoint> graphScale = new PointsGraphSeries<DataPoint>(new DataPoint[] {
-                new DataPoint(-20, -20),
-                new DataPoint(20, 20)
+                new DataPoint(-10, -10),
+                new DataPoint(10, 10)
         });
         graph.addSeries(graphScale);
         graphScale.setShape(PointsGraphSeries.Shape.POINT);
@@ -80,21 +73,17 @@ public class Graph1 extends Activity {
         graphScale.setSize(0001);
 
         try{
-
-            int x = 20;
-            for(int y = 20; y> -20; y--){
+            int x = 10;
+            for(int y = 10; y> -10; y--){
                 LineGraphSeries<DataPoint> fineLinesX = new LineGraphSeries<>(new DataPoint[] {
                         new DataPoint(x*-1, y),
                         new DataPoint(x, y)
                 });
 
-
                 LineGraphSeries<DataPoint> fineLinesY = new LineGraphSeries<>(new DataPoint[] {
                         new DataPoint(y, -1*x),
                         new DataPoint(y, x)
                 });
-
-
 
                 graph.addSeries(fineLinesX);
                 fineLinesX.setColor(Color.GRAY);
@@ -108,12 +97,10 @@ public class Graph1 extends Activity {
                 fineLinesY.setDataPointsRadius(0);
                 fineLinesY.setThickness(1);
             }
-
         }
         catch(Exception e){
             Toast.makeText(this, "Creating fineLines didn't work", Toast.LENGTH_SHORT).show();
         }
-
 
         PointsGraphSeries<DataPoint> RandomSeries = new PointsGraphSeries<DataPoint>(new DataPoint[] {
                 new DataPoint(Xrand, Yrand)
@@ -128,11 +115,11 @@ public class Graph1 extends Activity {
         getCoordinates();
         createUserPoint();
         // implement logic to see if user is correct plotting reflection across Y axis
-        if(X== -1*Xrand && Y == Yrand){
-            Toast.makeText(this, "Try again", Toast.LENGTH_SHORT).show();
+        if(X == (Xrand * -1) && Y == Yrand){
+            Toast.makeText(this, "Correct!", Toast.LENGTH_LONG).show();
         }
         else{
-            Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Try again", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -155,7 +142,15 @@ public class Graph1 extends Activity {
         });
         graph.addSeries(userSeries);
         userSeries.setColor(Color.GREEN);
-        userSeries.setSize(3);
+        userSeries.setSize(5);
+        userSeries.setCustomShape(new PointsGraphSeries.CustomShape() {
+            @Override
+            public void draw(Canvas canvas, Paint paint, float x, float y, DataPointInterface dataPoint) {
+                paint.setStrokeWidth(5);
+                canvas.drawLine(x-10, y-10, x+10, y+10, paint);
+                canvas.drawLine(x+10, y-10, x-10, y+10, paint);
+            }
+        });
     }
 
     public void onClickLineGraph(View view){
@@ -175,10 +170,10 @@ public class Graph1 extends Activity {
 
     /**
      * Shows the soft keyboard
+     * public void showSoftKeyboard(View view) {
+     * InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+     * view.requestFocus();
+     * inputMethodManager.showSoftInput(view, 0);
+     * }
      */
-    public void showSoftKeyboard(View view) {
-        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-        view.requestFocus();
-        inputMethodManager.showSoftInput(view, 0);
-    }
 }

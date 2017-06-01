@@ -2,34 +2,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.shane_taylor.truthtables.Graph2">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="2"
+    tools:context="com.shane_taylor.truthtables.Graph2"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
         <com.jjoe64.graphview.GraphView
             android:id="@+id/linegraph"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="top|center_horizontal"
+            android:layout_weight="1"
             android:scaleType="centerInside" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:layout_margin="5dp"
-        android:layout_weight=".65">
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:layout_weight="1"
             android:columnCount="4"
             android:rowCount="8">
 
@@ -38,6 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:layout_column="0"
+                android:layout_columnSpan="4"
                 android:layout_gravity="top"
                 android:layout_margin="5dp"
                 android:layout_row="1"
@@ -64,6 +70,7 @@
                 android:layout_margin="10dp"
                 android:layout_marginRight="20dp"
                 android:layout_row="2"
+                android:gravity="center"
                 android:inputType="number|numberSigned"
                 android:nextFocusDown="@+id/y1" />
 
@@ -87,6 +94,7 @@
                 android:layout_gravity="start"
                 android:layout_margin="10dp"
                 android:layout_row="2"
+                android:gravity="center"
                 android:inputType="number|numberSigned"
                 android:nextFocusDown="@+id/x2" />
 
@@ -95,6 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:layout_column="0"
+                android:layout_columnSpan="4"
                 android:layout_margin="5dp"
                 android:layout_row="4"
                 android:gravity="bottom"
@@ -120,6 +129,7 @@
                 android:layout_margin="10dp"
                 android:layout_marginRight="20dp"
                 android:layout_row="5"
+                android:gravity="center"
                 android:inputType="number|numberSigned"
                 android:nextFocusDown="@+id/y2" />
 
@@ -142,6 +152,7 @@
                 android:layout_gravity="start"
                 android:layout_margin="10dp"
                 android:layout_row="5"
+                android:gravity="center"
                 android:inputType="number|numberSigned" />
 
             <Button
@@ -154,9 +165,9 @@
                 android:layout_margin="10dp"
                 android:layout_row="7"
                 android:gravity="center_horizontal"
+                android:maxLength="400"
                 android:onClick="onClickPlot"
-                android:text="@string/Plot"
-                android:maxLength="400"/>
+                android:text="@string/Plot" />
 
         </GridLayout>
     </LinearLayout>
