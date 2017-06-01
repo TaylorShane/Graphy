@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.shane_taylor.truthtables.Graph1"
-    android:weightSum="2">
+    android:weightSum="2"
+    android:baselineAligned="false">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -35,7 +36,8 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:baselineAligned="false">
 
         <GridLayout
             android:layout_width="0dp"
@@ -47,12 +49,12 @@
 
 
             <TextView
-                android:id="@+id/pointInstructionsOne"
+                android:id="@+id/pointInstruction1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnSpan="5"
                 android:layout_margin="10dp"
-                android:text="@string/PointYreflection" />
+                android:text="@string/poinInstruction1" />
 
             <TextView
                 android:id="@+id/enterXY"

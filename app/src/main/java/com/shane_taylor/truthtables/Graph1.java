@@ -141,7 +141,7 @@ public class Graph1 extends Activity {
                 new DataPoint(X, Y)
         });
         graph.addSeries(userSeries);
-        userSeries.setColor(Color.GREEN);
+        userSeries.setColor(Color.parseColor("#ff8a05"));
         userSeries.setSize(5);
         userSeries.setCustomShape(new PointsGraphSeries.CustomShape() {
             @Override

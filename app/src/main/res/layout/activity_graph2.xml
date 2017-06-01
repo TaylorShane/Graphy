@@ -16,7 +16,7 @@
 
         <com.jjoe64.graphview.GraphView
             android:id="@+id/linegraph"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="top|center_horizontal"
             android:layout_weight="1"
@@ -28,15 +28,24 @@
         android:layout_height="fill_parent"
         android:layout_margin="5dp"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:baselineAligned="false">
 
         <GridLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:columnCount="4"
-            android:rowCount="8">
+            android:rowCount="8"
+            >
+
+            <TextView
+                android:id="@+id/lineInstruction1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:text="@string/lineInstruction1" />
 
             <TextView
                 android:id="@+id/txtViewLineStart"
@@ -46,7 +55,7 @@
                 android:layout_columnSpan="4"
                 android:layout_gravity="top"
                 android:layout_margin="5dp"
-                android:layout_row="1"
+                android:layout_row="3"
                 android:gravity="bottom"
                 android:text="@string/line_start_coordinates" />
 
@@ -57,7 +66,7 @@
                 android:layout_column="0"
                 android:layout_gravity="end"
                 android:layout_margin="10dp"
-                android:layout_row="2"
+                android:layout_row="4"
                 android:gravity="end"
                 android:text="@string/EnterXTextView" />
 
@@ -68,8 +77,8 @@
                 android:layout_column="1"
                 android:layout_gravity="start"
                 android:layout_margin="10dp"
-                android:layout_marginRight="20dp"
-                android:layout_row="2"
+                android:layout_marginEnd="20dp"
+                android:layout_row="4"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
                 android:nextFocusDown="@+id/y1" />
@@ -81,7 +90,7 @@
                 android:layout_column="2"
                 android:layout_gravity="end"
                 android:layout_margin="10dp"
-                android:layout_row="2"
+                android:layout_row="4"
 
                 android:gravity="end"
                 android:text="@string/EnterYTextView" />
@@ -93,7 +102,7 @@
                 android:layout_column="3"
                 android:layout_gravity="start"
                 android:layout_margin="10dp"
-                android:layout_row="2"
+                android:layout_row="4"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
                 android:nextFocusDown="@+id/x2" />
@@ -105,7 +114,7 @@
                 android:layout_column="0"
                 android:layout_columnSpan="4"
                 android:layout_margin="5dp"
-                android:layout_row="4"
+                android:layout_row="5"
                 android:gravity="bottom"
                 android:text="@string/line_end_coordinates" />
 
@@ -116,7 +125,7 @@
                 android:layout_column="0"
                 android:layout_gravity="end"
                 android:layout_margin="10dp"
-                android:layout_row="5"
+                android:layout_row="6"
                 android:gravity="end"
                 android:text="@string/EnterXTextView" />
 
@@ -127,8 +136,8 @@
                 android:layout_column="1"
                 android:layout_gravity="start"
                 android:layout_margin="10dp"
-                android:layout_marginRight="20dp"
-                android:layout_row="5"
+                android:layout_marginEnd="20dp"
+                android:layout_row="6"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
                 android:nextFocusDown="@+id/y2" />
@@ -140,7 +149,7 @@
                 android:layout_column="2"
                 android:layout_gravity="end"
                 android:layout_margin="10dp"
-                android:layout_row="5"
+                android:layout_row="6"
                 android:gravity="end"
                 android:text="@string/EnterYTextView" />
 
@@ -151,7 +160,7 @@
                 android:layout_column="3"
                 android:layout_gravity="start"
                 android:layout_margin="10dp"
-                android:layout_row="5"
+                android:layout_row="6"
                 android:gravity="center"
                 android:inputType="number|numberSigned" />
 
