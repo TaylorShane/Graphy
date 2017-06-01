@@ -33,6 +33,7 @@ public class Graph2 extends Activity {
         hideSoftKeyboard();
     }
 
+
     private void randomLine(){
         Random generator = new Random();
         X1rand = -10 + generator.nextInt(20);
