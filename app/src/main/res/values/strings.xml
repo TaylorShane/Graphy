@@ -24,4 +24,5 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="poinInstruction1">Plot the blue point\'s reflection across the Y axis.</string>
     <string name="enter_x_and_y">Enter X and Y</string>
     <string name="lineInstruction1">Create a line that reflects the line above along the X axis</string>
+    <string name="commit_test">commit test</string>
 </resources>
