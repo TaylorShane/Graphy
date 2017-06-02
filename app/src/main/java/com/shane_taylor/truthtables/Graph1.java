@@ -36,12 +36,8 @@ implement the onSaveInstanceState() method - see implementation completed on Tap
 
 public class Graph1 extends Activity {
 
-    public EditText xcoordinate;
-    public EditText ycoordinate;
-    public int X;
-    public int Y;
-    public int Xrand;
-    public int Yrand;
+    public EditText xcoordinate, ycoordinate;
+    public int X, Y, Xrand, Yrand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

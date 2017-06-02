@@ -20,8 +20,7 @@ import java.util.Random;
 public class Graph2 extends Activity {
 
     public EditText x1, y1, x2, y2;
-    public int A, B, C, D;
-    public int X1rand, Y1rand, X2rand, Y2rand;
+    public int Ux1, Uy1, Ux2, Uy2, X1rand, Y1rand, X2rand, Y2rand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +33,7 @@ public class Graph2 extends Activity {
     }
 
 
-    private void randomLine(){
+    private void randomLine(){ /** random line generator */
         Random generator = new Random();
         X1rand = -10 + generator.nextInt(20);
         Y1rand = -10 + generator.nextInt(20);
@@ -44,8 +43,36 @@ public class Graph2 extends Activity {
 
     public void setGraphScale(){
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
-        createCustomLine();
+        //createCustomLine();
+
+        Toast.makeText(this,
+                "Initial Values: " +
+                        "X1rand: " + X1rand +
+                        "\n Y1rand: " + Y1rand +
+                        "\n X2rand: " + X2rand +
+                        "\n Y2rand: " + Y2rand
+                , Toast.LENGTH_LONG).show();
+
+        if(X1rand > X2rand) {
+            int temp = 0;
+            temp = X1rand;
+            X1rand = X2rand;
+            X2rand = temp;
+
+            temp = Y1rand;
+            Y1rand = Y2rand;
+            Y2rand = temp;
+
+            Toast.makeText(this,
+                    "Have been changed to: " +
+                            "X1rand: " + X1rand +
+                            "\n Y1rand: " + Y1rand +
+                            "\n X2rand: " + X2rand +
+                            "\n Y2rand: " + Y2rand
+                    , Toast.LENGTH_LONG).show();
+        }
         LineGraphSeries<DataPoint> randomLine = new LineGraphSeries<>(new DataPoint[] {
+
                 new DataPoint(X1rand, Y1rand),
                 new DataPoint(X2rand, Y2rand)
         });
@@ -109,47 +136,43 @@ public class Graph2 extends Activity {
         }
     }
 
-    public void createCustomLine(){
-        /*
-        Paint paint = new Paint();
-        GraphView graph = (GraphView) findViewById(R.id.linegraph);
-        graph.drawLine(0, 0, 20, 20, paint);
-        graph.drawLine(20, 0, 0, 20, paint);
-        */
-    }
-    public void onClickPlot(View v) {
+    public void onClickPlot(View v) { /** button click method **/
 
         getCoordinates();
         createUserLine();
-        Toast.makeText(this,
-                "X1rand: " + X1rand +
-                        "\n Y1rand: " + Y1rand +
-                        "\n X2rand: " + X2rand +
-                        "\n Y2rand: " + Y2rand
-                , Toast.LENGTH_LONG).show();
     }
 
-    public void createUserLine(){
+    public void createUserLine(){  // Using user coordinates to create user line
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
+        if(Ux1 > Ux2) {
+            int temp = 0;
+            temp = Ux1;
+            Ux1 = Ux2;
+            Ux2 = temp;
+
+            temp = Uy1;
+            Uy1 = Uy2;
+            Uy2 = temp;
+        }
         LineGraphSeries<DataPoint> userLine = new LineGraphSeries<>(new DataPoint[] {
-                new DataPoint(A, B),
-                new DataPoint(C, D)
+                new DataPoint(Ux1, Uy1),
+                new DataPoint(Ux2, Uy2)
         });
 
         graph.addSeries(userLine);
         userLine.setColor(Color.parseColor("#ff8a05"));
     }
-    public void getCoordinates(){
+    public void getCoordinates(){  // Getting user coordinates
         x1 = (EditText) findViewById(R.id.x1);
         y1 = (EditText) findViewById(R.id.y1);
         x2 = (EditText) findViewById(R.id.x2);
         y2 = (EditText) findViewById(R.id.y2);
 
         try{
-            A = Integer.parseInt(x1.getText().toString());
-            B = Integer.parseInt(y1.getText().toString());
-            C = Integer.parseInt(x2.getText().toString());
-            D = Integer.parseInt(y2.getText().toString());
+            Ux1 = Integer.parseInt(x1.getText().toString());
+            Uy1 = Integer.parseInt(y1.getText().toString());
+            Ux2 = Integer.parseInt(x2.getText().toString());
+            Uy2 = Integer.parseInt(y2.getText().toString());
         }
         catch(Exception e){
             Toast.makeText(this, "Please enter integer values", Toast.LENGTH_SHORT).show();
@@ -159,7 +182,7 @@ public class Graph2 extends Activity {
     /**
      * Hides the soft keyboard
      */
-    public void hideSoftKeyboard() {
+    public void hideSoftKeyboard() { // this isn't working on all devices
         if(getCurrentFocus()!=null) {
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);

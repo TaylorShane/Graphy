@@ -54,7 +54,8 @@
                 android:layout_height="wrap_content"
                 android:layout_columnSpan="5"
                 android:layout_margin="10dp"
-                android:text="@string/poinInstruction1" />
+                android:text="@string/poinInstruction1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
             <TextView
                 android:id="@+id/enterXY"
