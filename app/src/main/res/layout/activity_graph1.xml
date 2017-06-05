@@ -86,7 +86,7 @@
                 android:layout_margin="10dp"
                 android:layout_row="3"
                 android:gravity="center"
-                android:inputType="number|numberSigned"
+                android:inputType="number|numberSigned|numberDecimal"
                 android:nextFocusDown="@+id/yplot" />
 
             <TextView
@@ -109,7 +109,7 @@
                 android:layout_margin="10dp"
                 android:layout_row="3"
                 android:gravity="center"
-                android:inputType="number|numberSigned" />
+                android:inputType="number|numberSigned|numberDecimal" />
 
             <Button
                 android:id="@+id/btnPlot"

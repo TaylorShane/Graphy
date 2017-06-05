@@ -37,23 +37,24 @@ implement the onSaveInstanceState() method - see implementation completed on Tap
 public class Graph1 extends Activity {
 
     public EditText xcoordinate, ycoordinate;
-    public int X, Y, Xrand, Yrand;
+    public double X, Y, Xrand, Yrand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_graph1);
+
         randomPoints();
         createGraphScale();
         hideSoftKeyboard();
     }
 
+
     private void randomPoints(){
         Random generator = new Random();
         Xrand = -10 + generator.nextInt(20);
         Yrand = -10 + generator.nextInt(20);
-
     }
 
     private void createGraphScale() {
@@ -123,8 +124,8 @@ public class Graph1 extends Activity {
         xcoordinate = (EditText) findViewById(R.id.xplot);
         ycoordinate = (EditText) findViewById(R.id.yplot);
         try{
-            X = Integer.parseInt(xcoordinate.getText().toString());
-            Y = Integer.parseInt(ycoordinate.getText().toString());
+            X = Double.parseDouble(xcoordinate.getText().toString());
+            Y = Double.parseDouble(ycoordinate.getText().toString());
         }
         catch (Exception e){
             Toast.makeText(this, "Please enter integer values for X and Y ", Toast.LENGTH_SHORT).show();
