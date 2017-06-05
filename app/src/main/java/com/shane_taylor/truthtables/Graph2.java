@@ -1,15 +1,15 @@
 package com.shane_taylor.truthtables;
 
 import android.app.Activity;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
@@ -21,6 +21,8 @@ public class Graph2 extends Activity {
 
     public EditText x1, y1, x2, y2;
     public int Ux1, Uy1, Ux2, Uy2, X1rand, Y1rand, X2rand, Y2rand;
+    double uSlope, RandSlope;
+    public TextView lineInstructions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +47,11 @@ public class Graph2 extends Activity {
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
         //createCustomLine();
 
-        Toast.makeText(this,
-                "Initial Values: " +
-                        "X1rand: " + X1rand +
-                        "\n Y1rand: " + Y1rand +
-                        "\n X2rand: " + X2rand +
-                        "\n Y2rand: " + Y2rand
-                , Toast.LENGTH_LONG).show();
-
+        /**
+         * This graph library expects lines to be drawn from left to right.  The first X coordinate MUST be less than the second.
+         * The below logic swaps the two values if this is not the case, along with the appropriate Y values.
+         * Vertical lines are not affected no matter the relation of the start and end X values.
+         */
         if(X1rand > X2rand) {
             int temp = 0;
             temp = X1rand;
@@ -62,14 +61,6 @@ public class Graph2 extends Activity {
             temp = Y1rand;
             Y1rand = Y2rand;
             Y2rand = temp;
-
-            Toast.makeText(this,
-                    "Have been changed to: " +
-                            "X1rand: " + X1rand +
-                            "\n Y1rand: " + Y1rand +
-                            "\n X2rand: " + X2rand +
-                            "\n Y2rand: " + Y2rand
-                    , Toast.LENGTH_LONG).show();
         }
         LineGraphSeries<DataPoint> randomLine = new LineGraphSeries<>(new DataPoint[] {
 
@@ -142,8 +133,38 @@ public class Graph2 extends Activity {
         createUserLine();
     }
 
+    public void getSlopes(){
+        RandSlope = (double) (Y2rand - Y1rand) / (double)(X2rand - X1rand);  // Y2-Y1/X2-X1
+        uSlope = (double)(Uy2 - Uy1) / (double)(Ux2 - Ux1);
+        lineInstructions = (TextView) findViewById(R.id.lineInstructions);
+
+        if(RandSlope == uSlope ) {
+            //Toast.makeText(this, "They are parallel", Toast.LENGTH_LONG).show();
+            lineInstructions.setText(getResources().getString(R.string.lineInstruction2));
+            Toast toast = new Toast(this);
+            ImageView view = new ImageView(this);
+            view.setImageResource(R.drawable.correct_large);
+            toast.setView(view);
+            toast.setDuration(Toast.LENGTH_LONG);
+            toast.show();
+        }
+        else if(RandSlope * uSlope == -1 ){
+            Toast.makeText(this, "They are perpendicular", Toast.LENGTH_LONG).show();
+            lineInstructions.setText(getResources().getString(R.string.lineInstruction1));
+        }
+        else
+            Toast.makeText(this, "Try again!" , Toast.LENGTH_LONG).show();
+
+    }
+
     public void createUserLine(){  // Using user coordinates to create user line
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
+
+        /**
+         * This graph library expects lines to be drawn from left to right.  The first X coordinate MUST be less than the second.
+         * The below logic swaps the two values if this is not the case, along with the appropriate Y values.
+         * Vertical lines are not affected no matter the relation of the start and end X values.
+         */
         if(Ux1 > Ux2) {
             int temp = 0;
             temp = Ux1;
@@ -161,7 +182,9 @@ public class Graph2 extends Activity {
 
         graph.addSeries(userLine);
         userLine.setColor(Color.parseColor("#ff8a05"));
+        getSlopes();
     }
+
     public void getCoordinates(){  // Getting user coordinates
         x1 = (EditText) findViewById(R.id.x1);
         y1 = (EditText) findViewById(R.id.y1);
