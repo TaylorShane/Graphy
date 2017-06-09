@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 import java.util.Random;
 
@@ -21,8 +22,8 @@ import com.jjoe64.graphview.series.PointsGraphSeries;
 
 
 /**
-implement the onSaveInstanceState() method - see implementation completed on TapCloud app
-
+TODO: implement the onSaveInstanceState() method - see implementation completed on TapCloud app
+TODO: implement screen reset button
 */
 
 public class Graph1 extends Activity {
@@ -104,10 +105,20 @@ public class Graph1 extends Activity {
         createUserPoint();
         // implement logic to see if user is correct plotting reflection across Y axis
         if(X == (Xrand * -1) && Y == Yrand){
-            Toast.makeText(this, "Correct!", Toast.LENGTH_LONG).show();
+            Toast toast = new Toast(this);
+            ImageView view = new ImageView(this);
+            view.setImageResource(R.drawable.correct_large);
+            toast.setView(view);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.show();
         }
         else{
-            Toast.makeText(this, "Try again", Toast.LENGTH_LONG).show();
+            Toast toast = new Toast(this);
+            ImageView view = new ImageView(this);
+            view.setImageResource(R.drawable.try_again_large);
+            toast.setView(view);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.show();
         }
     }
 

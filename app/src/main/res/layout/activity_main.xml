@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#454545"
+    android:configChanges="orientation|keyboardHidden"
+    android:keepScreenOn="true"
     android:orientation="vertical"
+    android:screenOrientation="portrait"
     tools:context="com.shane_taylor.truthtables.MainActivity">
 
     <LinearLayout
@@ -21,7 +24,7 @@
             android:id="@+id/textView"
             android:layout_width="150dp"
             android:layout_height="25dp"
-            android:layout_gravity="top|center_horizontal"
+            android:layout_gravity="center_horizontal|center"
             android:layout_margin="10dp"
             android:gravity="center"
             android:padding="2dp"
@@ -33,9 +36,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-
         android:layout_gravity="center"
+
+        android:layout_weight="1"
         android:gravity="center"
         android:scaleType="centerInside">
 
@@ -49,6 +52,7 @@
             android:contentDescription="@string/PthenQ"
             android:gravity="top|center_horizontal"
             android:src="@drawable/truth_table_large" />
+        <!--TODO: change image to interactive activity with dropdowns to choose resulting truth values -->
 
     </LinearLayout>
 

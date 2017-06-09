@@ -1,8 +1,10 @@
 package com.shane_taylor.truthtables;
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -17,12 +19,7 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.Random;
 
-/**
- TODO: implement the onSaveInstanceState() method - see implementation completed on TapCloud app
- TODO: implement screen reset button
- */
-
-public class Graph2 extends Activity {
+public class Graph3 extends Activity {
 
     public EditText x1, y1, x2, y2;
     public int Ux1, Uy1, Ux2, Uy2, X1rand, Y1rand, X2rand, Y2rand;
@@ -33,13 +30,11 @@ public class Graph2 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_graph2);
-        randomLine();
+        setContentView(R.layout.activity_graph3);
+        randomLine(); //TODO: change to randomShape
         setGraphScale();
         hideSoftKeyboard();
     }
-
-
     private void randomLine(){ /** random line generator */
         Random generator = new Random();
         X1rand = -10 + generator.nextInt(20);
@@ -58,8 +53,7 @@ public class Graph2 extends Activity {
          * Vertical lines are not affected no matter the relation of the start and end X values.
          */
         if(X1rand > X2rand) {
-            int temp = 0;
-            temp = X1rand;
+            int temp = X1rand;
             X1rand = X2rand;
             X2rand = temp;
 
@@ -143,35 +137,22 @@ public class Graph2 extends Activity {
         uSlope = (double)(Uy2 - Uy1) / (double)(Ux2 - Ux1);
         lineInstructions = (TextView) findViewById(R.id.lineInstructions);
 
-        if(RandSlope == uSlope && lineInstructions.getText() == getResources().getString(R.string.lineInstruction1)) {
-
-            Toast toast = new Toast(this);
-            ImageView view = new ImageView(this);
-            view.setImageResource(R.drawable.correct_large);
-            toast.setView(view);
-            toast.setDuration(Toast.LENGTH_SHORT);
-            toast.show();
+        if(RandSlope == uSlope ) {
+            //Toast.makeText(this, "They are parallel", Toast.LENGTH_LONG).show();
             lineInstructions.setText(getResources().getString(R.string.lineInstruction2));
-        }
-        else if(RandSlope * uSlope == -1 && lineInstructions.getText() == getResources().getString(R.string.lineInstruction1)){
-
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
             view.setImageResource(R.drawable.correct_large);
             toast.setView(view);
-            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setDuration(Toast.LENGTH_LONG);
             toast.show();
+        }
+        else if(RandSlope * uSlope == -1 ){
+            Toast.makeText(this, "They are perpendicular", Toast.LENGTH_LONG).show();
             lineInstructions.setText(getResources().getString(R.string.lineInstruction1));
         }
-        else {
-
-            Toast toast = new Toast(this);
-            ImageView view = new ImageView(this);
-            view.setImageResource(R.drawable.try_again_large);
-            toast.setView(view);
-            toast.setDuration(Toast.LENGTH_SHORT);
-            toast.show();
-        }
+        else
+            Toast.makeText(this, "Try again!" , Toast.LENGTH_LONG).show();
 
     }
 
@@ -184,8 +165,7 @@ public class Graph2 extends Activity {
          * Vertical lines are not affected no matter the relation of the start and end X values.
          */
         if(Ux1 > Ux2) {
-            int temp = 0;
-            temp = Ux1;
+            int temp = Ux1;
             Ux1 = Ux2;
             Ux2 = temp;
 

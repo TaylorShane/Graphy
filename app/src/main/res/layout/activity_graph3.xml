@@ -3,10 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.shane_taylor.truthtables.Graph2"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-
+    tools:context="com.shane_taylor.truthtables.Graph3"
     android:weightSum="2"
     android:orientation="vertical"
     android:screenOrientation="portrait"
@@ -184,4 +183,5 @@
 
         </GridLayout>
     </LinearLayout>
+
 </LinearLayout>
