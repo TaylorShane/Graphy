@@ -26,4 +26,15 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="lineInstruction1">Create a line is parallel to the blue line above.</string>
     <string name="lineInstruction2">Create a line is perpendicular to the blue line above.</string>
     <string name="commit_test2">commit test 2</string>
+    <string name="triangle_graph">Triangle Graph</string>
+    <string name="line_a">Line A</string>
+    <string name="x1">X1</string>
+    <string name="y1">Y1</string>
+    <string name="x2">X2</string>
+    <string name="y2">Y2</string>
+    <string name="x3">X3</string>
+    <string name="y3">Y3</string>
+    <string name="line_b">Line B</string>
+    <string name="line_c">Line C</string>
+    <string name="triangleInstruction1">Create a reflexive triangle in quadrant II</string>
 </resources>

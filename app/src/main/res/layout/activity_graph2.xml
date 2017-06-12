@@ -41,7 +41,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:columnCount="4"
-            android:rowCount="8">
+            android:rowCount="9">
 
             <TextView
                 android:id="@+id/lineInstructions"
@@ -86,7 +86,7 @@
                 android:layout_row="4"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
-                android:nextFocusDown="@+id/y1" />
+                android:nextFocusDown="@+id/y1A" />
 
             <TextView
                 android:id="@+id/EnterYtextView"
@@ -101,7 +101,7 @@
                 android:text="@string/EnterYTextView" />
 
             <EditText
-                android:id="@+id/y1"
+                android:id="@+id/y1A"
                 android:layout_width="75dp"
                 android:layout_height="50dp"
                 android:layout_column="3"
@@ -110,7 +110,7 @@
                 android:layout_row="4"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
-                android:nextFocusDown="@+id/x2" />
+                android:nextFocusDown="@+id/x1B" />
 
             <TextView
                 android:id="@+id/txtViewLineEnd"
@@ -135,7 +135,7 @@
                 android:text="@string/EnterXTextView" />
 
             <EditText
-                android:id="@+id/x2"
+                android:id="@+id/x1B"
                 android:layout_width="75dp"
                 android:layout_height="50dp"
                 android:layout_column="1"
@@ -144,7 +144,7 @@
                 android:layout_row="6"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
-                android:nextFocusDown="@+id/y2" />
+                android:nextFocusDown="@+id/y1B" />
 
             <TextView
                 android:id="@+id/EnterYtextView2"
@@ -158,7 +158,7 @@
                 android:text="@string/EnterYTextView" />
 
             <EditText
-                android:id="@+id/y2"
+                android:id="@+id/y1B"
                 android:layout_width="75dp"
                 android:layout_height="50dp"
                 android:layout_column="3"
@@ -181,6 +181,20 @@
                 android:maxLength="400"
                 android:onClick="onClickPlot"
                 android:text="@string/Plot" />
+
+            <Button
+                android:id="@+id/btnTriangleGraph"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_column="0"
+                android:layout_columnSpan="4"
+                android:layout_gravity="top|center_horizontal|fill_horizontal"
+                android:layout_margin="10dp"
+                android:layout_row="8"
+                android:gravity="center_horizontal"
+                android:maxLength="400"
+                android:onClick="onClickTriangleGraph"
+                android:text="@string/triangle_graph" />
 
         </GridLayout>
     </LinearLayout>

@@ -1,8 +1,8 @@
 package com.shane_taylor.truthtables;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -205,9 +205,9 @@ public class Graph2 extends Activity {
 
     public void getCoordinates(){  // Getting user coordinates
         x1 = (EditText) findViewById(R.id.x1);
-        y1 = (EditText) findViewById(R.id.y1);
-        x2 = (EditText) findViewById(R.id.x2);
-        y2 = (EditText) findViewById(R.id.y2);
+        y1 = (EditText) findViewById(R.id.y1A);
+        x2 = (EditText) findViewById(R.id.x1B);
+        y2 = (EditText) findViewById(R.id.y1B);
 
         try{
             Ux1 = Integer.parseInt(x1.getText().toString());
@@ -218,6 +218,11 @@ public class Graph2 extends Activity {
         catch(Exception e){
             Toast.makeText(this, "Please enter integer values", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void onClickTriangleGraph(View view){
+        Intent intent = new Intent(this, Graph3.class);
+        startActivity(intent);
     }
 
     /**
@@ -239,3 +244,4 @@ public class Graph2 extends Activity {
         inputMethodManager.showSoftInput(view, 0);
     }
 }
+
