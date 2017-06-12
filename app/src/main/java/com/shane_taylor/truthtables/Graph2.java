@@ -20,6 +20,9 @@ import java.util.Random;
 
 /**
  TODO: implement the onSaveInstanceState() method
+ TODO: parallel detection doesn't work if user enters -Y then +Y
+ TODO: perpendicular detection doesn't work if user enters x1 < x2
+ TODO: perpendicular detection doesn't work if user enters x2 < x1
  */
 
 public class Graph2 extends Activity {
@@ -131,7 +134,7 @@ public class Graph2 extends Activity {
 
     public void onClickPlot(View v) { /** button click method **/
 
-        getCoordinates();
+        getUserCoordinates();
         createUserLine();
     }
 
@@ -160,7 +163,6 @@ public class Graph2 extends Activity {
 
         graph.addSeries(userLine);
         userLine.setColor(Color.parseColor("#ff8a05"));
-        getSlopes();
     }
 
     public void getSlopes(){
@@ -188,7 +190,7 @@ public class Graph2 extends Activity {
             toast.setView(view);
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
-            lineInstructions.setText(getResources().getString(R.string.lineInstruction1));
+            lineInstructions.setText(getResources().getString(R.string.lineInstruction3));
 
             clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
         }
@@ -204,7 +206,7 @@ public class Graph2 extends Activity {
 
     }
 
-    public void getCoordinates(){  // Getting user coordinates
+    public void getUserCoordinates(){  // Getting user coordinates
         x1 = (EditText) findViewById(R.id.x1);
         y1 = (EditText) findViewById(R.id.y1A);
         x2 = (EditText) findViewById(R.id.x1B);
@@ -219,6 +221,7 @@ public class Graph2 extends Activity {
         catch(Exception e){
             Toast.makeText(this, "Please enter integer values", Toast.LENGTH_SHORT).show();
         }
+        getSlopes();
     }
 
     public void onClickTriangleGraph(View view){

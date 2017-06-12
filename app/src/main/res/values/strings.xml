@@ -25,6 +25,7 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="enter_x_and_y">Enter X and Y</string>
     <string name="lineInstruction1">Create a line is parallel to the blue line above.</string>
     <string name="lineInstruction2">Create a line is perpendicular to the blue line above.</string>
+    <string name="lineInstruction3">Great Job!  Now hit the "Reset Graph" button for a new line.</string>
     <string name="commit_test2">commit test 2</string>
     <string name="triangle_graph">Triangle Graph</string>
     <string name="line_a">Line A</string>
@@ -39,4 +40,5 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="triangleInstruction1">Create a reflexive triangle in quadrant II</string>
     <string name="triangleInstruction2">Create a reflexive triangle in quadrant III</string>
     <string name="triangleInstruction3">Create a reflexive triangle in quadrant IV</string>
+    <string name="triangleInstruction4">Great Job!  Now hit the "Reset Graph" button for a new triangle.</string>
 </resources>

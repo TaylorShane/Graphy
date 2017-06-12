@@ -18,12 +18,23 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.Random;
 
+/**
+ *Graph3 method call order
+ *
+ * createRandomTriangle
+ * setGraphScale
+ * hideSoftKeyboard
+ *
+ * onClickPlot ->
+ *      createUserLine
+ *      getUserCoordinates ->
+ *          reflexiveII
+ */
 public class Graph3 extends Activity {
 
     public EditText Userx1A, Usery1A, Userx2A, Usery2A, Userx1B, Usery1B, Userx2B, Usery2B, Userx1C, Usery1C, Userx2C, Usery2C;
     public int Ux1A, Uy1A, Ux2A, Uy2A, Ux1B, Uy1B, Ux2B, Uy2B, Ux1C, Uy1C, Ux2C, Uy2C;
     public int randX1A, randY1A, randX2A, randY2A, randX1B, randY1B, randX2B, randY2B, randX1C, randY1C, randX2C, randY2C;
-    double userTriangle, randTriangle;
     public TextView triangleInstructions, results, userResults;
 
     @Override
@@ -239,7 +250,7 @@ public class Graph3 extends Activity {
             toast.setView(view);
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
-            triangleInstructions.setText(getResources().getString(R.string.triangleInstruction1));
+            triangleInstructions.setText(getResources().getString(R.string.triangleInstruction4));
 
             clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
         }
@@ -269,13 +280,13 @@ public class Graph3 extends Activity {
          * Vertical lines are not affected no matter the relation of the start and end X values.
          */
         if(Ux1A > Ux2A) {
-            int temp1 = Ux1A;
+            int temp = Ux1A;
             Ux1A = Ux2A;
-            Ux2A = temp1;
+            Ux2A = temp;
 
-            temp1 = Uy1A;
+            temp = Uy1A;
             Uy1A = Uy2A;
-            Uy2A = temp1;
+            Uy2A = temp;
         }
         LineGraphSeries<DataPoint> userLineA = new LineGraphSeries<>(new DataPoint[] {
                 new DataPoint(Ux1A, Uy1A),
@@ -286,13 +297,13 @@ public class Graph3 extends Activity {
         userLineA.setColor(Color.parseColor("#ff8a05"));
 
         if(Ux1B > Ux2B) {
-            int temp2 = Ux1B;
+            int temp = Ux1B;
             Ux1B = Ux2B;
-            Ux2B = temp2;
+            Ux2B = temp;
 
-            temp2 = Uy1B;
+            temp = Uy1B;
             Uy1B = Uy2B;
-            Uy2B = temp2;
+            Uy2B = temp;
         }
         LineGraphSeries<DataPoint> userLineB = new LineGraphSeries<>(new DataPoint[] {
                 new DataPoint(Ux1B, Uy1B),
@@ -303,13 +314,13 @@ public class Graph3 extends Activity {
         userLineB.setColor(Color.parseColor("#ff8a05"));
 
         if(Ux1C > Ux2C) {
-            int temp3 = Ux1C;
+            int temp = Ux1C;
             Ux1C = Ux2C;
-            Ux2C = temp3;
+            Ux2C = temp;
 
-            temp3 = Uy1C;
+            temp = Uy1C;
             Uy1C = Uy2C;
-            Uy2C = temp3;
+            Uy2C = temp;
         }
         LineGraphSeries<DataPoint> userLineC = new LineGraphSeries<>(new DataPoint[] {
                 new DataPoint(Ux1C, Uy1C),
