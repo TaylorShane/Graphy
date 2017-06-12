@@ -22,12 +22,14 @@
         <activity
             android:name=".Graph1"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Graph2"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".Graph3"></activity>
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Graph3"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

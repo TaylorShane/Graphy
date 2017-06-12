@@ -35,12 +35,13 @@
         android:orientation="horizontal">
 
         <GridLayout
+            android:id="@+id/enterCoordinatesLayout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:columnCount="8"
-            android:rowCount="11">
+            android:rowCount="14">
 
             <TextView
                 android:id="@+id/triangleInstructions"
@@ -62,7 +63,7 @@
                 android:layout_row="3"
                 android:gravity="bottom"
                 android:text="@string/line_a" />
-<!-- LINE A START-->
+            <!-- LINE A START-->
             <TextView
                 android:id="@+id/EnterX1A"
                 android:layout_width="wrap_content"
@@ -155,7 +156,7 @@
                 android:inputType="number|numberSigned"
                 android:nextFocusDown="@+id/x1B" />
 
-<!--   LINE B START   -->
+            <!--   LINE B START   -->
             <TextView
                 android:id="@+id/txtViewLineB"
                 android:layout_width="wrap_content"
@@ -256,7 +257,7 @@
                 android:layout_row="6"
                 android:gravity="center"
                 android:inputType="number|numberSigned" />
-<!-- LINE C START -->
+            <!-- LINE C START -->
 
             <TextView
                 android:id="@+id/txtViewLineC"
@@ -360,7 +361,7 @@
 
 
             <TextView
-                android:id="@+id/values_results"
+                android:id="@+id/random_values_results"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
@@ -369,6 +370,18 @@
                 android:layout_row="9"
                 android:gravity="fill_horizontal|center"
                 android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/user_values_results"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="8"
+                android:layout_gravity="top|center_horizontal|fill_horizontal"
+                android:layout_row="10"
+                android:gravity="fill_horizontal|center"
+                android:textSize="24sp" />
+
             <Button
                 android:id="@+id/btnPlot"
                 android:layout_width="80dp"
@@ -377,11 +390,25 @@
                 android:layout_columnSpan="8"
                 android:layout_gravity="top|center_horizontal|fill_horizontal"
                 android:layout_margin="10dp"
-                android:layout_row="10"
+                android:layout_row="11"
                 android:gravity="center_horizontal"
                 android:maxLength="400"
                 android:onClick="onClickPlot"
                 android:text="@string/Plot" />
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_column="0"
+                android:layout_columnSpan="8"
+                android:layout_gravity="top|center_horizontal|fill_horizontal"
+                android:layout_margin="10dp"
+                android:layout_row="12"
+                android:gravity="center_horizontal"
+                android:maxLength="400"
+                android:onClick="onClickReset"
+                android:text="@string/reset" />
 
         </GridLayout>
     </LinearLayout>

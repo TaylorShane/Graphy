@@ -36,12 +36,13 @@
         android:orientation="horizontal">
 
         <GridLayout
+            android:id="@+id/enterCoordinatesLayout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:columnCount="4"
-            android:rowCount="9">
+            android:rowCount="10">
 
             <TextView
                 android:id="@+id/lineInstructions"
@@ -183,7 +184,7 @@
                 android:text="@string/Plot" />
 
             <Button
-                android:id="@+id/btnTriangleGraph"
+                android:id="@+id/btnReset"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:layout_column="0"
@@ -191,6 +192,20 @@
                 android:layout_gravity="top|center_horizontal|fill_horizontal"
                 android:layout_margin="10dp"
                 android:layout_row="8"
+                android:gravity="center_horizontal"
+                android:maxLength="400"
+                android:onClick="onClickReset"
+                android:text="@string/reset" />
+
+            <Button
+                android:id="@+id/btnTriangleGraph"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_column="0"
+                android:layout_columnSpan="4"
+                android:layout_gravity="top|center_horizontal|fill_horizontal"
+                android:layout_margin="10dp"
+                android:layout_row="9"
                 android:gravity="center_horizontal"
                 android:maxLength="400"
                 android:onClick="onClickTriangleGraph"

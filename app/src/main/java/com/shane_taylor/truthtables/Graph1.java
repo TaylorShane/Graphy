@@ -22,8 +22,7 @@ import com.jjoe64.graphview.series.PointsGraphSeries;
 
 
 /**
-TODO: implement the onSaveInstanceState() method - see implementation completed on TapCloud app
-TODO: implement screen reset button
+TODO: implement the onSaveInstanceState() method
 */
 
 public class Graph1 extends Activity {
@@ -112,6 +111,7 @@ public class Graph1 extends Activity {
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
         }
+        //TODO: implement x axis point reflection
         else{
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
@@ -154,6 +154,12 @@ public class Graph1 extends Activity {
 
     public void onClickLineGraph(View view){
         Intent intent = new Intent(this, Graph2.class);
+        startActivity(intent);
+    }
+
+    protected void onClickReset(View view) {
+        Intent intent = getIntent();
+        finish();
         startActivity(intent);
     }
 

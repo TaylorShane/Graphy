@@ -1,9 +1,11 @@
 package com.shane_taylor.truthtables;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.graphics.Color;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -22,7 +24,7 @@ public class Graph3 extends Activity {
     public int Ux1A, Uy1A, Ux2A, Uy2A, Ux1B, Uy1B, Ux2B, Uy2B, Ux1C, Uy1C, Ux2C, Uy2C;
     public int randX1A, randY1A, randX2A, randY2A, randX1B, randY1B, randX2B, randY2B, randX1C, randY1C, randX2C, randY2C;
     double userTriangle, randTriangle;
-    public TextView triangleInstructions, results;
+    public TextView triangleInstructions, results, userResults;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class Graph3 extends Activity {
         setGraphScale();
         hideSoftKeyboard();
     }
+
     private void createRandomTriangle(){ /** random triangle generator - in quadrant I*/
 
         Random random = new Random();
@@ -119,7 +122,7 @@ public class Graph3 extends Activity {
         LineC.setThickness(5);
 
         /** for debugging */
-         results = (TextView) findViewById(R.id.values_results);
+         results = (TextView) findViewById(R.id.random_values_results);
          results.setText("randX1A: " + randX1A + " randY1A: " + randY1A + " randX2A: " + randX2A + " randY2A: " + randY2A + "\n"
          + "randX1B: " + randX1B + " randY1B: " + randY1B + " randX2B: " + randX2B + " randY2B: " + randY2B + "\n"
          + "randX1C: " + randX1C + " randY1C; " + randY1C + " randX2C: " + randX2C + " randY2C: " + randY2C);
@@ -127,11 +130,7 @@ public class Graph3 extends Activity {
     }
 
     public void setGraphScale(){
-        // set instructions to default
-        //triangleInstructions.setText(getResources().getString(R.string.triangleInstruction1));
-
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
-        //createCustomLine();
 
         LineGraphSeries<DataPoint> Xaxis = new LineGraphSeries<>(new DataPoint[] {
                 new DataPoint(-10, 0),
@@ -189,34 +188,79 @@ public class Graph3 extends Activity {
 
     public void onClickPlot(View v) { /** button click method **/
         getUserCoordinates();
-        createUserLine();
+        createUserTriangle();
     }
 
-    public void isReflexive(){
-        randTriangle = (double) (randY2A - randY1A) / (double)(randX2A - randX1A);  // Y2-Y1/X2-X1
-        userTriangle = (double)(Uy2A - Uy1A) / (double)(Ux2A - Ux1A);
+    public void reflexiveII(){ // y=y, x= -1*x
+        //TODO: implement reflexive triangles
         triangleInstructions = (TextView) findViewById(R.id.triangleInstructions);
 
-        if(randTriangle == userTriangle) {
-            //Toast.makeText(this, "They are parallel", Toast.LENGTH_LONG).show();
-            triangleInstructions.setText(getResources().getString(R.string.triangleInstruction1));
+        if( (Ux1A == randX1A * -1) && (Uy1A == randY1A) && (Ux2A == randX2A * -1) && (Uy2A == randY2A) &&
+            (Ux1B == randX1B * -1) && (Uy1B == randY1B) && (Ux2B == randX2B * -1) && (Uy2B == randY2B) &&
+            (Ux1C == randX1C * -1) && (Uy1C == randY1C) && (Ux2C == randX2C * -1) && (Uy2C == randY2C) &&
+            triangleInstructions.getText() == getResources().getString(R.string.triangleInstruction1))
+        {
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
             view.setImageResource(R.drawable.correct_large);
             toast.setView(view);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.show();
+            triangleInstructions.setText(getResources().getString(R.string.triangleInstruction2));
+            //Userx1A.setText("");, Usery1A, Userx2A, Usery2A, Userx1B, Usery1B, Userx2B, Usery2B, Userx1C, Usery1C, Userx2C, Usery2C;
+
+            clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
+        }
+
+        else if( (Ux1A == randX1A * -1) && (Uy1A == randY1A * -1) && (Ux2A == randX2A * -1) && (Uy2A == randY2A * -1) &&
+                (Ux1B == randX1B * -1) && (Uy1B == randY1B * -1) && (Ux2B == randX2B * -1) && (Uy2B == randY2B * -1) &&
+                (Ux1C == randX1C * -1) && (Uy1C == randY1C * -1) && (Ux2C == randX2C * -1) && (Uy2C == randY2C * -1) &&
+                triangleInstructions.getText() == getResources().getString(R.string.triangleInstruction2))
+        {
+            Toast toast = new Toast(this);
+            ImageView view = new ImageView(this);
+            view.setImageResource(R.drawable.correct_large);
+            toast.setView(view);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.show();
+            triangleInstructions.setText(getResources().getString(R.string.triangleInstruction3));
+
+            clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
+
+        }
+        else if( (Ux1A == randX1A) && (Uy1A == randY1A * -1) && (Ux2A == randX2A) && (Uy2A == randY2A * -1) &&
+                (Ux1B == randX1B) && (Uy1B == randY1B * -1) && (Ux2B == randX2B) && (Uy2B == randY2B * -1) &&
+                (Ux1C == randX1C) && (Uy1C == randY1C * -1) && (Ux2C == randX2C) && (Uy2C == randY2C * -1) &&
+                triangleInstructions.getText() == getResources().getString(R.string.triangleInstruction3))
+        {
+            Toast toast = new Toast(this);
+            ImageView view = new ImageView(this);
+            view.setImageResource(R.drawable.correct_large);
+            toast.setView(view);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.show();
+            triangleInstructions.setText(getResources().getString(R.string.triangleInstruction1));
+
+            clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
+        }
+        else {
+            // Try again toast image
+            Toast toast = new Toast(this);
+            ImageView view = new ImageView(this);
+            view.setImageResource(R.drawable.try_again_large);
+            toast.setView(view);
             toast.setDuration(Toast.LENGTH_LONG);
             toast.show();
         }
-        else if(randTriangle * userTriangle == -1 ){
-            Toast.makeText(this, "They are perpendicular", Toast.LENGTH_LONG).show();
-            triangleInstructions.setText(getResources().getString(R.string.triangleInstruction1));
-        }
-        else
-            Toast.makeText(this, "Try again!" , Toast.LENGTH_LONG).show();
 
+        /** for debugging */
+        userResults = (TextView) findViewById(R.id.user_values_results);
+        userResults.setText("X1A: " + Ux1A + " Y1A: " + Uy1A + " X2A: " + Ux2A + " Y2A: " + Uy2A + "\n"
+                + "Ux1B: " + Ux1B + " Uy1B: " + Uy1B + " X2B: " + Ux2B + " Y2B: " + Uy2B + "\n"
+                + "X1C: " + Ux1C + " Y1C; " + Uy1C + " X2C: " + Ux2C + " Y2C: " + Uy2C);
     }
 
-    public void createUserLine(){  // Using user coordinates to create user line
+    public void createUserTriangle(){  // Using user coordinates to create user line
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
         /**
@@ -225,13 +269,13 @@ public class Graph3 extends Activity {
          * Vertical lines are not affected no matter the relation of the start and end X values.
          */
         if(Ux1A > Ux2A) {
-            int temp = Ux1A;
+            int temp1 = Ux1A;
             Ux1A = Ux2A;
-            Ux2A = temp;
+            Ux2A = temp1;
 
-            temp = Uy1A;
+            temp1 = Uy1A;
             Uy1A = Uy2A;
-            Uy2A = temp;
+            Uy2A = temp1;
         }
         LineGraphSeries<DataPoint> userLineA = new LineGraphSeries<>(new DataPoint[] {
                 new DataPoint(Ux1A, Uy1A),
@@ -242,13 +286,13 @@ public class Graph3 extends Activity {
         userLineA.setColor(Color.parseColor("#ff8a05"));
 
         if(Ux1B > Ux2B) {
-            int temp = Ux1B;
+            int temp2 = Ux1B;
             Ux1B = Ux2B;
-            Ux2B = temp;
+            Ux2B = temp2;
 
-            temp = Uy1B;
+            temp2 = Uy1B;
             Uy1B = Uy2B;
-            Uy2B = temp;
+            Uy2B = temp2;
         }
         LineGraphSeries<DataPoint> userLineB = new LineGraphSeries<>(new DataPoint[] {
                 new DataPoint(Ux1B, Uy1B),
@@ -259,13 +303,13 @@ public class Graph3 extends Activity {
         userLineB.setColor(Color.parseColor("#ff8a05"));
 
         if(Ux1C > Ux2C) {
-            int temp = Ux1C;
+            int temp3 = Ux1C;
             Ux1C = Ux2C;
-            Ux2C = temp;
+            Ux2C = temp3;
 
-            temp = Uy1C;
+            temp3 = Uy1C;
             Uy1C = Uy2C;
-            Uy2C = temp;
+            Uy2C = temp3;
         }
         LineGraphSeries<DataPoint> userLineC = new LineGraphSeries<>(new DataPoint[] {
                 new DataPoint(Ux1C, Uy1C),
@@ -274,8 +318,6 @@ public class Graph3 extends Activity {
 
         graph.addSeries(userLineC);
         userLineC.setColor(Color.parseColor("#ff8a05"));
-
-        isReflexive();
     }
 
     public void getUserCoordinates(){  // Getting user coordinates
@@ -313,6 +355,7 @@ public class Graph3 extends Activity {
         catch(Exception e){
             Toast.makeText(this, "Please enter integer values", Toast.LENGTH_SHORT).show();
         }
+        reflexiveII();
     }
 
     /**
@@ -332,5 +375,25 @@ public class Graph3 extends Activity {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         view.requestFocus();
         inputMethodManager.showSoftInput(view, 0);
+    }
+
+    protected void onClickReset(View view) {
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
+    }
+
+    /** clears the editTexts **/
+    private void clearForm(ViewGroup group)
+    {
+        for (int i = 0, count = group.getChildCount(); i < count; ++i) {
+            View view = group.getChildAt(i);
+            if (view instanceof EditText) {
+                ((EditText)view).setText("");
+            }
+
+            if(view instanceof ViewGroup && (((ViewGroup)view).getChildCount() > 0))
+                clearForm((ViewGroup)view);
+        }
     }
 }

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -18,8 +19,7 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 import java.util.Random;
 
 /**
- TODO: implement the onSaveInstanceState() method - see implementation completed on TapCloud app
- TODO: implement screen reset button
+ TODO: implement the onSaveInstanceState() method
  */
 
 public class Graph2 extends Activity {
@@ -34,13 +34,12 @@ public class Graph2 extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_graph2);
-        randomLine();
+        createRandomLine();
         setGraphScale();
         hideSoftKeyboard();
     }
 
-
-    private void randomLine(){ /** random line generator */
+    private void createRandomLine(){ /** random line generator */
         Random generator = new Random();
         X1rand = -10 + generator.nextInt(20);
         Y1rand = -10 + generator.nextInt(20);
@@ -50,8 +49,6 @@ public class Graph2 extends Activity {
 
     public void setGraphScale(){
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
-        //createCustomLine();
-
         /**
          * This graph library expects lines to be drawn from left to right.  The first X coordinate MUST be less than the second.
          * The below logic swaps the two values if this is not the case, along with the appropriate Y values.
@@ -138,43 +135,6 @@ public class Graph2 extends Activity {
         createUserLine();
     }
 
-    public void getSlopes(){
-        RandSlope = (double) (Y2rand - Y1rand) / (double)(X2rand - X1rand);  // Y2-Y1/X2-X1
-        uSlope = (double)(Uy2 - Uy1) / (double)(Ux2 - Ux1);
-        lineInstructions = (TextView) findViewById(R.id.lineInstructions);
-
-        if(RandSlope == uSlope && lineInstructions.getText() == getResources().getString(R.string.lineInstruction1)) {
-
-            Toast toast = new Toast(this);
-            ImageView view = new ImageView(this);
-            view.setImageResource(R.drawable.correct_large);
-            toast.setView(view);
-            toast.setDuration(Toast.LENGTH_SHORT);
-            toast.show();
-            lineInstructions.setText(getResources().getString(R.string.lineInstruction2));
-        }
-        else if(RandSlope * uSlope == -1 && lineInstructions.getText() == getResources().getString(R.string.lineInstruction1)){
-
-            Toast toast = new Toast(this);
-            ImageView view = new ImageView(this);
-            view.setImageResource(R.drawable.correct_large);
-            toast.setView(view);
-            toast.setDuration(Toast.LENGTH_SHORT);
-            toast.show();
-            lineInstructions.setText(getResources().getString(R.string.lineInstruction1));
-        }
-        else {
-
-            Toast toast = new Toast(this);
-            ImageView view = new ImageView(this);
-            view.setImageResource(R.drawable.try_again_large);
-            toast.setView(view);
-            toast.setDuration(Toast.LENGTH_SHORT);
-            toast.show();
-        }
-
-    }
-
     public void createUserLine(){  // Using user coordinates to create user line
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
@@ -201,6 +161,47 @@ public class Graph2 extends Activity {
         graph.addSeries(userLine);
         userLine.setColor(Color.parseColor("#ff8a05"));
         getSlopes();
+    }
+
+    public void getSlopes(){
+        RandSlope = (double) (Y2rand - Y1rand) / (double)(X2rand - X1rand);  // Y2-Y1/X2-X1
+        uSlope = (double)(Uy2 - Uy1) / (double)(Ux2 - Ux1);
+        lineInstructions = (TextView) findViewById(R.id.lineInstructions);
+
+        if(RandSlope == uSlope && lineInstructions.getText() == getResources().getString(R.string.lineInstruction1)) {
+
+            Toast toast = new Toast(this);
+            ImageView view = new ImageView(this);
+            view.setImageResource(R.drawable.correct_large);
+            toast.setView(view);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.show();
+            lineInstructions.setText(getResources().getString(R.string.lineInstruction2));
+
+            clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
+        }
+        else if(RandSlope * uSlope == -1 && lineInstructions.getText() == getResources().getString(R.string.lineInstruction1)){
+
+            Toast toast = new Toast(this);
+            ImageView view = new ImageView(this);
+            view.setImageResource(R.drawable.correct_large);
+            toast.setView(view);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.show();
+            lineInstructions.setText(getResources().getString(R.string.lineInstruction1));
+
+            clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
+        }
+        else {
+
+            Toast toast = new Toast(this);
+            ImageView view = new ImageView(this);
+            view.setImageResource(R.drawable.try_again_large);
+            toast.setView(view);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.show();
+        }
+
     }
 
     public void getCoordinates(){  // Getting user coordinates
@@ -242,6 +243,26 @@ public class Graph2 extends Activity {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         view.requestFocus();
         inputMethodManager.showSoftInput(view, 0);
+    }
+
+    protected void onClickReset(View view) {
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
+    }
+
+    /** clears the editTexts **/
+    private void clearForm(ViewGroup group)
+    {
+        for (int i = 0, count = group.getChildCount(); i < count; ++i) {
+            View view = group.getChildAt(i);
+            if (view instanceof EditText) {
+                ((EditText)view).setText("");
+            }
+
+            if(view instanceof ViewGroup && (((ViewGroup)view).getChildCount() > 0))
+                clearForm((ViewGroup)view);
+        }
     }
 }
 
