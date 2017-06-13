@@ -20,9 +20,6 @@ import java.util.Random;
 
 /**
  TODO: implement the onSaveInstanceState() method
- TODO: parallel detection doesn't work if user enters -Y then +Y
- TODO: perpendicular detection doesn't work if user enters x1 < x2
- TODO: perpendicular detection doesn't work if user enters x2 < x1
  */
 
 public class Graph2 extends Activity {
@@ -48,10 +45,16 @@ public class Graph2 extends Activity {
         Y1rand = -10 + generator.nextInt(20);
         X2rand = -10 + generator.nextInt(20);
         Y2rand = -10 + generator.nextInt(20);
-    }
 
-    public void setGraphScale(){
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
+
+        /** The graph library doesn't respond to all scenarios of completely vertical or completely horizontal lines */
+        if(X1rand == X2rand){
+            X2rand += 1;
+        }
+        if (Y1rand == Y2rand){
+            Y2rand += 1;
+        }
         /**
          * This graph library expects lines to be drawn from left to right.  The first X coordinate MUST be less than the second.
          * The below logic swaps the two values if this is not the case, along with the appropriate Y values.
@@ -67,6 +70,7 @@ public class Graph2 extends Activity {
             Y1rand = Y2rand;
             Y2rand = temp;
         }
+
         LineGraphSeries<DataPoint> randomLine = new LineGraphSeries<>(new DataPoint[] {
 
                 new DataPoint(X1rand, Y1rand),
@@ -75,8 +79,12 @@ public class Graph2 extends Activity {
         graph.addSeries(randomLine);
         randomLine.setColor(Color.BLUE);
         randomLine.setDrawDataPoints(true);
-        randomLine.setDataPointsRadius(5);
+        randomLine.setDataPointsRadius(0);
         randomLine.setThickness(5);
+    }
+
+    public void setGraphScale(){
+        GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
         LineGraphSeries<DataPoint> Xaxis = new LineGraphSeries<>(new DataPoint[] {
                 new DataPoint(-10, 0),
@@ -182,7 +190,7 @@ public class Graph2 extends Activity {
 
             clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
         }
-        else if(RandSlope * uSlope == -1 && lineInstructions.getText() == getResources().getString(R.string.lineInstruction1)){
+        else if(RandSlope * uSlope == -1 && lineInstructions.getText() == getResources().getString(R.string.lineInstruction2)){
 
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);

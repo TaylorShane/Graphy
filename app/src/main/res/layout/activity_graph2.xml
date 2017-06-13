@@ -6,18 +6,15 @@
     tools:context="com.shane_taylor.truthtables.Graph2"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-
     android:weightSum="2"
     android:orientation="vertical"
     android:screenOrientation="portrait"
     android:configChanges="orientation|keyboardHidden">
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
         android:orientation="horizontal">
-
         <com.jjoe64.graphview.GraphView
             android:id="@+id/linegraph"
             android:layout_width="0dp"
@@ -26,7 +23,6 @@
             android:layout_weight="1"
             android:scaleType="centerInside" />
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -34,7 +30,6 @@
         android:layout_weight="1"
         android:baselineAligned="false"
         android:orientation="horizontal">
-
         <GridLayout
             android:id="@+id/enterCoordinatesLayout"
             android:layout_width="0dp"
@@ -43,7 +38,6 @@
             android:layout_weight="1"
             android:columnCount="4"
             android:rowCount="10">
-
             <TextView
                 android:id="@+id/lineInstructions"
                 android:layout_width="wrap_content"
@@ -52,7 +46,6 @@
                 android:layout_row="1"
                 android:text="@string/lineInstruction1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
             <TextView
                 android:id="@+id/txtViewLineStart"
                 android:layout_width="wrap_content"
@@ -64,7 +57,6 @@
                 android:layout_row="3"
                 android:gravity="bottom"
                 android:text="@string/line_start_coordinates" />
-
             <TextView
                 android:id="@+id/EnterXtextView"
                 android:layout_width="wrap_content"
@@ -75,7 +67,6 @@
                 android:layout_row="4"
                 android:gravity="end"
                 android:text="@string/EnterXTextView" />
-
             <EditText
                 android:id="@+id/x1"
                 android:layout_width="75dp"
@@ -88,7 +79,6 @@
                 android:gravity="center"
                 android:inputType="number|numberSigned"
                 android:nextFocusDown="@+id/y1A" />
-
             <TextView
                 android:id="@+id/EnterYtextView"
                 android:layout_width="wrap_content"
@@ -96,11 +86,9 @@
                 android:layout_column="2"
                 android:layout_gravity="center|end"
                 android:layout_marginRight="10dp"
-
                 android:layout_row="4"
                 android:gravity="end"
                 android:text="@string/EnterYTextView" />
-
             <EditText
                 android:id="@+id/y1A"
                 android:layout_width="75dp"
@@ -112,7 +100,6 @@
                 android:gravity="center"
                 android:inputType="number|numberSigned"
                 android:nextFocusDown="@+id/x1B" />
-
             <TextView
                 android:id="@+id/txtViewLineEnd"
                 android:layout_width="wrap_content"
@@ -123,7 +110,6 @@
                 android:layout_row="5"
                 android:gravity="bottom"
                 android:text="@string/line_end_coordinates" />
-
             <TextView
                 android:id="@+id/EnterXtextView2"
                 android:layout_width="wrap_content"
@@ -134,7 +120,6 @@
                 android:layout_row="6"
                 android:gravity="end"
                 android:text="@string/EnterXTextView" />
-
             <EditText
                 android:id="@+id/x1B"
                 android:layout_width="75dp"
@@ -146,7 +131,6 @@
                 android:gravity="center"
                 android:inputType="number|numberSigned"
                 android:nextFocusDown="@+id/y1B" />
-
             <TextView
                 android:id="@+id/EnterYtextView2"
                 android:layout_width="wrap_content"
@@ -157,7 +141,6 @@
                 android:layout_row="6"
                 android:gravity="end"
                 android:text="@string/EnterYTextView" />
-
             <EditText
                 android:id="@+id/y1B"
                 android:layout_width="75dp"
@@ -168,7 +151,6 @@
                 android:layout_row="6"
                 android:gravity="center"
                 android:inputType="number|numberSigned" />
-
             <Button
                 android:id="@+id/btnPlot"
                 android:layout_width="80dp"
@@ -182,7 +164,6 @@
                 android:maxLength="400"
                 android:onClick="onClickPlot"
                 android:text="@string/Plot" />
-
             <Button
                 android:id="@+id/btnReset"
                 android:layout_width="80dp"
@@ -196,7 +177,6 @@
                 android:maxLength="400"
                 android:onClick="onClickReset"
                 android:text="@string/reset" />
-
             <Button
                 android:id="@+id/btnTriangleGraph"
                 android:layout_width="80dp"
@@ -210,7 +190,6 @@
                 android:maxLength="400"
                 android:onClick="onClickTriangleGraph"
                 android:text="@string/triangle_graph" />
-
         </GridLayout>
     </LinearLayout>
 </LinearLayout>

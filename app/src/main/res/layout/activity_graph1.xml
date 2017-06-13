@@ -10,13 +10,11 @@
     android:baselineAligned="false"
     android:screenOrientation="portrait"
     android:configChanges="orientation|keyboardHidden">
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
         android:orientation="horizontal">
-
         <com.jjoe64.graphview.GraphView
             android:id="@+id/graph"
             android:layout_width="0dp"
@@ -30,9 +28,7 @@
             android:scaleType="centerInside"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="0dp" />
-
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -43,6 +39,7 @@
         android:scrollIndicators="left">
 
         <GridLayout
+            android:id="@+id/pointsGridLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
@@ -53,14 +50,13 @@
             android:nestedScrollingEnabled="false"
             android:rowCount="7">
 
-
             <TextView
-                android:id="@+id/pointInstruction1"
+                android:id="@+id/pointInstructions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnSpan="5"
                 android:layout_margin="5dp"
-                android:text="@string/poinInstruction1"
+                android:text="@string/pointInstruction1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
@@ -142,7 +138,6 @@
                 android:maxLength="400"
                 android:onClick="onClickReset"
                 android:text="@string/reset" />
-
 
             <Button
                 android:id="@+id/btnLineGraph"

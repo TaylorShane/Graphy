@@ -10,7 +10,6 @@
     android:orientation="vertical"
     android:screenOrientation="portrait"
     tools:context="com.shane_taylor.truthtables.MainActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,7 +18,6 @@
         android:background="@color/grey3"
         android:gravity="center"
         android:scaleType="centerInside">
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="150dp"
@@ -32,16 +30,13 @@
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-
         android:layout_weight="1"
         android:gravity="center"
         android:scaleType="centerInside">
-
         <ImageView
             android:id="@+id/truthTableImageView"
             android:layout_width="0dp"
@@ -53,9 +48,7 @@
             android:gravity="top|center_horizontal"
             android:src="@drawable/truth_table_large" />
         <!--TODO: change image to interactive activity with dropdowns to choose resulting truth values -->
-
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -63,7 +56,6 @@
         android:layout_weight="1"
         android:gravity="center"
         android:scaleType="centerInside">
-
         <ScrollView
             android:id="@+id/MainScrollView"
             android:layout_width="match_parent"
@@ -78,7 +70,6 @@
             android:scrollbarTrackVertical="?android:attr/scrollbarThumbVertical"
             android:scrollbars="vertical"
             android:verticalScrollbarPosition="left">
-
             <TextView
                 android:id="@+id/AthenDollar"
                 android:layout_width="wrap_content"
@@ -92,18 +83,14 @@
                 android:text="@string/explained"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp" />
-
         </ScrollView>
-
     </LinearLayout>
-
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.5"
         android:columnCount="2"
         android:rowCount="1">
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="50dp"

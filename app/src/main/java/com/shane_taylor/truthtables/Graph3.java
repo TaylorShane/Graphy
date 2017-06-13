@@ -30,6 +30,8 @@ import java.util.Random;
  *      getUserCoordinates ->
  *          reflexiveII
  */
+// TODO: fix the hide soft keyboard
+// TODO: fix random triangles that show up as lines
 public class Graph3 extends Activity {
 
     public EditText Userx1A, Usery1A, Userx2A, Usery2A, Userx1B, Usery1B, Userx2B, Usery2B, Userx1C, Usery1C, Userx2C, Usery2C;
@@ -203,7 +205,6 @@ public class Graph3 extends Activity {
     }
 
     public void reflexiveII(){ // y=y, x= -1*x
-        //TODO: implement reflexive triangles
         triangleInstructions = (TextView) findViewById(R.id.triangleInstructions);
 
         if( (Ux1A == randX1A * -1) && (Uy1A == randY1A) && (Ux2A == randX2A * -1) && (Uy2A == randY2A) &&

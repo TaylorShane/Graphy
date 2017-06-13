@@ -7,10 +7,12 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Random;
 
@@ -20,7 +22,6 @@ import com.jjoe64.graphview.series.DataPointInterface;
 import com.jjoe64.graphview.series.LineGraphSeries;
 import com.jjoe64.graphview.series.PointsGraphSeries;
 
-
 /**
 TODO: implement the onSaveInstanceState() method
 */
@@ -29,23 +30,31 @@ public class Graph1 extends Activity {
 
     public EditText xcoordinate, ycoordinate;
     public double X, Y, Xrand, Yrand;
+    public TextView pointInstructions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_graph1);
-
-        randomPoints();
+        createRandomPoint();
         createGraphScale();
         hideSoftKeyboard();
     }
 
-
-    private void randomPoints(){
+    private void createRandomPoint(){
         Random generator = new Random();
         Xrand = -10 + generator.nextInt(20);
         Yrand = -10 + generator.nextInt(20);
+
+        GraphView graph = (GraphView) findViewById(R.id.graph);
+        PointsGraphSeries<DataPoint> randomPoint = new PointsGraphSeries<DataPoint>(new DataPoint[] {
+                new DataPoint(Xrand, Yrand)
+        });
+        graph.addSeries(randomPoint);
+        randomPoint.setShape(PointsGraphSeries.Shape.POINT);
+        randomPoint.setColor(Color.BLUE);
+        randomPoint.setSize(6);
     }
 
     private void createGraphScale() {
@@ -89,29 +98,33 @@ public class Graph1 extends Activity {
         catch(Exception e){
             Toast.makeText(this, "Creating fineLines didn't work", Toast.LENGTH_SHORT).show();
         }
-
-        PointsGraphSeries<DataPoint> RandomSeries = new PointsGraphSeries<DataPoint>(new DataPoint[] {
-                new DataPoint(Xrand, Yrand)
-        });
-        graph.addSeries(RandomSeries);
-        RandomSeries.setShape(PointsGraphSeries.Shape.POINT);
-        RandomSeries.setColor(Color.BLUE);
-        RandomSeries.setSize(5);
     }
 
     public void onClickPlot(View v) {
         getCoordinates();
         createUserPoint();
-        // implement logic to see if user is correct plotting reflection across Y axis
-        if(X == (Xrand * -1) && Y == Yrand){
+        pointInstructions = (TextView) findViewById(R.id.pointInstructions);
+        if(X == (Xrand * -1) && Y == Yrand && pointInstructions.getText() == getResources().getString(R.string.pointInstruction1)){
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
             view.setImageResource(R.drawable.correct_large);
             toast.setView(view);
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
+            pointInstructions.setText(R.string.pointInstruction2);
+            clearForm((ViewGroup) findViewById(R.id.pointsGridLayout));
         }
-        //TODO: implement x axis point reflection
+        else if( X == Xrand  && Y == (Yrand *-1) && (pointInstructions.getText() == getResources().getString(R.string.pointInstruction2)) )
+        {
+            Toast toast = new Toast(this);
+            ImageView view = new ImageView(this);
+            view.setImageResource(R.drawable.correct_large);
+            toast.setView(view);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.show();
+            pointInstructions.setText(R.string.pointInstruction3);
+            clearForm((ViewGroup) findViewById(R.id.pointsGridLayout));
+        }
         else{
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
@@ -135,7 +148,6 @@ public class Graph1 extends Activity {
     }
     private void createUserPoint(){
         GraphView graph = (GraphView) findViewById(R.id.graph);
-        //Green
         PointsGraphSeries<DataPoint> userSeries = new PointsGraphSeries<>(new DataPoint[] {
                 new DataPoint(X, Y)
         });
@@ -166,6 +178,7 @@ public class Graph1 extends Activity {
     /**
      * Hides the soft keyboard
      */
+
     public void hideSoftKeyboard() {
         if(getCurrentFocus()!=null) {
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
@@ -181,4 +194,16 @@ public class Graph1 extends Activity {
      * inputMethodManager.showSoftInput(view, 0);
      * }
      */
+    private void clearForm(ViewGroup group)
+    {
+        for (int i = 0, count = group.getChildCount(); i < count; ++i) {
+            View view = group.getChildAt(i);
+            if (view instanceof EditText) {
+                ((EditText)view).setText("");
+            }
+
+            if(view instanceof ViewGroup && (((ViewGroup)view).getChildCount() > 0))
+                clearForm((ViewGroup)view);
+        }
+    }
 }
