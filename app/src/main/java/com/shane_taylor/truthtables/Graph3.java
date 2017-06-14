@@ -265,11 +265,12 @@ public class Graph3 extends Activity {
             toast.show();
         }
 
-        /** for debugging */
+        /** for debugging
         userResults = (TextView) findViewById(R.id.user_values_results);
         userResults.setText("X1A: " + Ux1A + " Y1A: " + Uy1A + " X2A: " + Ux2A + " Y2A: " + Uy2A + "\n"
                 + "Ux1B: " + Ux1B + " Uy1B: " + Uy1B + " X2B: " + Ux2B + " Y2B: " + Uy2B + "\n"
                 + "X1C: " + Ux1C + " Y1C; " + Uy1C + " X2C: " + Ux2C + " Y2C: " + Uy2C);
+         */
     }
 
     public void createUserTriangle(){  // Using user coordinates to create user line
