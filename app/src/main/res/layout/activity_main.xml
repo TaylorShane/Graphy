@@ -8,7 +8,7 @@
     android:configChanges="orientation|keyboardHidden"
     android:keepScreenOn="true"
     android:orientation="vertical"
-    android:screenOrientation="portrait"
+    android:screenOrientation="landscape"
     tools:context="com.shane_taylor.truthtables.MainActivity">
     <LinearLayout
         android:layout_width="match_parent"
