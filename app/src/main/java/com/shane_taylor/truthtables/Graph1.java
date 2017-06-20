@@ -54,7 +54,7 @@ public class Graph1 extends Activity {
         graph.addSeries(randomPoint);
         randomPoint.setShape(PointsGraphSeries.Shape.POINT);
         randomPoint.setColor(Color.BLUE);
-        randomPoint.setSize(6);
+        randomPoint.setSize(7);
     }
 
     private void createGraphScale() {
@@ -154,6 +154,8 @@ public class Graph1 extends Activity {
         graph.addSeries(userSeries);
         userSeries.setColor(Color.parseColor("#ff8a05"));
         userSeries.setSize(5);
+        userSeries.setShape(PointsGraphSeries.Shape.POINT);
+        /**
         userSeries.setCustomShape(new PointsGraphSeries.CustomShape() {
             @Override
             public void draw(Canvas canvas, Paint paint, float x, float y, DataPointInterface dataPoint) {
@@ -162,6 +164,7 @@ public class Graph1 extends Activity {
                 canvas.drawLine(x+10, y-10, x-10, y+10, paint);
             }
         });
+         */
     }
 
     public void onClickLineGraph(View view){

@@ -61,8 +61,7 @@ public class Graph2 extends Activity {
          * Vertical lines are not affected no matter the relation of the start and end X values.
          */
         if(X1rand > X2rand) {
-            int temp = 0;
-            temp = X1rand;
+            int temp = X1rand;
             X1rand = X2rand;
             X2rand = temp;
 

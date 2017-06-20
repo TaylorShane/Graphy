@@ -9,7 +9,9 @@
     android:keepScreenOn="true"
     android:orientation="vertical"
     android:screenOrientation="landscape"
-    tools:context="com.shane_taylor.truthtables.MainActivity">
+    tools:context="com.shane_taylor.truthtables.MainActivity"
+    >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,49 +20,55 @@
         android:background="@color/grey3"
         android:gravity="center"
         android:scaleType="centerInside">
+
         <TextView
             android:id="@+id/textView"
-            android:layout_width="150dp"
-            android:layout_height="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center"
             android:layout_margin="10dp"
             android:gravity="center"
             android:padding="2dp"
             android:text="@string/TruthTables"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            android:textColor="@color/colorPrimary" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
+        android:layout_margin="20dp"
         android:layout_weight="1"
         android:gravity="center"
         android:scaleType="centerInside">
+
         <ImageView
             android:id="@+id/truthTableImageView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="top|center_horizontal"
-            android:layout_margin="10dp"
             android:layout_weight="1"
             android:contentDescription="@string/PthenQ"
             android:gravity="top|center_horizontal"
-            android:src="@drawable/truth_table_large" />
+            android:src="@drawable/truth_table_large_2" />
         <!--TODO: change image to interactive activity with dropdowns to choose resulting truth values -->
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
+        android:layout_margin="20dp"
         android:layout_weight="1"
         android:gravity="center"
         android:scaleType="centerInside">
+
         <ScrollView
             android:id="@+id/MainScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fadeScrollbars="false"
+            android:fadeScrollbars="true"
             android:fillViewport="true"
             android:scrollIndicators="left|right"
             android:scrollbarAlwaysDrawVerticalTrack="true"
@@ -70,32 +78,35 @@
             android:scrollbarTrackVertical="?android:attr/scrollbarThumbVertical"
             android:scrollbars="vertical"
             android:verticalScrollbarPosition="left">
+
             <TextView
                 android:id="@+id/AthenDollar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="5dp"
                 android:isScrollContainer="true"
                 android:maxLines="50"
-                android:padding="5dp"
+                android:padding="30dp"
                 android:scrollbars="vertical"
                 android:text="@string/explained"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@color/colorPrimary"
-                android:textSize="18sp" />
+                android:textSize="24sp" />
         </ScrollView>
     </LinearLayout>
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.5"
         android:columnCount="2"
         android:rowCount="1">
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_columnSpan="2"
-            android:layout_gravity="bottom|fill_horizontal"
+            android:layout_gravity="fill_vertical|fill_horizontal"
             android:layout_margin="15dp"
             android:onClick="graphActivity"
             android:text="@string/pointGraphs" />
