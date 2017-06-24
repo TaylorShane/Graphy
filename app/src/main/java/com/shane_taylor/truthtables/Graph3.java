@@ -34,10 +34,10 @@ import java.util.Random;
 // TODO: fix random triangles that show up as lines
 public class Graph3 extends Activity {
 
-    public EditText Userx1A, Usery1A, Userx2A, Usery2A, Userx1B, Usery1B, Userx2B, Usery2B, Userx1C, Usery1C, Userx2C, Usery2C;
-    public int Ux1A, Uy1A, Ux2A, Uy2A, Ux1B, Uy1B, Ux2B, Uy2B, Ux1C, Uy1C, Ux2C, Uy2C;
-    public int randX1A, randY1A, randX2A, randY2A, randX1B, randY1B, randX2B, randY2B, randX1C, randY1C, randX2C, randY2C;
-    public TextView triangleInstructions, results, userResults;
+    private EditText Userx1A, Usery1A, Userx2A, Usery2A, Userx1B, Usery1B, Userx2B, Usery2B, Userx1C, Usery1C, Userx2C, Usery2C;
+    private int Ux1A, Uy1A, Ux2A, Uy2A, Ux1B, Uy1B, Ux2B, Uy2B, Ux1C, Uy1C, Ux2C, Uy2C;
+    private int randX1A, randY1A, randX2A, randY2A, randX1B, randY1B, randX2B, randY2B, randX1C, randY1C, randX2C, randY2C;
+    private TextView triangleInstructions, results, userResults;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,7 +142,7 @@ public class Graph3 extends Activity {
 
     }
 
-    public void setGraphScale(){
+    private void setGraphScale(){
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
         LineGraphSeries<DataPoint> Xaxis = new LineGraphSeries<>(new DataPoint[] {
@@ -199,12 +199,12 @@ public class Graph3 extends Activity {
         }
     }
 
-    public void onClickPlot(View v) { /** button click method **/
+    private void onClickPlot(View v) { /** button click method **/
         getUserCoordinates();
         createUserTriangle();
     }
 
-    public void reflexiveII(){ // y=y, x= -1*x
+    private void reflexiveII(){ // y=y, x= -1*x
         triangleInstructions = (TextView) findViewById(R.id.triangleInstructions);
 
         if( (Ux1A == randX1A * -1) && (Uy1A == randY1A) && (Ux2A == randX2A * -1) && (Uy2A == randY2A) &&
@@ -273,7 +273,7 @@ public class Graph3 extends Activity {
          */
     }
 
-    public void createUserTriangle(){  // Using user coordinates to create user line
+    private void createUserTriangle(){  // Using user coordinates to create user line
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
         /**
@@ -333,7 +333,7 @@ public class Graph3 extends Activity {
         userLineC.setColor(Color.parseColor("#ff8a05"));
     }
 
-    public void getUserCoordinates(){  // Getting user coordinates
+    private void getUserCoordinates(){  // Getting user coordinates
         Userx1A = (EditText) findViewById(R.id.x1A);
         Usery1A = (EditText) findViewById(R.id.y1A);
         Userx2A = (EditText) findViewById(R.id.x2A);
@@ -374,7 +374,7 @@ public class Graph3 extends Activity {
     /**
      * Hides the soft keyboard
      */
-    public void hideSoftKeyboard() { // this isn't working on all devices
+    private void hideSoftKeyboard() { // this isn't working on all devices
         if(getCurrentFocus()!=null) {
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
@@ -384,13 +384,13 @@ public class Graph3 extends Activity {
     /**
      * Shows the soft keyboard
      */
-    public void showSoftKeyboard(View view) {
+    private void showSoftKeyboard(View view) {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         view.requestFocus();
         inputMethodManager.showSoftInput(view, 0);
     }
 
-    protected void onClickReset(View view) {
+    private void onClickReset(View view) {
         Intent intent = getIntent();
         finish();
         startActivity(intent);

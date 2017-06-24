@@ -30,7 +30,7 @@
             android:gravity="center"
             android:padding="2dp"
             android:text="@string/TruthTables"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/colorPrimary" />
     </LinearLayout>
 

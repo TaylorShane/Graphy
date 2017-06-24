@@ -28,9 +28,9 @@ TODO: implement the onSaveInstanceState() method
 
 public class Graph1 extends Activity {
 
-    public EditText xcoordinate, ycoordinate;
-    public double X, Y, Xrand, Yrand;
-    public TextView pointInstructions;
+    private EditText xcoordinate, ycoordinate;
+    private double X, Y, Xrand, Yrand;
+    private TextView pointInstructions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +100,7 @@ public class Graph1 extends Activity {
         }
     }
 
-    public void onClickPlot(View v) {
+    private void onClickPlot(View v) {
         getCoordinates();
         createUserPoint();
         pointInstructions = (TextView) findViewById(R.id.pointInstructions);
@@ -167,12 +167,12 @@ public class Graph1 extends Activity {
          */
     }
 
-    public void onClickLineGraph(View view){
+    private void onClickLineGraph(View view){
         Intent intent = new Intent(this, Graph2.class);
         startActivity(intent);
     }
 
-    protected void onClickReset(View view) {
+    private void onClickReset(View view) {
         Intent intent = getIntent();
         finish();
         startActivity(intent);
@@ -182,7 +182,7 @@ public class Graph1 extends Activity {
      * Hides the soft keyboard
      */
 
-    public void hideSoftKeyboard() {
+    private void hideSoftKeyboard() {
         if(getCurrentFocus()!=null) {
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);

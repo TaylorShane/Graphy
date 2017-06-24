@@ -15,19 +15,21 @@ import android.widget.Toast;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+import com.jjoe64.graphview.series.Series;
 
 import java.util.Random;
 
 /**
  TODO: implement the onSaveInstanceState() method
+ TODO: fix reset graph to work with chromebook
  */
 
 public class Graph2 extends Activity {
 
-    public EditText x1, y1, x2, y2;
-    public int Ux1, Uy1, Ux2, Uy2, X1rand, Y1rand, X2rand, Y2rand;
+    private EditText x1, y1, x2, y2;
+    private int Ux1, Uy1, Ux2, Uy2, X1rand, Y1rand, X2rand, Y2rand;
     double uSlope, RandSlope;
-    public TextView lineInstructions;
+    private TextView lineInstructions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +84,7 @@ public class Graph2 extends Activity {
         randomLine.setThickness(5);
     }
 
-    public void setGraphScale(){
+    private void setGraphScale(){
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
         LineGraphSeries<DataPoint> Xaxis = new LineGraphSeries<>(new DataPoint[] {
@@ -139,13 +141,13 @@ public class Graph2 extends Activity {
         }
     }
 
-    public void onClickPlot(View v) { /** button click method **/
+    private void onClickPlot(View v) { /** button click method **/
 
         getUserCoordinates();
         createUserLine();
     }
 
-    public void createUserLine(){  // Using user coordinates to create user line
+    private void createUserLine(){  // Using user coordinates to create user line
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
         /**
@@ -172,7 +174,7 @@ public class Graph2 extends Activity {
         userLine.setColor(Color.parseColor("#ff8a05"));
     }
 
-    public void getSlopes(){
+    private void getSlopes(){
         RandSlope = (double) (Y2rand - Y1rand) / (double)(X2rand - X1rand);  // Y2-Y1/X2-X1
         uSlope = (double)(Uy2 - Uy1) / (double)(Ux2 - Ux1);
         lineInstructions = (TextView) findViewById(R.id.lineInstructions);
@@ -213,7 +215,7 @@ public class Graph2 extends Activity {
 
     }
 
-    public void getUserCoordinates(){  // Getting user coordinates
+    private void getUserCoordinates(){  // Getting user coordinates
         x1 = (EditText) findViewById(R.id.x1);
         y1 = (EditText) findViewById(R.id.y1A);
         x2 = (EditText) findViewById(R.id.x1B);
@@ -231,7 +233,7 @@ public class Graph2 extends Activity {
         getSlopes();
     }
 
-    public void onClickTriangleGraph(View view){
+    private void onClickTriangleGraph(View view){
         Intent intent = new Intent(this, Graph3.class);
         startActivity(intent);
     }
@@ -239,7 +241,7 @@ public class Graph2 extends Activity {
     /**
      * Hides the soft keyboard
      */
-    public void hideSoftKeyboard() { // this isn't working on all devices
+    private void hideSoftKeyboard() { // this isn't working on all devices
         if(getCurrentFocus()!=null) {
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
@@ -249,16 +251,23 @@ public class Graph2 extends Activity {
     /**
      * Shows the soft keyboard
      */
-    public void showSoftKeyboard(View view) {
+    private void showSoftKeyboard(View view) {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         view.requestFocus();
         inputMethodManager.showSoftInput(view, 0);
     }
 
-    protected void onClickReset(View view) {
+    private void onClickReset(View view) {
+        // TODO Auto-generated method stub
+        //super.recreate();
+        /*
+        finish();
+        startActivity(getIntent());
+
+
         Intent intent = getIntent();
         finish();
-        startActivity(intent);
+        startActivity(intent);*/
     }
 
     /** clears the editTexts **/
