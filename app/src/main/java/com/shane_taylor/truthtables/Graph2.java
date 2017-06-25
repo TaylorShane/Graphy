@@ -41,7 +41,7 @@ public class Graph2 extends Activity {
         hideSoftKeyboard();
     }
 
-    private void createRandomLine(){ /** random line generator */
+    protected void createRandomLine(){ /** random line generator */
         Random generator = new Random();
         X1rand = -10 + generator.nextInt(20);
         Y1rand = -10 + generator.nextInt(20);
@@ -84,7 +84,7 @@ public class Graph2 extends Activity {
         randomLine.setThickness(5);
     }
 
-    private void setGraphScale(){
+    protected void setGraphScale(){
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
         LineGraphSeries<DataPoint> Xaxis = new LineGraphSeries<>(new DataPoint[] {
@@ -141,13 +141,13 @@ public class Graph2 extends Activity {
         }
     }
 
-    private void onClickPlot(View v) { /** button click method **/
+    protected void onClickPlot(View v) { /** button click method **/
 
         getUserCoordinates();
         createUserLine();
     }
 
-    private void createUserLine(){  // Using user coordinates to create user line
+    protected void createUserLine(){  // Using user coordinates to create user line
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
         /**
@@ -174,7 +174,7 @@ public class Graph2 extends Activity {
         userLine.setColor(Color.parseColor("#ff8a05"));
     }
 
-    private void getSlopes(){
+    protected void getSlopes(){
         RandSlope = (double) (Y2rand - Y1rand) / (double)(X2rand - X1rand);  // Y2-Y1/X2-X1
         uSlope = (double)(Uy2 - Uy1) / (double)(Ux2 - Ux1);
         lineInstructions = (TextView) findViewById(R.id.lineInstructions);
@@ -215,7 +215,7 @@ public class Graph2 extends Activity {
 
     }
 
-    private void getUserCoordinates(){  // Getting user coordinates
+    protected void getUserCoordinates(){  // Getting user coordinates
         x1 = (EditText) findViewById(R.id.x1);
         y1 = (EditText) findViewById(R.id.y1A);
         x2 = (EditText) findViewById(R.id.x1B);
@@ -233,7 +233,7 @@ public class Graph2 extends Activity {
         getSlopes();
     }
 
-    private void onClickTriangleGraph(View view){
+    protected void onClickTriangleGraph(View view){
         Intent intent = new Intent(this, Graph3.class);
         startActivity(intent);
     }
@@ -241,7 +241,7 @@ public class Graph2 extends Activity {
     /**
      * Hides the soft keyboard
      */
-    private void hideSoftKeyboard() { // this isn't working on all devices
+    protected void hideSoftKeyboard() { // this isn't working on all devices
         if(getCurrentFocus()!=null) {
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
@@ -251,13 +251,13 @@ public class Graph2 extends Activity {
     /**
      * Shows the soft keyboard
      */
-    private void showSoftKeyboard(View view) {
+    protected void showSoftKeyboard(View view) {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         view.requestFocus();
         inputMethodManager.showSoftInput(view, 0);
     }
 
-    private void onClickReset(View view) {
+    protected void onClickReset(View view) {
         // TODO Auto-generated method stub
         //super.recreate();
         /*
@@ -271,7 +271,7 @@ public class Graph2 extends Activity {
     }
 
     /** clears the editTexts **/
-    private void clearForm(ViewGroup group)
+    protected void clearForm(ViewGroup group)
     {
         for (int i = 0, count = group.getChildCount(); i < count; ++i) {
             View view = group.getChildAt(i);

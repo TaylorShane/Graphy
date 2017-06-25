@@ -42,7 +42,7 @@ public class Graph1 extends Activity {
         hideSoftKeyboard();
     }
 
-    private void createRandomPoint(){
+    protected void createRandomPoint(){
         Random generator = new Random();
         Xrand = -10 + generator.nextInt(20);
         Yrand = -10 + generator.nextInt(20);
@@ -57,7 +57,7 @@ public class Graph1 extends Activity {
         randomPoint.setSize(7);
     }
 
-    private void createGraphScale() {
+    protected void createGraphScale() {
         GraphView graph = (GraphView) findViewById(R.id.graph);
 
         PointsGraphSeries<DataPoint> graphScale = new PointsGraphSeries<DataPoint>(new DataPoint[] {
@@ -100,7 +100,7 @@ public class Graph1 extends Activity {
         }
     }
 
-    private void onClickPlot(View v) {
+    protected void onClickPlot(View v) {
         getCoordinates();
         createUserPoint();
         pointInstructions = (TextView) findViewById(R.id.pointInstructions);
@@ -135,7 +135,7 @@ public class Graph1 extends Activity {
         }
     }
 
-    private void getCoordinates() {
+    protected void getCoordinates() {
         xcoordinate = (EditText) findViewById(R.id.xplot);
         ycoordinate = (EditText) findViewById(R.id.yplot);
         try{
@@ -146,7 +146,7 @@ public class Graph1 extends Activity {
             Toast.makeText(this, "Please enter integer values for X and Y ", Toast.LENGTH_SHORT).show();
         }
     }
-    private void createUserPoint(){
+    protected void createUserPoint(){
         GraphView graph = (GraphView) findViewById(R.id.graph);
         PointsGraphSeries<DataPoint> userSeries = new PointsGraphSeries<>(new DataPoint[] {
                 new DataPoint(X, Y)
@@ -167,12 +167,12 @@ public class Graph1 extends Activity {
          */
     }
 
-    private void onClickLineGraph(View view){
+    protected void onClickLineGraph(View view){
         Intent intent = new Intent(this, Graph2.class);
         startActivity(intent);
     }
 
-    private void onClickReset(View view) {
+    protected void onClickReset(View view) {
         Intent intent = getIntent();
         finish();
         startActivity(intent);
@@ -182,7 +182,7 @@ public class Graph1 extends Activity {
      * Hides the soft keyboard
      */
 
-    private void hideSoftKeyboard() {
+    protected void hideSoftKeyboard() {
         if(getCurrentFocus()!=null) {
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
@@ -197,7 +197,7 @@ public class Graph1 extends Activity {
      * inputMethodManager.showSoftInput(view, 0);
      * }
      */
-    private void clearForm(ViewGroup group)
+    protected void clearForm(ViewGroup group)
     {
         for (int i = 0, count = group.getChildCount(); i < count; ++i) {
             View view = group.getChildAt(i);

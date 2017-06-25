@@ -49,7 +49,7 @@ public class Graph3 extends Activity {
         hideSoftKeyboard();
     }
 
-    private void createRandomTriangle(){ /** random triangle generator - in quadrant I*/
+    protected void createRandomTriangle(){ /** random triangle generator - in quadrant I*/
 
         Random random = new Random();
         randX1A = random.nextInt(11);
@@ -142,7 +142,7 @@ public class Graph3 extends Activity {
 
     }
 
-    private void setGraphScale(){
+    protected void setGraphScale(){
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
         LineGraphSeries<DataPoint> Xaxis = new LineGraphSeries<>(new DataPoint[] {
@@ -199,12 +199,12 @@ public class Graph3 extends Activity {
         }
     }
 
-    private void onClickPlot(View v) { /** button click method **/
+    protected void onClickPlot(View v) { /** button click method **/
         getUserCoordinates();
         createUserTriangle();
     }
 
-    private void reflexiveII(){ // y=y, x= -1*x
+    protected void reflexiveII(){ // y=y, x= -1*x
         triangleInstructions = (TextView) findViewById(R.id.triangleInstructions);
 
         if( (Ux1A == randX1A * -1) && (Uy1A == randY1A) && (Ux2A == randX2A * -1) && (Uy2A == randY2A) &&
@@ -273,7 +273,7 @@ public class Graph3 extends Activity {
          */
     }
 
-    private void createUserTriangle(){  // Using user coordinates to create user line
+    protected void createUserTriangle(){  // Using user coordinates to create user line
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
         /**
@@ -333,7 +333,7 @@ public class Graph3 extends Activity {
         userLineC.setColor(Color.parseColor("#ff8a05"));
     }
 
-    private void getUserCoordinates(){  // Getting user coordinates
+    protected void getUserCoordinates(){  // Getting user coordinates
         Userx1A = (EditText) findViewById(R.id.x1A);
         Usery1A = (EditText) findViewById(R.id.y1A);
         Userx2A = (EditText) findViewById(R.id.x2A);
@@ -374,7 +374,7 @@ public class Graph3 extends Activity {
     /**
      * Hides the soft keyboard
      */
-    private void hideSoftKeyboard() { // this isn't working on all devices
+    protected void hideSoftKeyboard() { // this isn't working on all devices
         if(getCurrentFocus()!=null) {
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
@@ -384,20 +384,20 @@ public class Graph3 extends Activity {
     /**
      * Shows the soft keyboard
      */
-    private void showSoftKeyboard(View view) {
+    protected void showSoftKeyboard(View view) {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         view.requestFocus();
         inputMethodManager.showSoftInput(view, 0);
     }
 
-    private void onClickReset(View view) {
+    protected void onClickReset(View view) {
         Intent intent = getIntent();
         finish();
         startActivity(intent);
     }
 
     /** clears the editTexts **/
-    private void clearForm(ViewGroup group)
+    protected void clearForm(ViewGroup group)
     {
         for (int i = 0, count = group.getChildCount(); i < count; ++i) {
             View view = group.getChildAt(i);
