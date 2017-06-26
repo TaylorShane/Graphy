@@ -33,7 +33,7 @@
 
     <GridLayout
         android:id="@+id/enterCoordinatesLayout"
-        android:layout_width="665dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_column="1"
         android:layout_gravity="center"

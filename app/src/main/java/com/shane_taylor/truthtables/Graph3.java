@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.graphics.Color;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -32,7 +33,8 @@ import java.util.Random;
  */
 // TODO: fix the hide soft keyboard
 // TODO: fix random triangles that show up as lines
-public class Graph3 extends Activity {
+
+public class Graph3 extends AppCompatActivity {
 
     private EditText Userx1A, Usery1A, Userx2A, Usery2A, Userx1B, Usery1B, Userx2B, Usery2B, Userx1C, Usery1C, Userx2C, Usery2C;
     private int Ux1A, Uy1A, Ux2A, Uy2A, Ux1B, Uy1B, Ux2B, Uy2B, Ux1C, Uy1C, Ux2C, Uy2C;
@@ -92,7 +94,7 @@ public class Graph3 extends Activity {
         LineA.setColor(Color.BLUE);
         LineA.setDrawDataPoints(true);
         LineA.setDataPointsRadius(0);
-        LineA.setThickness(5);
+        LineA.setThickness(3);
 
         if(randX1B > randX2B) {
             int temp = randX1B;
@@ -112,7 +114,7 @@ public class Graph3 extends Activity {
         LineB.setColor(Color.BLUE);
         LineB.setDrawDataPoints(true);
         LineB.setDataPointsRadius(0);
-        LineB.setThickness(5);
+        LineB.setThickness(3);
 
         if(randX1C > randX2C) {
             int temp = randX1C;
@@ -132,7 +134,7 @@ public class Graph3 extends Activity {
         LineC.setColor(Color.BLUE);
         LineC.setDrawDataPoints(true);
         LineC.setDataPointsRadius(0);
-        LineC.setThickness(5);
+        LineC.setThickness(3);
 
         /** for debugging */
          results = (TextView) findViewById(R.id.random_values_results);
@@ -396,6 +398,10 @@ public class Graph3 extends Activity {
         startActivity(intent);
     }
 
+    protected void onClickGraph4(View v){
+        Intent intent = new Intent(this, Graph4.class);
+        startActivity(intent);
+    }
     /** clears the editTexts **/
     protected void clearForm(ViewGroup group)
     {

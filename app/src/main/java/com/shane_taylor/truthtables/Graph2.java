@@ -258,16 +258,9 @@ public class Graph2 extends Activity {
     }
 
     protected void onClickReset(View view) {
-        // TODO Auto-generated method stub
-        //super.recreate();
-        /*
-        finish();
-        startActivity(getIntent());
-
-
         Intent intent = getIntent();
         finish();
-        startActivity(intent);*/
+        startActivity(intent);
     }
 
     /** clears the editTexts **/

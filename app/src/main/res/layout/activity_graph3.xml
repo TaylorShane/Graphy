@@ -33,7 +33,7 @@
 
     <GridLayout
         android:id="@+id/enterCoordinatesLayout"
-        android:layout_width="665dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_column="1"
         android:layout_gravity="center"
@@ -394,7 +394,7 @@
             android:layout_height="50dp"
             android:layout_column="0"
             android:layout_columnSpan="10"
-            android:layout_gravity="fill_horizontal|center"
+            android:layout_gravity="top|fill_horizontal"
             android:layout_margin="10dp"
             android:layout_row="11"
             android:gravity="center"
@@ -410,13 +410,28 @@
             android:layout_height="50dp"
             android:layout_column="0"
             android:layout_columnSpan="10"
-            android:layout_gravity="fill_horizontal"
+            android:layout_gravity="top|fill_horizontal"
             android:layout_margin="10dp"
             android:layout_row="12"
             android:gravity="center"
             android:maxLength="400"
             android:onClick="onClickReset"
             android:text="@string/reset"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+        <Button
+            android:id="@+id/btnGraph4"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_column="0"
+            android:layout_columnSpan="10"
+            android:layout_gravity="bottom|fill_horizontal"
+            android:layout_margin="10dp"
+            android:layout_row="13"
+            android:gravity="center"
+            android:maxLength="400"
+            android:onClick="onClickGraph4"
+            android:text="@string/similarTriangles"
             android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
     </GridLayout>

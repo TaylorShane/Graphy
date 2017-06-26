@@ -41,4 +41,14 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="triangleInstruction2">Create a reflexive triangle in quadrant III</string>
     <string name="triangleInstruction3">Create a reflexive triangle in quadrant IV</string>
     <string name="triangleInstruction4">Great Job!  Now hit the "Reset Graph" button for a new triangle.</string>
+
+    <string name="title_activity_graph4">Graph4</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="similarTriangleInstruciton1">Create a triangle that is similar to the blue triangle</string>
+    <string name="similarTriangles">Similar Triangles</string>
+    <string name="lineAlength">Line A length:</string>
+    <string name="lineBlength">Line B length:</string>
+    <string name="lineClength">Line C length:</string>
+    <string name="submit">Submit</string>
 </resources>

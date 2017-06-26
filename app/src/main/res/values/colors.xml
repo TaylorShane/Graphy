@@ -10,6 +10,7 @@
     <color name="colorAccent">#ff8a05</color>
 
     <color name="green">#10b634</color>
+    <color name="dark_green">#037E03</color> <!-- 3,126,3 -->
     <color name="pink">#e34242</color>
     <color name="blue">#4264dd</color>
     <color name="purple">#5e184d</color>
@@ -22,5 +23,7 @@
     <color name="grey2">#454545</color>
     <color name="maroon">#5e0101</color>
     <color name="white">#ffffff</color>
+
+    <color name="black_overlay">#66000000</color>
 
 </resources>
