@@ -286,7 +286,7 @@ public class Graph4 extends Activity {
                     == getResources().getString(R.string.similarTriangleInstructions2)
                     ){
                 Toast.makeText(this, "else if instructions2 was reached", Toast.LENGTH_SHORT).show();
-
+                //TODO: change labels to ask for degree - change decimal to degree
             }
             else{
                 // Try again toast image
