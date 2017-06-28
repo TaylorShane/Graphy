@@ -48,8 +48,18 @@
             android:layout_columnSpan="10"
             android:layout_margin="10dp"
             android:layout_row="0"
-            android:text="@string/similarTriangleInstruciton1"
+            android:text="@string/similarTriangleHeader"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/similarInstructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_columnSpan="10"
+            android:layout_margin="10dp"
+            android:layout_row="1"
+            android:text="@string/similarTriangleInstructions1" />
 
         <TextView
             android:id="@+id/txtLineA"
@@ -58,21 +68,11 @@
             android:layout_columnSpan="10"
             android:layout_column="0"
             android:layout_margin="5dp"
-            android:layout_row="1"
+            android:layout_row="2"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <TextView
             android:id="@+id/txtLineB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_columnSpan="10"
-            android:layout_margin="5dp"
-            android:layout_row="2"
-            android:layout_column="0"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
-
-        <TextView
-            android:id="@+id/txtLineC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnSpan="10"
@@ -82,11 +82,21 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
         <TextView
+            android:id="@+id/txtLineC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_columnSpan="10"
+            android:layout_margin="5dp"
+            android:layout_row="4"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <TextView
             android:id="@+id/txtEnterAlength"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="0"
-            android:layout_row="4"
+            android:layout_row="5"
             android:text="@string/lineAlength"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             tools:text="Enter the side lenghts: " />
@@ -96,7 +106,7 @@
             android:layout_width="60dp"
             android:layout_height="50dp"
             android:layout_column="1"
-            android:layout_row="4"
+            android:layout_row="5"
             android:gravity="center"
             android:inputType="number|numberDecimal" />
 
@@ -105,7 +115,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="2"
-            android:layout_row="4"
+            android:layout_row="5"
             android:text="@string/lineBlength"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             tools:text="Enter the side lenghts: " />
@@ -115,7 +125,7 @@
             android:layout_width="60dp"
             android:layout_height="50dp"
             android:layout_column="3"
-            android:layout_row="4"
+            android:layout_row="5"
             android:gravity="center"
             android:inputType="number|numberDecimal" />
 
@@ -124,7 +134,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="4"
-            android:layout_row="4"
+            android:layout_row="5"
             android:text="@string/lineClength"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             tools:text="Enter the side lenghts: " />
@@ -134,7 +144,7 @@
             android:layout_width="60dp"
             android:layout_height="50dp"
             android:layout_column="5"
-            android:layout_row="4"
+            android:layout_row="5"
             android:gravity="center"
             android:inputType="number|numberDecimal" />
 

@@ -1,10 +1,12 @@
 package com.shane_taylor.truthtables;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -26,12 +28,14 @@ import java.util.Random;
  *
  */
 
-public class Graph4 extends AppCompatActivity {
+public class Graph4 extends Activity {
 
-    private int randX1A, randY1A, randX2A, randY2A, randX1B, randY1B, randX2B, randY2B, randX1C, randY1C, randX2C, randY2C;
-    double randAlength, randBlength, randClength, userAlengthDbl, userBlengthDbl, userClengthDbl;
-    private TextView results, userResults, lineA, lineB, lineC;
-    private EditText userAlength, userBlength, userClength;
+    protected double randX1A, randY1A, randX2A, randY2A, randX1B, randY1B, randX2B, randY2B, randX1C, randY1C, randX2C, randY2C,
+            randAlength, randBlength, randClength, userAlengthDbl, userBlengthDbl, userClengthDbl,
+            randSlopeA, randSlopeB, randAngle, userAngle;
+
+    protected TextView results, userResults, lineA, lineB, lineC, similarInstructions;
+    protected EditText userAlength, userBlength, userClength;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +106,7 @@ public class Graph4 extends AppCompatActivity {
 
     protected void createRandomTriangle(){ /** random triangle generator - in quadrant I*/
 
+        similarInstructions = (TextView) findViewById(R.id.similarInstructions);
         Random random = new Random();
         randX1A = -10 + random.nextInt(20);
         randY1A = -10 + random.nextInt(20);
@@ -125,8 +130,10 @@ public class Graph4 extends AppCompatActivity {
          */
 
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
+        graph.removeAllSeries();
+        setGraphScale();
         if(randX1A > randX2A) {
-            int temp = randX1A;
+            double temp = randX1A;
             randX1A = randX2A;
             randX2A = temp;
 
@@ -146,7 +153,7 @@ public class Graph4 extends AppCompatActivity {
         LineA.setThickness(3);
 
         if(randX1B > randX2B) {
-            int temp = randX1B;
+            double temp = randX1B;
             randX1B = randX2B;
             randX2B = temp;
 
@@ -166,7 +173,7 @@ public class Graph4 extends AppCompatActivity {
         LineB.setThickness(3);
 
         if(randX1C > randX2C) {
-            int temp = randX1C;
+            double temp = randX1C;
             randX1C = randX2C;
             randX2C = temp;
 
@@ -174,22 +181,30 @@ public class Graph4 extends AppCompatActivity {
             randY1C = randY2C;
             randY2C = temp;
         }
-        LineGraphSeries<DataPoint> LineC = new LineGraphSeries<>(new DataPoint[] {
 
-                new DataPoint(randX1C, randY1C),
-                new DataPoint(randX2C, randY2C)
-        });
-        graph.addSeries(LineC);
-        LineC.setColor(Color.rgb(3,126,3));
-        LineC.setDrawDataPoints(true);
-        LineC.setDataPointsRadius(0);
-        LineC.setThickness(3);
+        if(similarInstructions.getText()
+                == getResources().getString(R.string.similarTriangleInstructions1)){
+            LineGraphSeries<DataPoint> LineC = new LineGraphSeries<>(new DataPoint[] {
+
+                    new DataPoint(randX1C, randY1C),
+                    new DataPoint(randX2C, randY2C)
+            });
+            graph.addSeries(LineC);
+            LineC.setColor(Color.rgb(3,126,3));
+            LineC.setDrawDataPoints(true);
+            LineC.setDataPointsRadius(0);
+            LineC.setThickness(3);
+        }
+
 
         /** for debugging */
         results = (TextView) findViewById(R.id.random_values_results);
-        results.setText("randX1A: " + randX1A + " randY1A: " + randY1A + " randX2A: " + randX2A + " randY2A: " + randY2A + "\n"
-                + "randX1B: " + randX1B + " randY1B: " + randY1B + " randX2B: " + randX2B + " randY2B: " + randY2B + "\n"
-                + "randX1C: " + randX1C + " randY1C; " + randY1C + " randX2C: " + randX2C + " randY2C: " + randY2C);
+        results.setText("randX1A: " + randX1A + " randY1A: " + randY1A  + "\n" +
+                "randX2A: " + randX2A + " randY2A: " + randY2A + "\n" +
+                "randX1B: " + randX1B + " randY1B: " + randY1B + "\n" +
+                "randX2B: " + randX2B + " randY2B: " + randY2B + "\n" +
+                "randX1C: " + randX1C + " randY1C; " + randY1C + "\n" +
+                "randX2C: " + randX2C + " randY2C: " + randY2C);
 
         populateTextViews();
     }
@@ -213,37 +228,40 @@ public class Graph4 extends AppCompatActivity {
         lineB.setText("Line B has a length of " + (int)randBlength);
         lineC.setText("Line C has a length of " + (int)randClength);
     }
-    protected void onClickReset(View view) {
-        Intent intent = getIntent();
-        finish();
-        startActivity(intent);
-    }
 
-    protected void hideSoftKeyboard() { // this isn't working on all devices
-        if(getCurrentFocus()!=null) {
-            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
-        }
+    protected void getSlopes(){
+        randSlopeA = (randY1A - randY2A) / (randX1A - randX2A);  // Y2-Y1/X2-X1
+        randSlopeB = (randY1B - randY2B) / (randX1B - randX2B);  // Y2-Y1/X2-X1
+        randAngle = Math.atan((randSlopeA - randSlopeB) / (1 - (randSlopeA * randSlopeB)));
     }
 
     protected void onClickVerify(View v){
         userAlength = (EditText) findViewById(R.id.userLineA);
         userBlength = (EditText) findViewById(R.id.userLineB);
         userClength = (EditText) findViewById(R.id.userLineC);
-        userAlengthDbl = Double.parseDouble(userAlength.getText().toString());
-        userBlengthDbl = Double.parseDouble(userBlength.getText().toString());
-        userClengthDbl = Double.parseDouble(userClength.getText().toString());
+
+        try{
+            userAlengthDbl = Double.parseDouble(userAlength.getText().toString());
+            userBlengthDbl = Double.parseDouble(userBlength.getText().toString());
+            userClengthDbl = Double.parseDouble(userClength.getText().toString());
+        }
+        catch(Exception e){
+            Toast.makeText(this, "Please enter integer values", Toast.LENGTH_SHORT).show();
+        }
+
+        similarInstructions = (TextView) findViewById(R.id.similarInstructions);
 
         try{
             if(     randAlength == userAlengthDbl && randBlength == userBlengthDbl &&
                     randClength == userClengthDbl
-                    ){
+                    ) {
                 Toast.makeText(this, "Please enter lengths different than those of the blue triangle.", Toast.LENGTH_SHORT).show();
             }
-            else if(
-                    randAlength / userAlengthDbl == randBlength / userBlengthDbl &&
+            else if(randAlength / userAlengthDbl == randBlength / userBlengthDbl &&
                     randAlength / userAlengthDbl == randClength / userClengthDbl &&
-                    randBlength / userBlengthDbl == randClength / userClengthDbl
+                    randBlength / userBlengthDbl == randClength / userClengthDbl &&
+                    (similarInstructions.getText()
+                    == getResources().getString(R.string.similarTriangleInstructions1))
                     ){
                 Toast toast = new Toast(this);
                 ImageView view = new ImageView(this);
@@ -251,7 +269,24 @@ public class Graph4 extends AppCompatActivity {
                 toast.setView(view);
                 toast.setDuration(Toast.LENGTH_SHORT);
                 toast.show();
-                //triangleInstructions.setText(getResources().getString(R.string.triangleInstruction2));
+                similarInstructions.setText(getResources().getString(R.string.similarTriangleInstructions2));
+                clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
+
+                /**
+                 * create a new triangle with side C missing
+                 * get the slopes of the two
+                 * set the text color of lineC to black and change the text ot show angle
+                 */
+                createRandomTriangle();
+                getSlopes();
+                lineC.setTextColor(Color.BLACK);
+                lineC.setText( "Their angle is: " +Double.toString(randAngle) );  //"The angle between line A and B is: "
+            }
+            else if(similarInstructions.getText()
+                    == getResources().getString(R.string.similarTriangleInstructions2)
+                    ){
+                Toast.makeText(this, "else if instructions2 was reached", Toast.LENGTH_SHORT).show();
+
             }
             else{
                 // Try again toast image
@@ -266,7 +301,30 @@ public class Graph4 extends AppCompatActivity {
         catch(Exception e){
             Toast.makeText(this, "that didn't work", Toast.LENGTH_SHORT).show();
         }
+    }
 
+    protected void clearForm(ViewGroup group){
+        for (int i = 0, count = group.getChildCount(); i < count; ++i) {
+            View view = group.getChildAt(i);
+            if (view instanceof EditText) {
+                ((EditText)view).setText("");
+            }
+            if(view instanceof ViewGroup && (((ViewGroup)view).getChildCount() > 0))
+                clearForm((ViewGroup)view);
+        }
+    }
+
+    protected void onClickReset(View view) {
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
+    }
+
+    protected void hideSoftKeyboard() { // this isn't working on all devices
+        if(getCurrentFocus()!=null) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
     }
 
 }

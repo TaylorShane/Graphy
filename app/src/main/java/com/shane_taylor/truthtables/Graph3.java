@@ -34,7 +34,7 @@ import java.util.Random;
 // TODO: fix the hide soft keyboard
 // TODO: fix random triangles that show up as lines
 
-public class Graph3 extends AppCompatActivity {
+public class Graph3 extends Activity {
 
     private EditText Userx1A, Usery1A, Userx2A, Usery2A, Userx1B, Usery1B, Userx2B, Usery2B, Userx1C, Usery1C, Userx2C, Usery2C;
     private int Ux1A, Uy1A, Ux2A, Uy2A, Ux1B, Uy1B, Ux2B, Uy2B, Ux1C, Uy1C, Ux2C, Uy2C;

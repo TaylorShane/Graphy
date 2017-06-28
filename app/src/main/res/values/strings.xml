@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Truth Tables</string>
+    <string name="app_name">Graphy</string>
     <string name="TruthTables">Truth Tables</string>
     <string name="explained">"If you get an A, then I will give you a dollar."
 The statement will be true if I keep my promise and false if I don"'"t."
@@ -26,7 +26,6 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="lineInstruction1">Create a line is parallel to the blue line above.</string>
     <string name="lineInstruction2">Create a line is perpendicular to the blue line above.</string>
     <string name="lineInstruction3">Great Job!  Now hit the "Reset Graph" button for a new line.</string>
-    <string name="commit_test2">commit test 2</string>
     <string name="triangle_graph">Triangle Graph</string>
     <string name="line_a">Line A</string>
     <string name="x1">X1:</string>
@@ -45,7 +44,11 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="title_activity_graph4">Graph4</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="similarTriangleInstruciton1">Create a triangle that is similar to the blue triangle</string>
+    <string name="similarTriangleHeader">Create a triangle that is similar to the blue triangle</string>
+    <string name="similarTriangleInstructions1">Given the length of each side of the triangle (SSS), enter three \n
+        side lengths to create a similar triangle</string>
+    <string name="similarTriangleInstructions2">Given the length of two sides and an angle between them (SAS),\n
+        enter a new SAS to create a similar triangle</string>
     <string name="similarTriangles">Similar Triangles</string>
     <string name="lineAlength">Line A length:</string>
     <string name="lineBlength">Line B length:</string>
