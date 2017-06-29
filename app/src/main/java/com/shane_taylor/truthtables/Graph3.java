@@ -138,10 +138,10 @@ public class Graph3 extends Activity {
 
         /** for debugging */
          results = (TextView) findViewById(R.id.random_values_results);
-         results.setText("randX1A: " + randX1A + " randY1A: " + randY1A + " randX2A: " + randX2A + " randY2A: " + randY2A + "\n"
-         + "randX1B: " + randX1B + " randY1B: " + randY1B + " randX2B: " + randX2B + " randY2B: " + randY2B + "\n"
-         + "randX1C: " + randX1C + " randY1C; " + randY1C + " randX2C: " + randX2C + " randY2C: " + randY2C);
-
+         results.setText("PLEASE IGNORE THIS TEST DATA" + "\n" +
+                 "randX1A: " + randX1A + " randY1A: " + randY1A + " randX2A: " + randX2A + " randY2A: " + randY2A + "\n" +
+                 "randX1B: " + randX1B + " randY1B: " + randY1B + " randX2B: " + randX2B + " randY2B: " + randY2B + "\n" +
+                 "randX1C: " + randX1C + " randY1C; " + randY1C + " randX2C: " + randX2C + " randY2C: " + randY2C);
     }
 
     protected void setGraphScale(){

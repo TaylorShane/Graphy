@@ -34,8 +34,8 @@
         <activity
             android:name=".Graph4"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape"
-            />
+            android:screenOrientation="landscape" />
+        <activity android:name=".Graph5"></activity>
     </application>
 
 </manifest>

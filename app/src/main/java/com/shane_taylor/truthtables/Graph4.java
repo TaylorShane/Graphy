@@ -20,6 +20,8 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Random;
 
 /** TODO: implement SAS test logic - which means - create triangle minus last line - get slope for each line -
@@ -34,7 +36,7 @@ public class Graph4 extends Activity {
             randAlength, randBlength, randClength, userAlengthDbl, userBlengthDbl, userClengthDbl,
             randSlopeA, randSlopeB, randAngle, userAngle;
 
-    protected TextView results, userResults, lineA, lineB, lineC, similarInstructions;
+    protected TextView results, userResults, lineA, lineB, lineC, similarInstructions, txtEnterClength;
     protected EditText userAlength, userBlength, userClength;
 
     @Override
@@ -199,7 +201,8 @@ public class Graph4 extends Activity {
 
         /** for debugging */
         results = (TextView) findViewById(R.id.random_values_results);
-        results.setText("randX1A: " + randX1A + " randY1A: " + randY1A  + "\n" +
+        results.setText("PLEASE IGNORE THIS TEST DATA" + "\n" +
+                "randX1A: " + randX1A + " randY1A: " + randY1A  + "\n" +
                 "randX2A: " + randX2A + " randY2A: " + randY2A + "\n" +
                 "randX1B: " + randX1B + " randY1B: " + randY1B + "\n" +
                 "randX2B: " + randX2B + " randY2B: " + randY2B + "\n" +
@@ -224,15 +227,16 @@ public class Graph4 extends Activity {
         lineB.setTextColor(Color.RED);
         lineC.setTextColor(Color.rgb(3,126,3));
 
-        lineA.setText("Line A has a length of " + (int)randAlength);
-        lineB.setText("Line B has a length of " + (int)randBlength);
-        lineC.setText("Line C has a length of " + (int)randClength);
+        lineA.setText(getString(R.string.displayAlength) + " " +(int)randAlength);
+        lineB.setText(getString(R.string.displayBlength) + " " + (int)randBlength);
+        lineC.setText(getString(R.string.displayClength) + " " + (int)randClength);
     }
 
     protected void getSlopes(){
         randSlopeA = (randY1A - randY2A) / (randX1A - randX2A);  // Y2-Y1/X2-X1
         randSlopeB = (randY1B - randY2B) / (randX1B - randX2B);  // Y2-Y1/X2-X1
-        randAngle = Math.atan((randSlopeA - randSlopeB) / (1 - (randSlopeA * randSlopeB)));
+        double rawRandAngle = Math.atan((randSlopeA - randSlopeB) / (1 - (randSlopeA * randSlopeB)));
+        randAngle = Math.round(rawRandAngle*100.0)/100.0;
     }
 
     protected void onClickVerify(View v){
@@ -255,48 +259,63 @@ public class Graph4 extends Activity {
             if(     randAlength == userAlengthDbl && randBlength == userBlengthDbl &&
                     randClength == userClengthDbl
                     ) {
-                Toast.makeText(this, "Please enter lengths different than those of the blue triangle.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please enter lengths different than those of the original triangle.", Toast.LENGTH_LONG).show();
             }
-            else if(randAlength / userAlengthDbl == randBlength / userBlengthDbl &&
-                    randAlength / userAlengthDbl == randClength / userClengthDbl &&
-                    randBlength / userBlengthDbl == randClength / userClengthDbl &&
-                    (similarInstructions.getText()
-                    == getResources().getString(R.string.similarTriangleInstructions1))
-                    ){
-                Toast toast = new Toast(this);
-                ImageView view = new ImageView(this);
-                view.setImageResource(R.drawable.correct_large);
-                toast.setView(view);
-                toast.setDuration(Toast.LENGTH_SHORT);
-                toast.show();
-                similarInstructions.setText(getResources().getString(R.string.similarTriangleInstructions2));
-                clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
+            else if(randAlength == userAlengthDbl && randBlength == userBlengthDbl &&
+                    userClengthDbl == randAngle){
+                Toast.makeText(this, "Please enter lengths different than those of the original triangle.", Toast.LENGTH_LONG).show();
+            }
+            else {
+                if (randAlength / userAlengthDbl == randBlength / userBlengthDbl &&
+                        randAlength / userAlengthDbl == randClength / userClengthDbl &&
+                        randBlength / userBlengthDbl == randClength / userClengthDbl &&
+                        (similarInstructions.getText()
+                                == getResources().getString(R.string.similarTriangleInstructions1))
+                        ) {
+                    Toast toast = new Toast(this);
+                    ImageView view = new ImageView(this);
+                    view.setImageResource(R.drawable.correct_large);
+                    toast.setView(view);
+                    toast.setDuration(Toast.LENGTH_SHORT);
+                    toast.show();
+                    similarInstructions.setText(getResources().getString(R.string.similarTriangleInstructions2));
+                    clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
 
-                /**
-                 * create a new triangle with side C missing
-                 * get the slopes of the two
-                 * set the text color of lineC to black and change the text ot show angle
-                 */
-                createRandomTriangle();
-                getSlopes();
-                lineC.setTextColor(Color.BLACK);
-                lineC.setText( "Their angle is: " +Double.toString(randAngle) );  //"The angle between line A and B is: "
-            }
-            else if(similarInstructions.getText()
-                    == getResources().getString(R.string.similarTriangleInstructions2)
-                    ){
-                Toast.makeText(this, "else if instructions2 was reached", Toast.LENGTH_SHORT).show();
-                //TODO: change labels to ask for degree - change decimal to degree.
-                // commit dns server resolve.
-            }
-            else{
-                // Try again toast image
-                Toast toast = new Toast(this);
-                ImageView view = new ImageView(this);
-                view.setImageResource(R.drawable.try_again_large);
-                toast.setView(view);
-                toast.setDuration(Toast.LENGTH_LONG);
-                toast.show();
+                    /**
+                     * create a new triangle with side C missing
+                     * get the slopes of the two
+                     * set the text color of lineC to black and change the text ot show angle
+                     */
+                    createRandomTriangle();
+                    getSlopes();
+                    lineC.setTextColor(Color.BLACK);
+                    lineC.setText( getString(R.string.theirAngleIs) + " " + randAngle);  //"The angle between line A and B is: "
+                    txtEnterClength = (TextView) findViewById(R.id.txtEnterClength);
+                    txtEnterClength.setText(getString(R.string.angle));
+
+                } else if (similarInstructions.getText() == getResources().getString(R.string.similarTriangleInstructions2) &&
+                        randAlength / userAlengthDbl == randBlength / userBlengthDbl && userClengthDbl == randAngle
+                        ) {
+                    //TODO: change labels to ask for degree - change decimal to degree.
+                    Toast toast = new Toast(this);
+                    ImageView view = new ImageView(this);
+                    view.setImageResource(R.drawable.correct_large);
+                    toast.setView(view);
+                    toast.setDuration(Toast.LENGTH_SHORT);
+                    toast.show();
+                    similarInstructions.setText(getResources().getString(R.string.similarTriangleInstructions3));
+                    clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
+
+
+                } else {
+                    // Try again toast image
+                    Toast toast = new Toast(this);
+                    ImageView view = new ImageView(this);
+                    view.setImageResource(R.drawable.try_again_large);
+                    toast.setView(view);
+                    toast.setDuration(Toast.LENGTH_LONG);
+                    toast.show();
+                }
             }
         }
         catch(Exception e){

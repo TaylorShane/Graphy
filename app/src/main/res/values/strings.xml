@@ -44,14 +44,18 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="title_activity_graph4">Graph4</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="similarTriangleHeader">Create a triangle that is similar to the blue triangle</string>
-    <string name="similarTriangleInstructions1">Given the length of each side of the triangle (SSS), enter three \n
-        side lengths to create a similar triangle</string>
-    <string name="similarTriangleInstructions2">Given the length of two sides and an angle between them (SAS),\n
-        enter a new SAS to create a similar triangle</string>
+    <string name="similarTriangleHeader">Similar Triangles</string>
+    <string name="similarTriangleInstructions1">Given the length of each side of the triangle (SSS), enter three side lengths to create a similar triangle</string>
+    <string name="similarTriangleInstructions2">Given the length of two sides and an angle between them (SAS), enter a new SAS to create a similar triangle</string>
+    <string name="similarTriangleInstructions3">Great Job!  Now hit the "Reset Graph" button for a new triangle. </string>
     <string name="similarTriangles">Similar Triangles</string>
     <string name="lineAlength">Line A length:</string>
     <string name="lineBlength">Line B length:</string>
     <string name="lineClength">Line C length:</string>
+    <string name="displayAlength">Line A has a length of </string>
+    <string name="displayBlength">Line B has a length of </string>
+    <string name="displayClength">Line C has a length of </string>
+    <string name="angle">Angle:</string>
     <string name="submit">Submit</string>
+    <string name="theirAngleIs">Their angle is </string>
 </resources>
