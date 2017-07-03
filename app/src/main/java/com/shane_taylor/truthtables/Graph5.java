@@ -3,12 +3,12 @@ package com.shane_taylor.truthtables;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,13 +16,32 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
+import static java.lang.Math.round;
+import static java.lang.Math.sqrt;
+
+/**
+ *Graph5 method call order
+ *
+ * onCreate ->
+ *  hideSoftKeyboard
+ *  createRandomTriangle ->
+ *  	graph.removeAllSeries
+ *      setGraphScale
+ *      getRandTriangleSideLengths
+ *      populateTextViews
+ *
+ * onClickVerify ->
+ *  clearForm
+ *
+ */
 public class Graph5 extends Activity {
 
-    protected double randX1A, randY1A, randX2A, randY2A, randX1B, randY1B, randX2B, randY2B, randX1C, randY1C, randX2C, randY2C,
-            randAlength, randBlength, randClength, userAlengthDbl, userBlengthDbl, userClengthDbl,
-            randSlopeA, randSlopeB, randAngle;
+    protected double randX1A, randY1A, randX2A, randY2A, randX1B, randY1B,
+            randX2B, randY2B, randX1C, randY1C, randX2C, randY2C,
+            randAlength, randBlength, randClength, userClengthDbl;
 
     protected TextView results, userResults, lineA, lineB, lineC, txtEnterClength;
     protected EditText userAlength, userBlength, userClength;
@@ -31,28 +50,40 @@ public class Graph5 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph5);
-
         hideSoftKeyboard();
         createRandomTriangle();
+        setGraphScale();
     }
 
     protected void createRandomTriangle(){ /** random triangle generator */
-
+    //TODO: Fix the random triangle to only create right angle triangles
         Random random = new Random();
-        randX1A = -10 + random.nextInt(20);
-        randY1A = -10 + random.nextInt(20);
-        randX2A = -10 + random.nextInt(20);
-        randY2A = -10 + random.nextInt(20);
+
+        randX1A = Math.round((-10 + (20) * random.nextDouble()) * 100.0) / 100.0;
+        randY1A = Math.round((-10 + (20) * random.nextDouble()) * 100.0) / 100.0;
+        randX2A = Math.round((-10 + (20) * random.nextDouble()) * 100.0) / 100.0;
+        randX2A = Math.round((-10 + (20) * random.nextDouble()) * 100.0) / 100.0;
 
         randX1B = randX2A;
         randY1B = randY2A;
-        randX2B = -10 + random.nextInt(20);
-        randY2B = -10 + random.nextInt(20);
+        randX1B = Math.round(randX1B * 100.0) / 100.0;
+        randY1B = Math.round(randY1B * 100.0) / 100.0;
+
+        randX2B = -10 + (20) * random.nextDouble();
+        randY2B = -10 + (20) * random.nextDouble();
+
+        randX2B = Math.round(randX2B * 100.0) / 100.0;
+        randY2B = Math.round(randY2B * 100.0) / 100.0;
 
         randX1C = randX1A;
         randY1C = randY1A;
         randX2C = randX2B;
         randY2C = randY2B;
+
+        randX1C = Math.round(randX1C * 100.0) / 100.0;
+        randY1C = Math.round(randY1C * 100.0) / 100.0;
+        randX2C = Math.round(randX2C * 100.0) / 100.0;
+        randY2C = Math.round(randY2C * 100.0) / 100.0;
 
         /**
          * This graph library expects lines to be drawn from left to right.  The first X coordinate MUST be less than the second.
@@ -63,6 +94,7 @@ public class Graph5 extends Activity {
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
         graph.removeAllSeries();
         setGraphScale();
+
         if(randX1A > randX2A) {
             double temp = randX1A;
             randX1A = randX2A;
@@ -124,6 +156,9 @@ public class Graph5 extends Activity {
         LineC.setDataPointsRadius(0);
         LineC.setThickness(3);
 
+        getRandTriangleSideLengths();
+        populateTextViews();
+
         /** for debugging */
         results = (TextView) findViewById(R.id.random_values_results);
         results.setText("PLEASE IGNORE THIS TEST DATA" + "\n" +
@@ -132,7 +167,14 @@ public class Graph5 extends Activity {
                 "randX1B: " + randX1B + " randY1B: " + randY1B + "\n" +
                 "randX2B: " + randX2B + " randY2B: " + randY2B + "\n" +
                 "randX1C: " + randX1C + " randY1C; " + randY1C + "\n" +
-                "randX2C: " + randX2C + " randY2C: " + randY2C);
+                "randX2C: " + randX2C + " randY2C: " + randY2C + "\n" +
+                "randClength" + randClength);
+    }
+
+    protected void getRandTriangleSideLengths(){
+        randAlength = Math.round(sqrt( Math.pow(randX2A - randX1A, 2) + Math.pow(randY2A - randY1A, 2)));
+        randBlength = Math.round(sqrt( Math.pow(randX2B - randX1B, 2) + Math.pow(randY2B - randY1B, 2)));
+        randClength = Math.round(sqrt( Math.pow(randX2C - randX1C, 2) + Math.pow(randY2C - randY1C, 2)));
 
     }
 
@@ -204,7 +246,40 @@ public class Graph5 extends Activity {
         }
     }
 
-    protected void onClickReset(View view) {
+    protected void onClickVerify(View v){
+        userClength = (EditText) findViewById(R.id.userLineC);
+
+        try{
+            userClengthDbl = Double.parseDouble(userClength.getText().toString());
+        }
+        catch(Exception e){
+            Toast.makeText(this, "Please enter integer values", Toast.LENGTH_SHORT).show();
+        }
+
+        if (randClength == userClengthDbl){
+            Toast toast = new Toast(this);
+            ImageView view = new ImageView(this);
+            view.setImageResource(R.drawable.correct_large);
+            toast.setView(view);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.show();
+            clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
+        }
+    }
+
+    protected void populateTextViews(){
+        getRandTriangleSideLengths();
+        lineA = (TextView) findViewById(R.id.txtLineA);
+        lineB = (TextView) findViewById(R.id.txtLineB);
+
+        lineA.setTextColor(Color.BLUE);
+        lineB.setTextColor(Color.RED);
+
+        lineA.setText(getString(R.string.displayAlength) + " " +(int)randAlength);
+        lineB.setText(getString(R.string.displayBlength) + " " + (int)randBlength);
+    }
+
+    protected void onClickReset(View view){
         Intent intent = getIntent();
         finish();
         startActivity(intent);

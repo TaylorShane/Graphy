@@ -24,9 +24,22 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Random;
 
-/** TODO: implement SAS test logic - which means - create triangle minus last line - get slope for each line -
- * If the slopes of the two lines are m1 m2, the angle θ is obtained from
- * tanθ=( m1−m21 / 1 +m1*m2 }.
+/**
+ *Graph4 method call order
+ *
+ * onCreate ->
+ *  setGraphScale
+ *  hideSoftKeyboard
+ *  createRandomTriangle ->
+ *      graph.removeAllSeries
+ *      setGraphScale
+ *      populateTextViews ->
+ *          getRandTriangleSideLengths
+ *
+ * onClickVerify -> (if successful)
+ *  clearForm
+ *  createRandomTriangle
+ *  getSlopes
  *
  */
 
