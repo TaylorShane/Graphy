@@ -44,7 +44,7 @@ public class Graph5 extends Activity {
             randAlength, randBlength, randClength, userClengthDbl;
 
     protected TextView results, userResults, lineA, lineB, lineC, txtEnterClength;
-    protected EditText userAlength, userBlength, userClength;
+    protected EditText userClength;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +56,6 @@ public class Graph5 extends Activity {
     }
 
     protected void createRandomTriangle(){ /** random triangle generator */
-    //TODO: Fix the random triangle to only create right angle triangles
         Random random = new Random();
 
         randX1A = Math.round((-10 + (20) * random.nextDouble()) * 100.0) / 100.0;
@@ -71,7 +70,6 @@ public class Graph5 extends Activity {
 
         randX2B = -10 + (20) * random.nextDouble();
         randY2B = -10 + (20) * random.nextDouble();
-
         randX2B = Math.round(randX2B * 100.0) / 100.0;
         randY2B = Math.round(randY2B * 100.0) / 100.0;
 
@@ -169,9 +167,16 @@ public class Graph5 extends Activity {
                 "randX1C: " + randX1C + " randY1C; " + randY1C + "\n" +
                 "randX2C: " + randX2C + " randY2C: " + randY2C + "\n" +
                 "randClength" + randClength);
+
+        while((randAlength*randAlength) + (randBlength*randBlength) != (randClength*randClength) ||
+                randAlength == 0 || randBlength == 0 || randClength == 0){
+            createRandomTriangle();
+        }
     }
 
     protected void getRandTriangleSideLengths(){
+
+
         randAlength = Math.round(sqrt( Math.pow(randX2A - randX1A, 2) + Math.pow(randY2A - randY1A, 2)));
         randBlength = Math.round(sqrt( Math.pow(randX2B - randX1B, 2) + Math.pow(randY2B - randY1B, 2)));
         randClength = Math.round(sqrt( Math.pow(randX2C - randX1C, 2) + Math.pow(randY2C - randY1C, 2)));
