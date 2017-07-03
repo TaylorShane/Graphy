@@ -36,20 +36,32 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_column="1"
-        android:layout_gravity="center"
+        android:layout_gravity="left|center"
         android:columnCount="10"
         android:padding="20dp"
         android:rowCount="14">
 
         <TextView
+            android:id="@+id/reflexiveTrianglesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_columnSpan="10"
+            android:layout_margin="10dp"
+            android:layout_row="0"
+            android:text="@string/reflexiveTriangleTitle"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
+        <TextView
             android:id="@+id/triangleInstructions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_column="0"
             android:layout_columnSpan="10"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:layout_row="1"
             android:text="@string/triangleInstruction1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
         <TextView
             android:id="@+id/txtViewLineA"
@@ -163,7 +175,7 @@
             android:layout_column="0"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:layout_row="6"
+            android:layout_row="5"
             android:gravity="bottom"
             android:text="@string/line_b"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
@@ -175,7 +187,7 @@
             android:layout_column="1"
             android:layout_gravity="center|end"
             android:layout_margin="1dp"
-            android:layout_row="6"
+            android:layout_row="5"
             android:gravity="end"
             android:text="@string/x1" />
 
@@ -186,7 +198,7 @@
             android:layout_column="2"
             android:layout_gravity="center|start"
             android:layout_margin="5dp"
-            android:layout_row="6"
+            android:layout_row="5"
             android:gravity="center"
             android:inputType="number|numberSigned"
             android:nextFocusDown="@+id/y1B" />
@@ -198,7 +210,7 @@
             android:layout_column="3"
             android:layout_gravity="center|end"
             android:layout_margin="1dp"
-            android:layout_row="6"
+            android:layout_row="5"
             android:gravity="end"
             android:text="@string/y1" />
 
@@ -209,7 +221,7 @@
             android:layout_column="4"
             android:layout_gravity="center|start"
             android:layout_margin="5dp"
-            android:layout_row="6"
+            android:layout_row="5"
             android:gravity="center"
             android:inputType="number|numberSigned"
             android:nextFocusDown="@+id/x2B" />
@@ -221,7 +233,7 @@
             android:layout_column="5"
             android:layout_gravity="center|end"
             android:layout_margin="1dp"
-            android:layout_row="6"
+            android:layout_row="5"
             android:gravity="end"
             android:text="@string/x2" />
 
@@ -232,7 +244,7 @@
             android:layout_column="6"
             android:layout_gravity="center|start"
             android:layout_margin="5dp"
-            android:layout_row="6"
+            android:layout_row="5"
             android:gravity="center"
             android:inputType="number|numberSigned"
             android:nextFocusDown="@+id/y2B" />
@@ -244,7 +256,7 @@
             android:layout_column="7"
             android:layout_gravity="center|end"
             android:layout_margin="1dp"
-            android:layout_row="6"
+            android:layout_row="5"
             android:gravity="end"
             android:text="@string/y2" />
 
@@ -255,7 +267,7 @@
             android:layout_column="8"
             android:layout_gravity="center|start"
             android:layout_margin="5dp"
-            android:layout_row="6"
+            android:layout_row="5"
             android:gravity="center"
             android:inputType="number|numberSigned"
             android:nextFocusDown="@+id/x1C" />
@@ -268,7 +280,7 @@
             android:layout_column="0"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:layout_row="8"
+            android:layout_row="6"
             android:gravity="bottom"
             android:text="@string/line_c"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
@@ -280,7 +292,7 @@
             android:layout_column="1"
             android:layout_gravity="center|end"
             android:layout_margin="1dp"
-            android:layout_row="8"
+            android:layout_row="6"
             android:gravity="end"
             android:text="@string/x1" />
 
@@ -291,7 +303,7 @@
             android:layout_column="2"
             android:layout_gravity="center|start"
             android:layout_margin="5dp"
-            android:layout_row="8"
+            android:layout_row="6"
             android:gravity="center"
             android:inputType="number|numberSigned"
             android:nextFocusDown="@+id/y1C" />
@@ -303,7 +315,7 @@
             android:layout_column="3"
             android:layout_gravity="center|end"
             android:layout_margin="1dp"
-            android:layout_row="8"
+            android:layout_row="6"
             android:gravity="end"
             android:text="@string/y1" />
 
@@ -314,7 +326,7 @@
             android:layout_column="4"
             android:layout_gravity="center|start"
             android:layout_margin="5dp"
-            android:layout_row="8"
+            android:layout_row="6"
             android:gravity="center"
             android:inputType="number|numberSigned"
             android:nextFocusDown="@+id/x2C" />
@@ -326,7 +338,7 @@
             android:layout_column="5"
             android:layout_gravity="center|end"
             android:layout_margin="1dp"
-            android:layout_row="8"
+            android:layout_row="6"
             android:gravity="end"
             android:text="@string/x2" />
 
@@ -337,7 +349,7 @@
             android:layout_column="6"
             android:layout_gravity="center|start"
             android:layout_margin="5dp"
-            android:layout_row="8"
+            android:layout_row="6"
             android:gravity="center"
             android:inputType="number|numberSigned"
             android:nextFocusDown="@+id/y2C" />
@@ -349,7 +361,7 @@
             android:layout_column="7"
             android:layout_gravity="center|end"
             android:layout_margin="1dp"
-            android:layout_row="8"
+            android:layout_row="6"
             android:gravity="end"
             android:text="@string/y2" />
 
@@ -360,7 +372,7 @@
             android:layout_column="8"
             android:layout_gravity="center|start"
             android:layout_margin="5dp"
-            android:layout_row="8"
+            android:layout_row="6"
             android:gravity="center"
             android:inputType="number|numberSigned"
             android:nextFocusDown="@id/btnPlot" />
@@ -396,7 +408,7 @@
             android:layout_columnSpan="10"
             android:layout_gravity="top|fill_horizontal"
             android:layout_margin="10dp"
-            android:layout_row="11"
+            android:layout_row="7"
             android:gravity="center"
             android:maxLength="400"
             android:nextFocusDown="@id/btnReset"
@@ -412,7 +424,7 @@
             android:layout_columnSpan="10"
             android:layout_gravity="top|fill_horizontal"
             android:layout_margin="10dp"
-            android:layout_row="12"
+            android:layout_row="8"
             android:gravity="center"
             android:maxLength="400"
             android:onClick="onClickReset"

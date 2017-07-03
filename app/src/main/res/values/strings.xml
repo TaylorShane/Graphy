@@ -49,13 +49,17 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="similarTriangleInstructions2">Given the length of two sides and an angle between them (SAS), enter a new SAS to create a similar triangle</string>
     <string name="similarTriangleInstructions3">Great Job!  Now hit the "Reset Graph" button for a new triangle. </string>
     <string name="similarTriangles">Similar Triangles</string>
-    <string name="lineAlength">Line A length:</string>
-    <string name="lineBlength">Line B length:</string>
-    <string name="lineClength">Line C length:</string>
-    <string name="displayAlength">Line A has a length of </string>
-    <string name="displayBlength">Line B has a length of </string>
-    <string name="displayClength">Line C has a length of </string>
+    <string name="lineAlength">A length:</string>
+    <string name="lineBlength">B length:</string>
+    <string name="lineClength">C length:</string>
+    <string name="displayAlength">Line A length: </string>
+    <string name="displayBlength">Line B length: </string>
+    <string name="displayClength">Line C length: </string>
     <string name="angle">Angle:</string>
     <string name="submit">Submit</string>
     <string name="theirAngleIs">Their angle is </string>
+    <string name="pointsTitle">Points</string>
+    <string name="linesTitle">Lines</string>
+    <string name="reflexiveTriangleTitle">Reflexive Triangles</string>
+    <string name="pythagorean">Pythagorean Theorem</string>
 </resources>

@@ -1,9 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.shane_taylor.truthtables.Graph5">
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+tools:context="com.shane_taylor.truthtables.Graph5"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:baselineAligned="false"
+android:configChanges="orientation|keyboardHidden"
+android:screenOrientation="landscape"
+android:weightSum="2"
+android:columnCount="2"
+android:background="@color/grey.9">
 
-</android.support.constraint.ConstraintLayout>
+<GridLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_column="0"
+    android:layout_gravity="center"
+    android:background="@color/colorPrimaryDark"
+    android:columnCount="7"
+    android:rowCount="6">
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/linegraph"
+        android:layout_width="700dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="fill_horizontal"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:scaleType="centerInside" />
+</GridLayout>
+
+<GridLayout
+    android:id="@+id/enterCoordinatesLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_column="1"
+    android:layout_gravity="left|center"
+    android:columnCount="10"
+    android:padding="20dp"
+    android:rowCount="14">
+
+
+
+    <Button
+        android:id="@+id/submitUserData"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_column="0"
+        android:layout_columnSpan="10"
+        android:layout_gravity="top|fill_horizontal"
+        android:layout_margin="10dp"
+        android:layout_row="10"
+        android:gravity="center"
+        android:maxLength="400"
+        android:onClick="onClickVerify"
+        android:text="@string/submit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/random_values_results"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_columnSpan="10"
+        android:layout_gravity="top|center_horizontal|fill_horizontal"
+        android:layout_row="11"
+        android:gravity="fill_horizontal|center"
+        android:textSize="10sp" />
+
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_column="0"
+        android:layout_columnSpan="10"
+        android:layout_gravity="bottom|fill_horizontal"
+        android:layout_margin="10dp"
+        android:layout_row="13"
+        android:gravity="center"
+        android:maxLength="400"
+        android:onClick="onClickGraph5"
+        android:text="@string/reset"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+</GridLayout>
+</GridLayout>
+

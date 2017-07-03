@@ -34,7 +34,7 @@ public class Graph4 extends Activity {
 
     protected double randX1A, randY1A, randX2A, randY2A, randX1B, randY1B, randX2B, randY2B, randX1C, randY1C, randX2C, randY2C,
             randAlength, randBlength, randClength, userAlengthDbl, userBlengthDbl, userClengthDbl,
-            randSlopeA, randSlopeB, randAngle, userAngle;
+            randSlopeA, randSlopeB, randAngle;
 
     protected TextView results, userResults, lineA, lineB, lineC, similarInstructions, txtEnterClength;
     protected EditText userAlength, userBlength, userClength;
@@ -345,6 +345,11 @@ public class Graph4 extends Activity {
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         }
+    }
+
+    protected void onClickGraph5(View v){
+        Intent intent = new Intent(this, Graph5.class);
+        startActivity(intent);
     }
 
 }

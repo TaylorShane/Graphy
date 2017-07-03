@@ -42,10 +42,21 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_column="1"
-        android:layout_gravity="center"
+        android:layout_gravity="left|center"
         android:columnCount="7"
         android:padding="20dp"
-        android:rowCount="7">
+        android:rowCount="10">
+
+        <TextView
+            android:id="@+id/PointsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_columnSpan="7"
+            android:layout_margin="10dp"
+            android:layout_row="0"
+            android:text="@string/pointsTitle"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
         <TextView
             android:id="@+id/pointInstructions"
@@ -53,10 +64,10 @@
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_columnSpan="7"
-            android:layout_margin="10dp"
-            android:layout_row="0"
+            android:layout_margin="5dp"
+            android:layout_row="1"
             android:text="@string/pointInstruction1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
 
             />
 
@@ -153,7 +164,7 @@
             android:layout_columnSpan="7"
             android:layout_gravity="bottom|center_vertical|fill_horizontal"
             android:layout_margin="20dp"
-            android:layout_row="6"
+            android:layout_row="9"
             android:onClick="onClickLineGraph"
             android:text="@string/line_graphs"
             android:textAppearance="@style/TextAppearance.AppCompat.Button" />
