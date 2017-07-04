@@ -168,7 +168,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:inputType="number|numberSigned" />
+                android:inputType="number|numberSigned"
+                android:nextFocusDown="@+id/btnPlot"/>
         </LinearLayout>
 
         <LinearLayout

@@ -196,6 +196,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center|start"
                 android:layout_margin="5dp"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
                 android:nextFocusDown="@+id/y1B" />
@@ -293,6 +294,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center|start"
                 android:layout_margin="5dp"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
                 android:nextFocusDown="@+id/y1C" />
