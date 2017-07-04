@@ -9,7 +9,6 @@
     android:baselineAligned="false"
     android:configChanges="orientation|keyboardHidden"
     android:screenOrientation="landscape"
-
     tools:context="com.shane_taylor.truthtables.Graph1">
 
     <LinearLayout
@@ -31,123 +30,128 @@
         <!-- android:scaleType="centerInside" -->
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/pointsGridLayout"
+    <!-- TODO: add this scroll view to all layouts -->
+
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_gravity="left|center"
-        android:layout_weight="1"
-        android:columnCount="7"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="20dp">
-
-        <TextView
-            android:id="@+id/PointsTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pointsTitle"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
-
-        <TextView
-            android:id="@+id/pointInstructions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:maxWidth="500dp"
-            android:text="@string/pointInstruction1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
-
-        <TextView
-            android:id="@+id/enterXY"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/enter_x_and_y"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:layout_weight="1">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/pointsGridLayout"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight=".5"
+            android:layout_gravity="fill_vertical|fill_horizontal"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="20dp">
 
             <TextView
-                android:id="@+id/EnterXtextView"
+                android:id="@+id/PointsTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/x1" />
-
-            <EditText
-                android:id="@+id/xplot"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:inputType="number|numberSigned|numberDecimal"
-                android:nextFocusDown="@+id/yplot" />
+                android:text="@string/pointsTitle"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
             <TextView
-                android:id="@+id/EnterYtextView"
+                android:id="@+id/pointInstructions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center_horizontal"
-                android:text="@string/y1" />
+                android:layout_margin="5dp"
+                android:maxWidth="500dp"
+                android:text="@string/pointInstruction1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
-            <EditText
-                android:id="@+id/yplot"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
+            <TextView
+                android:id="@+id/enterXY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_x_and_y"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight=".5"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/EnterXtextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/x1" />
+
+                <EditText
+                    android:id="@+id/xplot"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:inputType="number|numberSigned|numberDecimal"
+                    android:nextFocusDown="@+id/yplot" />
+
+                <TextView
+                    android:id="@+id/EnterYtextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_horizontal"
+                    android:text="@string/y1" />
+
+                <EditText
+                    android:id="@+id/yplot"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:inputType="number|numberSigned|numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:inputType="number|numberSigned|numberDecimal" />
-        </LinearLayout>
+                android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+                <Button
+                    android:id="@+id/btnPlot"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical|fill_horizontal"
+                    android:maxLength="400"
+                    android:onClick="onClickPlot"
+                    android:text="@string/Plot"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
-            <Button
-                android:id="@+id/btnPlot"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="center_vertical|fill_horizontal"
-                android:maxLength="400"
-                android:onClick="onClickPlot"
-                android:text="@string/Plot"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+                <Button
+                    android:id="@+id/btnReset"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical|fill_horizontal"
+                    android:maxLength="400"
+                    android:onClick="onClickReset"
+                    android:text="@string/reset"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
-            <Button
-                android:id="@+id/btnReset"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="center_vertical|fill_horizontal"
-                android:maxLength="400"
-                android:onClick="onClickReset"
-                android:text="@string/reset"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+                <Button
+                    android:id="@+id/btnLineGraph"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom|center_vertical|fill_horizontal"
+                    android:onClick="onClickLineGraph"
+                    android:text="@string/line_graphs"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
-            <Button
-                android:id="@+id/btnLineGraph"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom|center_vertical|fill_horizontal"
-                android:onClick="onClickLineGraph"
-                android:text="@string/line_graphs"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+            </LinearLayout>
 
         </LinearLayout>
-
-
-    </LinearLayout>
+    </ScrollView>
 </LinearLayout>
