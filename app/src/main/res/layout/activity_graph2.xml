@@ -1,64 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.shane_taylor.truthtables.Graph2"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/grey.9"
     android:baselineAligned="false"
+    android:columnCount="2"
     android:configChanges="orientation|keyboardHidden"
     android:screenOrientation="landscape"
-    android:weightSum="2"
-    android:columnCount="2"
-    android:background="@color/grey.9">
+    tools:context="com.shane_taylor.truthtables.Graph2">
 
-    <GridLayout
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_column="0"
         android:layout_gravity="center"
-        android:background="@color/colorPrimaryDark"
-        android:columnCount="7"
-        android:rowCount="6">
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark">
 
         <com.jjoe64.graphview.GraphView
             android:id="@+id/linegraph"
-            android:layout_width="700dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="fill_horizontal"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@color/white"
-            android:scaleType="centerInside" />
-    </GridLayout>
+            android:paddingRight="20dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp" />
+    </LinearLayout>
 
-    <GridLayout
+    <LinearLayout
         android:id="@+id/enterCoordinatesLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_column="1"
         android:layout_gravity="left|center"
+        android:layout_weight="1"
         android:columnCount="7"
-        android:padding="20dp"
-        android:rowCount="10">
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <TextView
             android:id="@+id/LinesTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:layout_columnSpan="7"
-            android:layout_margin="10dp"
-            android:layout_row="0"
+            android:layout_margin="5dp"
             android:text="@string/linesTitle"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
         <TextView
             android:id="@+id/lineInstructions"
-            android:layout_width="500dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_columnSpan="7"
             android:layout_margin="5dp"
-            android:layout_row="1"
+            android:maxWidth="500dp"
             android:text="@string/lineInstruction1"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
@@ -66,162 +60,158 @@
             android:id="@+id/txtViewLineStart"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
-            android:layout_column="0"
-            android:layout_columnSpan="7"
             android:layout_gravity="top"
             android:layout_margin="5dp"
-            android:layout_row="3"
             android:gravity="bottom"
             android:text="@string/line_start_coordinates"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-        <TextView
-            android:id="@+id/EnterXtextView"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:layout_gravity="center|end"
-            android:layout_marginRight="10dp"
-            android:layout_row="4"
-            android:gravity="end"
-            android:text="@string/x1" />
-
-        <EditText
-            android:id="@+id/x1"
-            android:layout_width="75dp"
-            android:layout_height="50dp"
-            android:layout_column="1"
-            android:layout_gravity="center|start"
-            android:layout_marginEnd="20dp"
-            android:layout_row="4"
+            android:layout_weight=".5"
             android:gravity="center"
-            android:inputType="number|numberSigned"
-            android:nextFocusDown="@+id/y1A" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/EnterYtextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_column="2"
-            android:layout_gravity="center|end"
-            android:layout_marginRight="10dp"
-            android:layout_row="4"
-            android:gravity="end"
-            android:text="@string/y1" />
+            <TextView
+                android:id="@+id/EnterXtextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:layout_marginRight="10dp"
+                android:gravity="end"
+                android:text="@string/x1" />
 
-        <EditText
-            android:id="@+id/y1A"
-            android:layout_width="75dp"
-            android:layout_height="50dp"
-            android:layout_column="3"
-            android:layout_gravity="center|start"
-            android:layout_margin="5dp"
-            android:layout_row="4"
-            android:gravity="center"
-            android:inputType="number|numberSigned"
-            android:nextFocusDown="@+id/x1B"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            <EditText
+                android:id="@+id/x1"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center|start"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:inputType="number|numberSigned"
+                android:nextFocusDown="@+id/y1A" />
+
+            <TextView
+                android:id="@+id/EnterYtextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:layout_marginRight="10dp"
+                android:gravity="end"
+                android:text="@string/y1" />
+
+            <EditText
+                android:id="@+id/y1A"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center|start"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:inputType="number|numberSigned"
+                android:nextFocusDown="@+id/x1B"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/txtViewLineEnd"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
-            android:layout_column="0"
-            android:layout_columnSpan="7"
             android:layout_margin="5dp"
-            android:layout_row="5"
             android:gravity="bottom"
             android:text="@string/line_end_coordinates"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-        <TextView
-            android:id="@+id/EnterXtextView2"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:layout_gravity="center|end"
-            android:layout_marginRight="10dp"
-            android:layout_row="6"
-            android:gravity="end"
-            android:text="@string/x2" />
-
-        <EditText
-            android:id="@+id/x1B"
-            android:layout_width="75dp"
-            android:layout_height="50dp"
-            android:layout_column="1"
-            android:layout_gravity="center|start"
-            android:layout_marginEnd="20dp"
-            android:layout_row="6"
+            android:layout_weight=".5"
             android:gravity="center"
-            android:inputType="number|numberSigned"
-            android:nextFocusDown="@+id/y1B" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/EnterYtextView2"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/EnterXtextView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:layout_marginRight="10dp"
+                android:gravity="end"
+                android:text="@string/x2" />
+
+            <EditText
+                android:id="@+id/x1B"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center|start"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:inputType="number|numberSigned"
+                android:nextFocusDown="@+id/y1B" />
+
+            <TextView
+                android:id="@+id/EnterYtextView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:layout_marginRight="10dp"
+                android:gravity="end"
+                android:text="@string/y2" />
+
+            <EditText
+                android:id="@+id/y1B"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center|start"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:inputType="number|numberSigned" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_column="2"
-            android:layout_gravity="center|end"
-            android:layout_marginRight="10dp"
-            android:layout_row="6"
-            android:gravity="end"
-            android:text="@string/y2" />
-
-        <EditText
-            android:id="@+id/y1B"
-            android:layout_width="75dp"
-            android:layout_height="50dp"
-            android:layout_column="3"
-            android:layout_gravity="center|start"
-            android:layout_margin="5dp"
-            android:layout_row="6"
+            android:layout_weight="1"
             android:gravity="center"
-            android:inputType="number|numberSigned" />
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnPlot"
-            android:layout_width="80dp"
-            android:layout_height="50dp"
-            android:layout_column="0"
-            android:layout_columnSpan="7"
-            android:layout_gravity="center_horizontal|fill_horizontal|center"
-            android:layout_margin="10dp"
-            android:layout_row="7"
-            android:gravity="center"
-            android:maxLength="600"
-            android:onClick="onClickPlot"
-            android:text="@string/Plot"
-            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+            <Button
+                android:id="@+id/btnPlot"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal|fill_horizontal|center"
+                android:gravity="center"
+                android:maxLength="600"
+                android:onClick="onClickPlot"
+                android:text="@string/Plot"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
-        <Button
-            android:id="@+id/btnReset"
-            android:layout_width="80dp"
-            android:layout_height="50dp"
-            android:layout_column="0"
-            android:layout_columnSpan="7"
-            android:layout_gravity="center_horizontal|fill_horizontal|center"
-            android:layout_margin="10dp"
-            android:layout_row="8"
-            android:gravity="center"
-            android:maxLength="400"
-            android:onClick="onClickReset"
-            android:text="@string/reset"
-            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal|fill_horizontal|center"
+                android:gravity="center"
+                android:maxLength="400"
+                android:onClick="onClickReset"
+                android:text="@string/reset"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
-        <Button
-            android:id="@+id/btnTriangleGraph"
-            android:layout_width="80dp"
-            android:layout_height="50dp"
-            android:layout_column="0"
-            android:layout_columnSpan="7"
-            android:layout_gravity="bottom|center_horizontal|fill_horizontal|center"
-            android:layout_margin="10dp"
-            android:layout_row="9"
-            android:gravity="center"
-            android:maxLength="400"
-            android:onClick="onClickTriangleGraph"
-            android:text="@string/triangle_graph"
-            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
-    </GridLayout>
-</GridLayout>
+            <Button
+                android:id="@+id/btnTriangleGraph"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom|center_horizontal|fill_horizontal|center"
+                android:gravity="center"
+                android:maxLength="400"
+                android:onClick="onClickTriangleGraph"
+                android:text="@string/triangle_graph"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

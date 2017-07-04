@@ -49,9 +49,9 @@ public class Graph5 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph5);
-        hideSoftKeyboard();
         createRandomTriangle();
         setGraphScale();
+        hideSoftKeyboard();
     }
 
     protected void createRandomTriangle(){ /** random triangle generator */
@@ -156,7 +156,7 @@ public class Graph5 extends Activity {
         getRandTriangleSideLengths();
         populateTextViews();
 
-        /** for debugging */
+        /** for debugging
         results = (TextView) findViewById(R.id.random_values_results);
         results.setText("PLEASE IGNORE THIS TEST DATA" + "\n" +
                 "randX1A: " + randX1A + " randY1A: " + randY1A  + "\n" +
@@ -166,7 +166,7 @@ public class Graph5 extends Activity {
                 "randX1C: " + randX1C + " randY1C; " + randY1C + "\n" +
                 "randX2C: " + randX2C + " randY2C: " + randY2C + "\n" +
                 "randClength" + randClength);
-
+         */
         while((randAlength*randAlength) + (randBlength*randBlength) != (randClength*randClength) ||
                 randAlength == 0 || randBlength == 0 || randClength == 0){
             createRandomTriangle();

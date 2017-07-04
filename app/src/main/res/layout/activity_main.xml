@@ -2,72 +2,51 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="#454545"
     android:configChanges="orientation|keyboardHidden"
     android:keepScreenOn="true"
     android:orientation="vertical"
     android:screenOrientation="landscape"
-    tools:context="com.shane_taylor.truthtables.MainActivity"
-    >
+    android:weightSum="1"
+    tools:context="com.shane_taylor.truthtables.MainActivity">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_weight="1.5"
-        android:background="@color/grey3"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_margin="10dp"
+        android:background="@color/black"
         android:gravity="center"
-        android:scaleType="centerInside">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:padding="2dp"
-            android:text="@string/TruthTables"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="@color/colorPrimary" />
-    </LinearLayout>
+        android:padding="2dp"
+        android:text="@string/TruthTables"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/colorPrimary" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="center"
-        android:scaleType="centerInside">
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/truthTableImageView"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="top|center_horizontal"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_weight=".75"
             android:contentDescription="@string/PthenQ"
-            android:gravity="top|center_horizontal"
+            android:gravity="center_vertical|center_horizontal"
             android:src="@drawable/truth_table_large_2" />
         <!--TODO: change image to interactive activity with dropdowns to choose resulting truth values -->
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:scaleType="centerInside">
-
         <ScrollView
             android:id="@+id/MainScrollView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal|center"
+            android:layout_weight="1"
             android:fadeScrollbars="true"
             android:fillViewport="true"
             android:scrollIndicators="left|right"
@@ -81,8 +60,8 @@
 
             <TextView
                 android:id="@+id/AthenDollar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:isScrollContainer="true"
                 android:maxLines="50"
@@ -95,20 +74,13 @@
         </ScrollView>
     </LinearLayout>
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1.5"
-        android:columnCount="2"
-        android:rowCount="1">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_columnSpan="2"
-            android:layout_gravity="fill_vertical|fill_horizontal"
-            android:layout_margin="15dp"
-            android:onClick="graphActivity"
-            android:text="@string/pointGraphs" />
-    </GridLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_vertical|fill_horizontal"
+        android:layout_margin="15dp"
+        android:layout_weight="1"
+        android:onClick="graphActivity"
+        android:text="@string/pointGraphs" />
 </LinearLayout>

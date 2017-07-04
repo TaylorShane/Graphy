@@ -61,8 +61,8 @@ public class Graph4 extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_graph4);
         setGraphScale();
-        hideSoftKeyboard();
         createRandomTriangle();
+        hideSoftKeyboard();
     }
 
     protected void setGraphScale(){
@@ -215,7 +215,7 @@ public class Graph4 extends Activity {
         }
 
 
-        /** for debugging */
+        /** for debugging
         results = (TextView) findViewById(R.id.random_values_results);
         results.setText("PLEASE IGNORE THIS TEST DATA" + "\n" +
                 "randX1A: " + randX1A + " randY1A: " + randY1A  + "\n" +
@@ -224,7 +224,7 @@ public class Graph4 extends Activity {
                 "randX2B: " + randX2B + " randY2B: " + randY2B + "\n" +
                 "randX1C: " + randX1C + " randY1C; " + randY1C + "\n" +
                 "randX2C: " + randX2C + " randY2C: " + randY2C);
-
+        */
         populateTextViews();
     }
 
