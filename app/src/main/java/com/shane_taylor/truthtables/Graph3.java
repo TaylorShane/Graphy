@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -33,7 +32,12 @@ import java.util.Random;
  */
 // TODO: fix the hide soft keyboard
 // TODO: fix random triangles that show up as lines
+// TODO: set focus back to Userx1A after plot attempt
+// TODO: figure out a way to remove last plot attempt if incorrect.
 
+/**
+ * Reflexive triangles
+ */
 public class Graph3 extends Activity {
 
     private EditText Userx1A, Usery1A, Userx2A, Usery2A, Userx1B, Usery1B, Userx2B, Usery2B, Userx1C, Usery1C, Userx2C, Usery2C;
@@ -94,7 +98,7 @@ public class Graph3 extends Activity {
         LineA.setColor(Color.BLUE);
         LineA.setDrawDataPoints(true);
         LineA.setDataPointsRadius(0);
-        LineA.setThickness(3);
+        LineA.setThickness(5);
 
         if(randX1B > randX2B) {
             int temp = randX1B;
@@ -114,7 +118,7 @@ public class Graph3 extends Activity {
         LineB.setColor(Color.BLUE);
         LineB.setDrawDataPoints(true);
         LineB.setDataPointsRadius(0);
-        LineB.setThickness(3);
+        LineB.setThickness(5);
 
         if(randX1C > randX2C) {
             int temp = randX1C;
@@ -134,7 +138,7 @@ public class Graph3 extends Activity {
         LineC.setColor(Color.BLUE);
         LineC.setDrawDataPoints(true);
         LineC.setDataPointsRadius(0);
-        LineC.setThickness(3);
+        LineC.setThickness(5);
 
         /** for debugging */
          results = (TextView) findViewById(R.id.random_values_results);
@@ -202,6 +206,7 @@ public class Graph3 extends Activity {
     }
 
     protected void onClickPlot(View v) { /** button click method **/
+
         getUserCoordinates();
         createUserTriangle();
     }
@@ -253,7 +258,7 @@ public class Graph3 extends Activity {
             toast.setView(view);
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
-            triangleInstructions.setText(getResources().getString(R.string.triangleInstruction4));
+            triangleInstructions.setText(getResources().getString(R.string.newTriangle));
 
             clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
         }
@@ -381,15 +386,6 @@ public class Graph3 extends Activity {
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         }
-    }
-
-    /**
-     * Shows the soft keyboard
-     */
-    protected void showSoftKeyboard(View view) {
-        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-        view.requestFocus();
-        inputMethodManager.showSoftInput(view, 0);
     }
 
     protected void onClickReset(View view) {

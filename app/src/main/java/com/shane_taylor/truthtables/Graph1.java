@@ -2,9 +2,7 @@ package com.shane_taylor.truthtables;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +16,6 @@ import java.util.Random;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.DataPointInterface;
 import com.jjoe64.graphview.series.LineGraphSeries;
 import com.jjoe64.graphview.series.PointsGraphSeries;
 
@@ -26,6 +23,9 @@ import com.jjoe64.graphview.series.PointsGraphSeries;
 TODO: implement the onSaveInstanceState() method
 */
 
+/**
+ * Points Graph
+ */
 public class Graph1 extends Activity {
 
     private EditText xcoordinate, ycoordinate;
@@ -122,7 +122,7 @@ public class Graph1 extends Activity {
             toast.setView(view);
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
-            pointInstructions.setText(R.string.pointInstruction3);
+            pointInstructions.setText(R.string.newPoint);
             clearForm((ViewGroup) findViewById(R.id.pointsGridLayout));
         }
         else{

@@ -21,11 +21,11 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="PthenQ">image of a conditional if P then Q truth table</string>
     <string name="pointInstruction1">Plot the blue point\'s reflection across the Y axis.</string>
     <string name="pointInstruction2">Plot the blue point\'s reflection across the X axis.</string>
-    <string name="pointInstruction3">Great Job!  Now hit the "Reset Graph" button for a new point.</string>
+    <string name="newPoint">Great Job!  Now hit the "Reset Graph" button for a new point.</string>
     <string name="enter_x_and_y">Enter X and Y</string>
     <string name="lineInstruction1">Create a line is parallel to the blue line above.</string>
     <string name="lineInstruction2">Create a line is perpendicular to the blue line above.</string>
-    <string name="lineInstruction3">Great Job!  Now hit the "Reset Graph" button for a new line.</string>
+    <string name="newLine">Great Job!  Now hit the "Reset Graph" button for a new line.</string>
     <string name="triangle_graph">Triangle Graph</string>
     <string name="line_a">Line A</string>
     <string name="x1">X1:</string>
@@ -39,7 +39,7 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="triangleInstruction1">Create a reflexive triangle in quadrant II</string>
     <string name="triangleInstruction2">Create a reflexive triangle in quadrant III</string>
     <string name="triangleInstruction3">Create a reflexive triangle in quadrant IV</string>
-    <string name="triangleInstruction4">Great Job!  Now hit the "Reset Graph" button for a new triangle.</string>
+    <string name="newTriangle">Great Job!  Now hit the "Reset Graph" button for a new triangle.</string>
 
     <string name="title_activity_graph4">Graph4</string>
     <string name="dummy_button">Dummy Button</string>
@@ -47,7 +47,7 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="similarTriangleHeader">Similar Triangles</string>
     <string name="similarTriangleInstructions1">Given the length of each side of the triangle (SSS), enter three side lengths to create a similar triangle</string>
     <string name="similarTriangleInstructions2">Given the length of two sides and an angle between them (SAS), enter a new SAS to create a similar triangle</string>
-    <string name="similarTriangleInstructions3">Great Job!  Now hit the "Reset Graph" button for a new triangle. </string>
+
     <string name="similarTriangles">Similar Triangles</string>
     <string name="lineAlength">A length:</string>
     <string name="lineBlength">B length:</string>
@@ -63,4 +63,5 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="reflexiveTriangleTitle">Reflexive Triangles</string>
     <string name="pythagorean">Pythagorean Theorem</string>
     <string name="pythagoreanInstructions1">Given the lengths of sides A and B, enter the length of side C.</string>
+
 </resources>

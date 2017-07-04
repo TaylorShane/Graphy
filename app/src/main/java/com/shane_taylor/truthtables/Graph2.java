@@ -15,7 +15,6 @@ import android.widget.Toast;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
-import com.jjoe64.graphview.series.Series;
 
 import java.util.Random;
 
@@ -24,6 +23,9 @@ import java.util.Random;
  TODO: fix reset graph to work with chromebook
  */
 
+/**
+ * Lines Graph
+ */
 public class Graph2 extends Activity {
 
     private EditText x1, y1, x2, y2;
@@ -199,7 +201,7 @@ public class Graph2 extends Activity {
             toast.setView(view);
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
-            lineInstructions.setText(getResources().getString(R.string.lineInstruction3));
+            lineInstructions.setText(getResources().getString(R.string.newLine));
 
             clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
         }
@@ -251,11 +253,6 @@ public class Graph2 extends Activity {
     /**
      * Shows the soft keyboard
      */
-    protected void showSoftKeyboard(View view) {
-        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-        view.requestFocus();
-        inputMethodManager.showSoftInput(view, 0);
-    }
 
     protected void onClickReset(View view) {
         Intent intent = getIntent();

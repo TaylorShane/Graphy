@@ -11,15 +11,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
-
-import java.text.DecimalFormat;
 import java.util.Random;
-
-import static java.lang.Math.round;
 import static java.lang.Math.sqrt;
 
 /**
@@ -37,13 +32,17 @@ import static java.lang.Math.sqrt;
  *  clearForm
  *
  */
+
+/**
+ * Pythagorean theorem triangle
+ */
 public class Graph5 extends Activity {
 
     protected double randX1A, randY1A, randX2A, randY2A, randX1B, randY1B,
             randX2B, randY2B, randX1C, randY1C, randX2C, randY2C,
             randAlength, randBlength, randClength, userClengthDbl;
 
-    protected TextView results, userResults, lineA, lineB, lineC, txtEnterClength;
+    protected TextView results, lineA, lineB, lineC, instructions;
     protected EditText userClength;
 
     @Override
@@ -252,7 +251,8 @@ public class Graph5 extends Activity {
     }
 
     protected void onClickVerify(View v){
-        userClength = (EditText) findViewById(R.id.userLineC);
+        userClength = (EditText) findViewById(R.id.userLineClength);
+        instructions = (TextView) findViewById(R.id.pythagoreaninstructions);
 
         try{
             userClengthDbl = Double.parseDouble(userClength.getText().toString());
@@ -269,6 +269,16 @@ public class Graph5 extends Activity {
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
             clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
+            instructions.setText(getResources().getString(R.string.newTriangle));
+        }
+        else{
+            // Try again toast image
+            Toast toast = new Toast(this);
+            ImageView view = new ImageView(this);
+            view.setImageResource(R.drawable.try_again_large);
+            toast.setView(view);
+            toast.setDuration(Toast.LENGTH_LONG);
+            toast.show();
         }
     }
 

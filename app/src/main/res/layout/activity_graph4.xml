@@ -151,7 +151,7 @@
             android:layout_margin="5dp"
             android:layout_row="7"
             android:gravity="center"
-            android:inputType="number|numberDecimal" />
+            android:inputType="number|numberSigned|numberDecimal" />
 
         <Button
             android:id="@+id/submitUserData"

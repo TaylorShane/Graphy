@@ -60,16 +60,16 @@
 
         <TextView
             android:id="@+id/pointInstructions"
-            android:layout_width="wrap_content"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_columnSpan="7"
             android:layout_margin="5dp"
             android:layout_row="1"
+            android:maxLength="500"
             android:text="@string/pointInstruction1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
 
-            />
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
 
         <TextView

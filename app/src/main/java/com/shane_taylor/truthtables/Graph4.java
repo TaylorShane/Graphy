@@ -3,7 +3,6 @@ package com.shane_taylor.truthtables;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +19,6 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.Random;
 
 /**
@@ -43,6 +40,12 @@ import java.util.Random;
  *
  */
 
+//TODO: fix negative angles?
+// TODO: fix lengthC to become decimal after first if statement success https://stackoverflow.com/questions/2586301/set-inputtype-for-an-edittext
+
+/**
+ * Similar triangles
+ */
 public class Graph4 extends Activity {
 
     protected double randX1A, randY1A, randX2A, randY2A, randX1B, randY1B, randX2B, randY2B, randX1C, randY1C, randX2C, randY2C,
@@ -250,6 +253,9 @@ public class Graph4 extends Activity {
         randSlopeB = (randY1B - randY2B) / (randX1B - randX2B);  // Y2-Y1/X2-X1
         double rawRandAngle = Math.atan((randSlopeA - randSlopeB) / (1 - (randSlopeA * randSlopeB)));
         randAngle = Math.round(rawRandAngle*100.0)/100.0;
+        if(randAngle < 0){
+            randAngle = randAngle * -1;
+        }
     }
 
     protected void onClickVerify(View v){
@@ -316,7 +322,7 @@ public class Graph4 extends Activity {
                     toast.setView(view);
                     toast.setDuration(Toast.LENGTH_SHORT);
                     toast.show();
-                    similarInstructions.setText(getResources().getString(R.string.similarTriangleInstructions3));
+                    similarInstructions.setText(getResources().getString(R.string.newTriangle));
                     clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
 
 
