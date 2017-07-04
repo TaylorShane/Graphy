@@ -69,9 +69,8 @@
                 android:padding="30dp"
                 android:scrollbars="vertical"
                 android:text="@string/explained"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textColor="@color/colorPrimary"
-                android:textSize="24sp" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorPrimary" />
         </ScrollView>
     </LinearLayout>
 

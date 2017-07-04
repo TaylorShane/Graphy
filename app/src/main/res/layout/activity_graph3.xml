@@ -28,33 +28,43 @@
             tools:layout_editor_absoluteY="0dp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/enterCoordinatesLayout"
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_gravity="left|center"
-        android:layout_weight="1"
-        android:columnCount="7"
+        android:layout_weight="1">
+    <LinearLayout
+        android:id="@+id/enterCoordinatesLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_vertical|fill_horizontal"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="20dp">
 
-        <TextView
-            android:id="@+id/reflexiveTrianglesTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/reflexiveTriangleTitle"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/triangleInstructions"
-            android:layout_width="500dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:maxWidth="500dp"
-            android:text="@string/triangleInstruction1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+            <TextView
+                android:id="@+id/reflexiveTrianglesTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/reflexiveTriangleTitle"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
+            <TextView
+                android:id="@+id/triangleInstructions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/triangleInstruction1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/txtViewLineA"
@@ -117,10 +127,8 @@
                 android:id="@+id/EnterX2A"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="5"
                 android:layout_gravity="center|end"
                 android:layout_margin="1dp"
-                android:layout_row="4"
                 android:gravity="end"
                 android:text="@string/x2" />
 
@@ -128,10 +136,8 @@
                 android:id="@+id/x2A"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:layout_column="6"
                 android:layout_gravity="center|start"
                 android:layout_margin="5dp"
-                android:layout_row="4"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
@@ -141,10 +147,8 @@
                 android:id="@+id/EnterY2A"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="7"
                 android:layout_gravity="center|end"
                 android:layout_margin="1dp"
-                android:layout_row="4"
                 android:gravity="end"
                 android:text="@string/y2" />
 
@@ -152,10 +156,8 @@
                 android:id="@+id/y2A"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:layout_column="8"
                 android:layout_gravity="center|start"
                 android:layout_margin="5dp"
-                android:layout_row="4"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
@@ -183,10 +185,8 @@
                 android:id="@+id/EnterX1B"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="1"
                 android:layout_gravity="center|end"
                 android:layout_margin="1dp"
-                android:layout_row="5"
                 android:gravity="end"
                 android:text="@string/x1" />
 
@@ -194,11 +194,8 @@
                 android:id="@+id/x1B"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:layout_column="2"
                 android:layout_gravity="center|start"
                 android:layout_margin="5dp"
-                android:layout_row="5"
-                android:layout_weight="1"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
                 android:nextFocusDown="@+id/y1B" />
@@ -207,10 +204,8 @@
                 android:id="@+id/EnterY1B"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="3"
                 android:layout_gravity="center|end"
                 android:layout_margin="1dp"
-                android:layout_row="5"
                 android:gravity="end"
                 android:text="@string/y1" />
 
@@ -218,10 +213,8 @@
                 android:id="@+id/y1B"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:layout_column="4"
                 android:layout_gravity="center|start"
                 android:layout_margin="5dp"
-                android:layout_row="5"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
@@ -231,10 +224,8 @@
                 android:id="@+id/EnterX2B"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="5"
                 android:layout_gravity="center|end"
                 android:layout_margin="1dp"
-                android:layout_row="5"
                 android:gravity="end"
                 android:text="@string/x2" />
 
@@ -242,10 +233,8 @@
                 android:id="@+id/x2B"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:layout_column="6"
                 android:layout_gravity="center|start"
                 android:layout_margin="5dp"
-                android:layout_row="5"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
@@ -255,10 +244,8 @@
                 android:id="@+id/EnterY2B"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="7"
                 android:layout_gravity="center|end"
                 android:layout_margin="1dp"
-                android:layout_row="5"
                 android:gravity="end"
                 android:text="@string/y2" />
 
@@ -266,10 +253,8 @@
                 android:id="@+id/y2B"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:layout_column="8"
                 android:layout_gravity="center|start"
                 android:layout_margin="5dp"
-                android:layout_row="5"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
@@ -297,10 +282,8 @@
                 android:id="@+id/EnterX1C"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="1"
                 android:layout_gravity="center|end"
                 android:layout_margin="1dp"
-                android:layout_row="6"
                 android:gravity="end"
                 android:text="@string/x1" />
 
@@ -308,11 +291,8 @@
                 android:id="@+id/x1C"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:layout_column="2"
                 android:layout_gravity="center|start"
                 android:layout_margin="5dp"
-                android:layout_row="6"
-                android:layout_weight="1"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
                 android:nextFocusDown="@+id/y1C" />
@@ -321,10 +301,8 @@
                 android:id="@+id/EnterY1C"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="3"
                 android:layout_gravity="center|end"
                 android:layout_margin="1dp"
-                android:layout_row="6"
                 android:gravity="end"
                 android:text="@string/y1" />
 
@@ -332,10 +310,8 @@
                 android:id="@+id/y1C"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:layout_column="4"
                 android:layout_gravity="center|start"
                 android:layout_margin="5dp"
-                android:layout_row="6"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
@@ -345,10 +321,8 @@
                 android:id="@+id/EnterX2C"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="5"
                 android:layout_gravity="center|end"
                 android:layout_margin="1dp"
-                android:layout_row="6"
                 android:gravity="end"
                 android:text="@string/x2" />
 
@@ -356,10 +330,8 @@
                 android:id="@+id/x2C"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:layout_column="6"
                 android:layout_gravity="center|start"
                 android:layout_margin="5dp"
-                android:layout_row="6"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
@@ -369,10 +341,8 @@
                 android:id="@+id/EnterY2C"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="7"
                 android:layout_gravity="center|end"
                 android:layout_margin="1dp"
-                android:layout_row="6"
                 android:gravity="end"
                 android:text="@string/y2" />
 
@@ -380,10 +350,8 @@
                 android:id="@+id/y2C"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:layout_column="8"
                 android:layout_gravity="center|start"
                 android:layout_margin="5dp"
-                android:layout_row="6"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
@@ -419,8 +387,9 @@
             <Button
                 android:id="@+id/btnPlot"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="top|fill_horizontal"
+                android:layout_margin="10dp"
                 android:gravity="center"
                 android:maxLength="400"
                 android:nextFocusDown="@id/btnReset"
@@ -431,8 +400,9 @@
             <Button
                 android:id="@+id/btnReset"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="top|fill_horizontal"
+                android:layout_margin="10dp"
                 android:gravity="center"
                 android:maxLength="400"
                 android:onClick="onClickReset"
@@ -442,15 +412,15 @@
             <Button
                 android:id="@+id/btnGraph4"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="bottom|fill_horizontal"
+                android:layout_margin="10dp"
                 android:gravity="center"
                 android:maxLength="400"
                 android:onClick="onClickGraph4"
                 android:text="@string/similarTriangles"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button" />
         </LinearLayout>
-
-
     </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -30,8 +30,6 @@
         <!-- android:scaleType="centerInside" -->
     </LinearLayout>
 
-    <!-- TODO: add this scroll view to all layouts -->
-
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -50,6 +48,7 @@
                 android:id="@+id/PointsTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:text="@string/pointsTitle"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
@@ -66,6 +65,8 @@
                 android:id="@+id/enterXY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_margin="5dp"
                 android:text="@string/enter_x_and_y"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -124,8 +125,9 @@
                 <Button
                     android:id="@+id/btnPlot"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|fill_horizontal"
+                    android:layout_margin="5dp"
                     android:maxLength="400"
                     android:onClick="onClickPlot"
                     android:text="@string/Plot"
@@ -134,8 +136,9 @@
                 <Button
                     android:id="@+id/btnReset"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|fill_horizontal"
+                    android:layout_margin="5dp"
                     android:maxLength="400"
                     android:onClick="onClickReset"
                     android:text="@string/reset"
@@ -144,14 +147,14 @@
                 <Button
                     android:id="@+id/btnLineGraph"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center_vertical|fill_horizontal"
+                    android:layout_margin="5dp"
                     android:onClick="onClickLineGraph"
                     android:text="@string/line_graphs"
                     android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

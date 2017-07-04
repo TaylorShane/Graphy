@@ -20,10 +20,6 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 import com.jjoe64.graphview.series.PointsGraphSeries;
 
 /**
-TODO: implement the onSaveInstanceState() method
-*/
-
-/**
  * Points Graph
  */
 public class Graph1 extends Activity {

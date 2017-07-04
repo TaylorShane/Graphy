@@ -27,13 +27,15 @@
             tools:layout_editor_absoluteY="0dp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/enterCoordinatesLayout"
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_gravity="left|center"
-        android:layout_weight="1"
-        android:columnCount="7"
+        android:layout_weight="1">
+    <LinearLayout
+        android:id="@+id/enterCoordinatesLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_vertical|fill_horizontal"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="20dp">
@@ -42,6 +44,7 @@
             android:id="@+id/pythagoreanTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:text="@string/pythagorean"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
@@ -81,6 +84,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_margin="10dp"
             android:layout_weight=".5"
             android:gravity="center"
             android:orientation="horizontal">
@@ -88,9 +92,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="0"
                 android:layout_margin="5dp"
-                android:layout_row="4"
                 android:text="@string/lineClength"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -98,12 +100,11 @@
                 android:id="@+id/userLineClength"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:layout_column="1"
-                android:layout_margin="5dp"
-                android:layout_row="4"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:inputType="number|numberDecimal" />
+                android:inputType="number|numberDecimal"
+                android:nextFocusDown="@+id/submitUserData"
+                />
         </LinearLayout>
 
         <!-- for debugging
@@ -121,19 +122,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:gravity="center"
             android:orientation="vertical">
 
             <Button
                 android:id="@+id/submitUserData"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_column="0"
-                android:layout_columnSpan="10"
+                android:layout_height="wrap_content"
                 android:layout_gravity="top|fill_horizontal"
                 android:layout_margin="10dp"
-                android:layout_row="10"
                 android:gravity="center"
                 android:maxLength="400"
                 android:onClick="onClickVerify"
@@ -143,12 +141,9 @@
             <Button
                 android:id="@+id/btnReset"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_column="0"
-                android:layout_columnSpan="10"
+                android:layout_height="wrap_content"
                 android:layout_gravity="bottom|fill_horizontal"
                 android:layout_margin="10dp"
-                android:layout_row="13"
                 android:gravity="center"
                 android:maxLength="400"
                 android:onClick="onClickReset"
@@ -157,5 +152,6 @@
         </LinearLayout>
 
     </LinearLayout>
+    </ScrollView>
 </LinearLayout>
 

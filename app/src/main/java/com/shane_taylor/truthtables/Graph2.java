@@ -19,7 +19,6 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 import java.util.Random;
 
 /**
- TODO: implement the onSaveInstanceState() method
  TODO: fix reset graph to work with chromebook
  */
 
