@@ -36,6 +36,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_margin="20dp"
             android:layout_weight=".75"
             android:contentDescription="@string/PthenQ"
             android:gravity="center_vertical|center_horizontal"
