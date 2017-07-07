@@ -30,7 +30,8 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="fill_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:fillViewport="true">
 
         <LinearLayout
             android:id="@+id/enterCoordinatesLayout"
@@ -41,35 +42,29 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/SimilarTrianglesTitle"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:text="@string/similarTriangleHeader"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
-                <TextView
-                    android:id="@+id/SimilarTrianglesTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="@string/similarTriangleHeader"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
-
-                <TextView
-                    android:id="@+id/similarInstructions"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:maxWidth="500dp"
-                    android:text="@string/similarTriangleInstructions1"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/similarInstructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:maxWidth="500dp"
+                android:text="@string/similarTriangleInstructions1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight=".5"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -134,7 +129,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:inputType="number|numberDecimal"
-                    android:nextFocusDown="@+id/userLineC"/>
+                    android:nextFocusDown="@+id/userLineC" />
 
                 <TextView
                     android:id="@+id/txtEnterClength"
@@ -150,7 +145,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:inputType="number|numberSigned|numberDecimal"
-                    android:nextFocusDown="@+id/submitUserData"/>
+                    android:nextFocusDown="@+id/submitUserData" />
 
             </LinearLayout>
             <!-- for debugging

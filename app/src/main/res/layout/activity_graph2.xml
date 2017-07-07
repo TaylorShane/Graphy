@@ -39,7 +39,8 @@
         android:layout_gravity="fill_vertical|fill_horizontal"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="20dp"
+        android:fillViewport="true">
 
         <TextView
             android:id="@+id/LinesTitle"
@@ -111,8 +112,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:inputType="number|numberSigned"
-                android:nextFocusDown="@+id/x1B"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                android:nextFocusDown="@+id/x1B" />
 
 
         </LinearLayout>

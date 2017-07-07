@@ -14,7 +14,12 @@ import android.widget.Toast;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+
+import java.text.DecimalFormat;
 import java.util.Random;
+
+import static java.lang.Double.parseDouble;
+import static java.lang.Integer.parseInt;
 import static java.lang.Math.sqrt;
 
 /**
@@ -33,15 +38,16 @@ import static java.lang.Math.sqrt;
  *
  */
 
+// TODO: currently only getting 1 of 6 possible whole number possibilities but calculating many more due to rounding afterwards. Either stop rounding or create an array of potential values.
+
 /**
  * Pythagorean theorem triangle
  */
 public class Graph5 extends Activity {
 
-    protected double randX1A, randY1A, randX2A, randY2A, randX1B, randY1B,
-            randX2B, randY2B, randX1C, randY1C, randX2C, randY2C,
-            randAlength, randBlength, randClength, userClengthDbl;
-
+    protected int randXA, randYA, randXB, randYB, randXC, randYC, randAlength, randBlength;
+    protected double randClength, userClengthDbl;
+    protected String userClengthString;
     protected TextView results, lineA, lineB, lineC, instructions;
     protected EditText userClength;
 
@@ -55,32 +61,21 @@ public class Graph5 extends Activity {
     }
 
     protected void createRandomTriangle(){ /** random triangle generator */
-        Random random = new Random();
+        Random generator = new Random();
 
-        randX1A = Math.round((-10 + (20) * random.nextDouble()) * 100.0) / 100.0;
-        randY1A = Math.round((-10 + (20) * random.nextDouble()) * 100.0) / 100.0;
-        randX2A = Math.round((-10 + (20) * random.nextDouble()) * 100.0) / 100.0;
-        randX2A = Math.round((-10 + (20) * random.nextDouble()) * 100.0) / 100.0;
+        randXA = -10 + generator.nextInt(20);
+        randYA = -10 + generator.nextInt(20);
 
-        randX1B = randX2A;
-        randY1B = randY2A;
-        randX1B = Math.round(randX1B * 100.0) / 100.0;
-        randY1B = Math.round(randY1B * 100.0) / 100.0;
+        randXB = randXA;
+        randYB = randYA * -3;
+        if( randXB < 1 )
+            randXC = randXB * -3;
+        else
+            randXC = randXB * 3;
+        randYC = randYA * -3;
 
-        randX2B = -10 + (20) * random.nextDouble();
-        randY2B = -10 + (20) * random.nextDouble();
-        randX2B = Math.round(randX2B * 100.0) / 100.0;
-        randY2B = Math.round(randY2B * 100.0) / 100.0;
-
-        randX1C = randX1A;
-        randY1C = randY1A;
-        randX2C = randX2B;
-        randY2C = randY2B;
-
-        randX1C = Math.round(randX1C * 100.0) / 100.0;
-        randY1C = Math.round(randY1C * 100.0) / 100.0;
-        randX2C = Math.round(randX2C * 100.0) / 100.0;
-        randY2C = Math.round(randY2C * 100.0) / 100.0;
+        //randSlopeA = (randY1A - randY2A) / (randX1A - randX2A);  // Y2-Y1/X2-X1
+        //randSlopeB = (randY1B - randY2B) / (randX1B - randX2B);  // Y2-Y1/X2-X1
 
         /**
          * This graph library expects lines to be drawn from left to right.  The first X coordinate MUST be less than the second.
@@ -90,21 +85,21 @@ public class Graph5 extends Activity {
 
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
         graph.removeAllSeries();
-        setGraphScale();
 
-        if(randX1A > randX2A) {
-            double temp = randX1A;
-            randX1A = randX2A;
-            randX2A = temp;
+        if(randXA > randXB) {
+            int temp = randXA;
+            randXA = randXB;
+            randXB = temp;
 
-            temp = randY1A;
-            randY1A = randY2A;
-            randY2A = temp;
+            temp = randYA;
+            randYA = randYB;
+            randYB = temp;
         }
         LineGraphSeries<DataPoint> LineA = new LineGraphSeries<>(new DataPoint[] {
 
-                new DataPoint(randX1A, randY1A),
-                new DataPoint(randX2A, randY2A)
+                new DataPoint(randXA, randYA),
+                new DataPoint(randXB, randYB),
+                new DataPoint(randXA, randYA)
         });
         graph.addSeries(LineA);
         LineA.setColor(Color.BLUE);
@@ -112,19 +107,19 @@ public class Graph5 extends Activity {
         LineA.setDataPointsRadius(0);
         LineA.setThickness(3);
 
-        if(randX1B > randX2B) {
-            double temp = randX1B;
-            randX1B = randX2B;
-            randX2B = temp;
+        if(randXB > randXC) {
+            int temp = randXB;
+            randXB = randXC;
+            randXC = temp;
 
-            temp = randY1B;
-            randY1B = randY2B;
-            randY2B = temp;
+            temp = randYB;
+            randYB = randYC;
+            randYC = temp;
         }
         LineGraphSeries<DataPoint> LineB = new LineGraphSeries<>(new DataPoint[] {
 
-                new DataPoint(randX1B, randY1B),
-                new DataPoint(randX2B, randY2B)
+                new DataPoint(randXB, randYB),
+                new DataPoint(randXC, randYC)
         });
         graph.addSeries(LineB);
         LineB.setColor(Color.RED);
@@ -132,20 +127,20 @@ public class Graph5 extends Activity {
         LineB.setDataPointsRadius(0);
         LineB.setThickness(3);
 
-        if(randX1C > randX2C) {
-            double temp = randX1C;
-            randX1C = randX2C;
-            randX2C = temp;
+        if(randXC > randXA) {
+            int temp = randXC;
+            randXC = randXA;
+            randXA = temp;
 
-            temp = randY1C;
-            randY1C = randY2C;
-            randY2C = temp;
+            temp = randYC;
+            randYC = randYA;
+            randYA = temp;
         }
 
         LineGraphSeries<DataPoint> LineC = new LineGraphSeries<>(new DataPoint[] {
 
-                new DataPoint(randX1C, randY1C),
-                new DataPoint(randX2C, randY2C)
+                new DataPoint(randXC, randYC),
+                new DataPoint(randXA, randYA)
         });
         graph.addSeries(LineC);
         LineC.setColor(Color.rgb(3,126,3));
@@ -157,42 +152,48 @@ public class Graph5 extends Activity {
         populateTextViews();
 
         /** for debugging
-        results = (TextView) findViewById(R.id.random_values_results);
-        results.setText("PLEASE IGNORE THIS TEST DATA" + "\n" +
-                "randX1A: " + randX1A + " randY1A: " + randY1A  + "\n" +
-                "randX2A: " + randX2A + " randY2A: " + randY2A + "\n" +
-                "randX1B: " + randX1B + " randY1B: " + randY1B + "\n" +
-                "randX2B: " + randX2B + " randY2B: " + randY2B + "\n" +
-                "randX1C: " + randX1C + " randY1C; " + randY1C + "\n" +
-                "randX2C: " + randX2C + " randY2C: " + randY2C + "\n" +
-                "randClength" + randClength);
+         results = (TextView) findViewById(R.id.random_values_results);
+         results.setText("PLEASE IGNORE THIS TEST DATA" + "\n" +
+         "randX1A: " + randX1A + " randY1A: " + randY1A  + "\n" +
+         "randX2A: " + randX2A + " randY2A: " + randY2A + "\n" +
+         "randX1B: " + randX1B + " randY1B: " + randY1B + "\n" +
+         "randX2B: " + randX2B + " randY2B: " + randY2B + "\n" +
+         "randX1C: " + randX1C + " randY1C; " + randY1C + "\n" +
+         "randX2C: " + randX2C + " randY2C: " + randY2C + "\n" +
+         "randClength" + randClength);
          */
-        while((randAlength*randAlength) + (randBlength*randBlength) != (randClength*randClength) ||
-                randAlength == 0 || randBlength == 0 || randClength == 0){
-            createRandomTriangle();
-        }
+
+        results = (TextView) findViewById(R.id.random_values_results);
+        results.setText("randClength: "+ randClength);
     }
 
     protected void getRandTriangleSideLengths(){
 
+        randAlength = (int) Math.round(sqrt( Math.pow(randXB - randXA, 2) + Math.pow(randYB - randYA, 2)));
+        randBlength = (int) Math.round(sqrt( Math.pow(randXC - randXB, 2) + Math.pow(randYC - randYB, 2)));
+        randClength = round((sqrt( Math.pow(randXA - randXC, 2) + Math.pow(randYA - randYC, 2))), 2);
+    }
 
-        randAlength = Math.round(sqrt( Math.pow(randX2A - randX1A, 2) + Math.pow(randY2A - randY1A, 2)));
-        randBlength = Math.round(sqrt( Math.pow(randX2B - randX1B, 2) + Math.pow(randY2B - randY1B, 2)));
-        randClength = Math.round(sqrt( Math.pow(randX2C - randX1C, 2) + Math.pow(randY2C - randY1C, 2)));
+    public static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
 
+        long factor = (long) Math.pow(10, places);
+        value = value * factor;
+        long tmp = Math.round(value);
+        return (double) tmp / factor;
     }
 
     protected void setGraphScale(){
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
         LineGraphSeries<DataPoint> Xaxis = new LineGraphSeries<>(new DataPoint[] {
-                new DataPoint(-10, 0),
-                new DataPoint(10, 0)
+                new DataPoint(-20, 0),
+                new DataPoint(20, 0)
         });
 
         LineGraphSeries<DataPoint> Yaxis = new LineGraphSeries<>(new DataPoint[] {
-                new DataPoint(0, -10),
-                new DataPoint(0, 10)
+                new DataPoint(0, -20),
+                new DataPoint(0, 20)
         });
         graph.addSeries(Xaxis);
         Xaxis.setTitle("X Axis");
@@ -207,36 +208,6 @@ public class Graph5 extends Activity {
         Yaxis.setDrawDataPoints(false);
         Yaxis.setDataPointsRadius(0);
         Yaxis.setThickness(0);
-
-        try{
-            int x = 10;
-            for(int y = 10; y> -10; y--){
-                LineGraphSeries<DataPoint> fineLinesX = new LineGraphSeries<>(new DataPoint[] {
-                        new DataPoint(x*-1, y),
-                        new DataPoint(x, y)
-                });
-
-                LineGraphSeries<DataPoint> fineLinesY = new LineGraphSeries<>(new DataPoint[] {
-                        new DataPoint(y, -1*x),
-                        new DataPoint(y, x)
-                });
-
-                graph.addSeries(fineLinesX);
-                fineLinesX.setColor(Color.GRAY);
-                fineLinesX.setDrawDataPoints(true);
-                fineLinesX.setDataPointsRadius(0);
-                fineLinesX.setThickness(1);
-
-                graph.addSeries(fineLinesY);
-                fineLinesY.setColor(Color.GRAY);
-                fineLinesY.setDrawDataPoints(true);
-                fineLinesY.setDataPointsRadius(0);
-                fineLinesY.setThickness(1);
-            }
-        }
-        catch(Exception e){
-            Toast.makeText(this, "Creating fineLines didn't work", Toast.LENGTH_SHORT).show();
-        }
     }
 
     protected void clearForm(ViewGroup group){
@@ -290,8 +261,8 @@ public class Graph5 extends Activity {
         lineA.setTextColor(Color.BLUE);
         lineB.setTextColor(Color.RED);
 
-        lineA.setText(getString(R.string.displayAlength) + " " +(int)randAlength);
-        lineB.setText(getString(R.string.displayBlength) + " " + (int)randBlength);
+        lineA.setText(getString(R.string.displayAlength) + " " + randAlength);
+        lineB.setText(getString(R.string.displayBlength) + " " + randBlength);
     }
 
     protected void onClickReset(View view){

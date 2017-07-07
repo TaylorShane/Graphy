@@ -34,6 +34,7 @@ import java.util.Random;
 // TODO: fix random triangles that show up as lines
 // TODO: set focus back to Userx1A after plot attempt
 // TODO: figure out a way to remove last plot attempt if incorrect.
+// TODO: Doesn't recognize reflexive unless plots entered exactly as expected, lineA, lineB, then lineC.  Answer - either change logic or color code lines and edittexts.
 
 /**
  * Reflexive triangles
@@ -98,7 +99,7 @@ public class Graph3 extends Activity {
         LineA.setColor(Color.BLUE);
         LineA.setDrawDataPoints(true);
         LineA.setDataPointsRadius(0);
-        LineA.setThickness(5);
+        LineA.setThickness(3);
 
         if(randX1B > randX2B) {
             int temp = randX1B;
@@ -115,10 +116,10 @@ public class Graph3 extends Activity {
                 new DataPoint(randX2B, randY2B)
         });
         graph.addSeries(LineB);
-        LineB.setColor(Color.BLUE);
+        LineB.setColor(Color.RED);
         LineB.setDrawDataPoints(true);
         LineB.setDataPointsRadius(0);
-        LineB.setThickness(5);
+        LineB.setThickness(3);
 
         if(randX1C > randX2C) {
             int temp = randX1C;
@@ -135,10 +136,10 @@ public class Graph3 extends Activity {
                 new DataPoint(randX2C, randY2C)
         });
         graph.addSeries(LineC);
-        LineC.setColor(Color.BLUE);
+        LineC.setColor(Color.rgb(3,126,3));
         LineC.setDrawDataPoints(true);
         LineC.setDataPointsRadius(0);
-        LineC.setThickness(5);
+        LineC.setThickness(3);
 
         /** for debugging
          results = (TextView) findViewById(R.id.random_values_results);

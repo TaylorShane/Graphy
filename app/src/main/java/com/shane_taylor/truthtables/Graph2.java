@@ -82,7 +82,7 @@ public class Graph2 extends Activity {
         randomLine.setColor(Color.BLUE);
         randomLine.setDrawDataPoints(true);
         randomLine.setDataPointsRadius(0);
-        randomLine.setThickness(5);
+        randomLine.setThickness(3);
     }
 
     protected void setGraphScale(){

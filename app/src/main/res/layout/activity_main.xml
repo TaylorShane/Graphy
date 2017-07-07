@@ -9,7 +9,6 @@
     android:keepScreenOn="true"
     android:orientation="vertical"
     android:screenOrientation="landscape"
-    android:weightSum="1"
     tools:context="com.shane_taylor.truthtables.MainActivity">
 
     <TextView
@@ -37,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_margin="10dp"
-            android:layout_weight=".75"
+            android:layout_weight="1"
             android:contentDescription="@string/PthenQ"
             android:gravity="center_vertical|center_horizontal"
             android:src="@drawable/truth_table_large_2" />
@@ -61,7 +60,7 @@
 
             <TextView
                 android:id="@+id/AthenDollar"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="10dp"
@@ -80,7 +79,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="fill_vertical|fill_horizontal"
         android:layout_margin="15dp"
-        android:layout_weight="1"
         android:onClick="graphActivity"
         android:text="@string/pointGraphs" />
 </LinearLayout>
