@@ -30,7 +30,8 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:fillViewport="true">
     <LinearLayout
         android:id="@+id/enterCoordinatesLayout"
         android:layout_width="fill_parent"
@@ -62,13 +63,14 @@
             android:layout_height="0dp"
             android:layout_weight=".5"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/txtLineA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:gravity="left"
                 android:text="Place holder"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -77,6 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:gravity="left"
                 android:text="Place holder"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </LinearLayout>
