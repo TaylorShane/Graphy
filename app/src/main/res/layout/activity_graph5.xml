@@ -140,7 +140,6 @@
                 android:onClick="onClickVerify"
                 android:text="@string/submit"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button" />
-
             <Button
                 android:id="@+id/btnReset"
                 android:layout_width="match_parent"
