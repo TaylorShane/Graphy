@@ -46,8 +46,7 @@ public class Graph5 extends Activity {
 
     protected int randXA, randYA, randXB, randYB, randXC, randYC, randAlength, randBlength;
     protected double randClength, userClengthDbl;
-    protected String userClengthString;
-    protected TextView results, lineA, lineB, lineC, instructions;
+    protected TextView results, lineA, lineB, instructions;
     protected EditText userClength;
 
     @Override
