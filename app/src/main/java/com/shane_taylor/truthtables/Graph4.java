@@ -41,7 +41,6 @@ import java.util.Random;
  *
  */
 
-//TODO: fix negative angles?
 // TODO: fix lengthC to become decimal after first if statement success https://stackoverflow.com/questions/2586301/set-inputtype-for-an-edittext
 
 /**

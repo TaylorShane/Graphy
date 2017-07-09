@@ -31,11 +31,9 @@ import java.util.Random;
  *      getUserCoordinates ->
  *          reflexiveII
  */
-// TODO: fix the hide soft keyboard
 // TODO: fix random triangles that show up as lines
 // TODO: set focus back to Userx1A after plot attempt
 // TODO: figure out a way to remove last plot attempt if incorrect.
-// TODO: Doesn't recognize reflexive unless plots entered exactly as expected, lineA, lineB, then lineC.  Answer - either change logic or color code lines and edittexts.
 
 /**
  * Reflexive triangles

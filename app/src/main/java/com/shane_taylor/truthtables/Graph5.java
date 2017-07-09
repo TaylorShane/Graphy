@@ -39,8 +39,6 @@ import static java.lang.Math.sqrt;
  *
  */
 
-// TODO: currently only getting 1 of 6 possible whole number possibilities but calculating many more due to rounding afterwards. Either stop rounding or create an array of potential values.
-
 /**
  * Pythagorean theorem triangle
  */
