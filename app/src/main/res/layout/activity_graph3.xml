@@ -382,7 +382,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
-                android:gravity="center"
+                android:gravity="bottom"
                 android:orientation="vertical">
 
                 <Button
@@ -421,6 +421,15 @@
                     android:onClick="onClickGraph4"
                     android:text="@string/similarTriangles"
                     android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_vertical|fill_horizontal"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:maxLength="400"
+                    android:onClick="onClickMenu"
+                    android:text="Menu" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

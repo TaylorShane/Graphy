@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -57,7 +58,7 @@ public class Graph5 extends Activity {
         setContentView(R.layout.activity_graph5);
         createRandomTriangle();
         setGraphScale();
-        hideSoftKeyboard();
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
     protected void createRandomTriangle(){ /** random triangle generator */
@@ -161,10 +162,9 @@ public class Graph5 extends Activity {
          "randX1C: " + randX1C + " randY1C; " + randY1C + "\n" +
          "randX2C: " + randX2C + " randY2C: " + randY2C + "\n" +
          "randClength" + randClength);
+         results = (TextView) findViewById(R.id.random_values_results);
+         results.setText("randClength: "+ randClength);
          */
-
-        results = (TextView) findViewById(R.id.random_values_results);
-        results.setText("randClength: "+ randClength);
     }
 
     protected void getRandTriangleSideLengths(){
@@ -271,10 +271,8 @@ public class Graph5 extends Activity {
         startActivity(intent);
     }
 
-    protected void hideSoftKeyboard() { // this isn't working on all devices
-        if(getCurrentFocus()!=null) {
-            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
-        }
+    protected void onClickMenu(View view){
+        Intent intent = new Intent(this, MenuPageActivity.class);
+        startActivity(intent);
     }
 }

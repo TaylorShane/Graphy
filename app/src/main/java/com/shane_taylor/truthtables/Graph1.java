@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -35,7 +36,7 @@ public class Graph1 extends Activity {
         setContentView(R.layout.activity_graph1);
         createRandomPoint();
         createGraphScale();
-        hideSoftKeyboard();
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
     protected void createRandomPoint(){
@@ -142,6 +143,7 @@ public class Graph1 extends Activity {
             Toast.makeText(this, "Please enter integer values for X and Y ", Toast.LENGTH_SHORT).show();
         }
     }
+
     protected void createUserPoint(){
         GraphView graph = (GraphView) findViewById(R.id.graph);
         PointsGraphSeries<DataPoint> userSeries = new PointsGraphSeries<>(new DataPoint[] {
@@ -174,27 +176,7 @@ public class Graph1 extends Activity {
         startActivity(intent);
     }
 
-    /**
-     * Hides the soft keyboard
-     */
-
-    protected void hideSoftKeyboard() {
-        if(getCurrentFocus()!=null) {
-            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
-        }
-    }
-
-    /**
-     * Shows the soft keyboard
-     * public void showSoftKeyboard(View view) {
-     * InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-     * view.requestFocus();
-     * inputMethodManager.showSoftInput(view, 0);
-     * }
-     */
-    protected void clearForm(ViewGroup group)
-    {
+    protected void clearForm(ViewGroup group) {
         for (int i = 0, count = group.getChildCount(); i < count; ++i) {
             View view = group.getChildAt(i);
             if (view instanceof EditText) {
@@ -204,5 +186,10 @@ public class Graph1 extends Activity {
             if(view instanceof ViewGroup && (((ViewGroup)view).getChildCount() > 0))
                 clearForm((ViewGroup)view);
         }
+    }
+
+    protected void onClickMenu(View view){
+        Intent intent = new Intent(this, MenuPageActivity.class);
+        startActivity(intent);
     }
 }

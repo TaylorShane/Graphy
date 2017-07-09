@@ -59,5 +59,6 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="reflexiveTriangleTitle">Reflexive Triangles</string>
     <string name="pythagorean">Pythagorean Theorem</string>
     <string name="pythagoreanInstructions1">Given the lengths of sides A and B and the Angle between them, enter the length of side C</string>
+    <string name="Graphy">Graphy</string>
 
 </resources>

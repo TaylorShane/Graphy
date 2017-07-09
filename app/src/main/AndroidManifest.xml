@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".MenuPageActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape">
             <intent-filter>
@@ -37,6 +37,10 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".Graph5"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".TruthTables"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape"
             />

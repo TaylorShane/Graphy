@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -62,7 +63,7 @@ public class Graph4 extends Activity {
         setContentView(R.layout.activity_graph4);
         setGraphScale();
         createRandomTriangle();
-        hideSoftKeyboard();
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
     protected void setGraphScale(){
@@ -359,16 +360,13 @@ public class Graph4 extends Activity {
         startActivity(intent);
     }
 
-    protected void hideSoftKeyboard() { // this isn't working on all devices
-        if(getCurrentFocus()!=null) {
-            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
-        }
-    }
-
     protected void onClickGraph5(View v){
         Intent intent = new Intent(this, Graph5.class);
         startActivity(intent);
     }
 
+    protected void onClickMenu(View view){
+        Intent intent = new Intent(this, MenuPageActivity.class);
+        startActivity(intent);
+    }
 }

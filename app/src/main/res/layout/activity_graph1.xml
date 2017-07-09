@@ -120,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:gravity="bottom"
                 android:orientation="vertical">
 
                 <Button
@@ -154,6 +154,15 @@
                     android:onClick="onClickLineGraph"
                     android:text="@string/line_graphs"
                     android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_vertical|fill_horizontal"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:maxLength="400"
+                    android:onClick="onClickMenu"
+                    android:text="Menu" />
 
             </LinearLayout>
         </LinearLayout>

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -39,7 +40,7 @@ public class Graph2 extends Activity {
         setContentView(R.layout.activity_graph2);
         createRandomLine();
         setGraphScale();
-        hideSoftKeyboard();
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
     protected void createRandomLine(){ /** random line generator */
@@ -239,29 +240,13 @@ public class Graph2 extends Activity {
         startActivity(intent);
     }
 
-    /**
-     * Hides the soft keyboard
-     */
-    protected void hideSoftKeyboard() { // this isn't working on all devices
-        if(getCurrentFocus()!=null) {
-            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
-        }
-    }
-
-    /**
-     * Shows the soft keyboard
-     */
-
     protected void onClickReset(View view) {
         Intent intent = getIntent();
         finish();
         startActivity(intent);
     }
 
-    /** clears the editTexts **/
-    protected void clearForm(ViewGroup group)
-    {
+    protected void clearForm(ViewGroup group) {
         for (int i = 0, count = group.getChildCount(); i < count; ++i) {
             View view = group.getChildAt(i);
             if (view instanceof EditText) {
@@ -271,6 +256,11 @@ public class Graph2 extends Activity {
             if(view instanceof ViewGroup && (((ViewGroup)view).getChildCount() > 0))
                 clearForm((ViewGroup)view);
         }
+    }
+
+    protected void onClickMenu(View view){
+        Intent intent = new Intent(this, MenuPageActivity.class);
+        startActivity(intent);
     }
 }
 

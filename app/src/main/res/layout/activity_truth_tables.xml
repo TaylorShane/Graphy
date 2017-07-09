@@ -9,7 +9,7 @@
     android:keepScreenOn="true"
     android:orientation="vertical"
     android:screenOrientation="landscape"
-    tools:context="com.shane_taylor.truthtables.MainActivity">
+    tools:context="com.shane_taylor.truthtables.TruthTables">
 
     <TextView
         android:id="@+id/textView"
@@ -79,6 +79,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="fill_vertical|fill_horizontal"
         android:layout_margin="15dp"
-        android:onClick="graphActivity"
+        android:onClick="onClickGraph1"
         android:text="@string/pointGraphs" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_vertical|fill_horizontal"
+        android:layout_margin="15dp"
+        android:onClick="onClickMenu"
+        android:text="Menu" />
 </LinearLayout>
