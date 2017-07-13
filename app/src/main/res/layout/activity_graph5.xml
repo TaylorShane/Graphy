@@ -51,8 +51,9 @@
 
         <TextView
             android:id="@+id/pythagoreaninstructions"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="left"
             android:layout_margin="5dp"
             android:maxWidth="500dp"
             android:text="@string/pythagoreanInstructions1"
@@ -61,7 +62,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".5"
+            android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -96,7 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="@string/lineClength"
+                android:text="@string/C"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <EditText
@@ -106,14 +107,13 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:inputType="number|numberDecimal"
-                android:nextFocusDown="@+id/submitUserData"
-                />
+                android:nextFocusDown="@+id/submitUserData" />
         </LinearLayout>
 
-
-    <TextView
+        
+        <TextView
             android:id="@+id/random_values_results"
-            android:layout_width="500dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_columnSpan="10"
@@ -121,7 +121,7 @@
             android:layout_row="11"
             android:gravity="fill_horizontal|center"
             android:textSize="18sp" />
-    -
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -140,6 +140,7 @@
                 android:onClick="onClickVerify"
                 android:text="@string/submit"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
             <Button
                 android:id="@+id/btnReset"
                 android:layout_width="match_parent"
@@ -151,13 +152,13 @@
                 android:onClick="onClickReset"
                 android:text="@string/reset"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="fill_vertical|fill_horizontal"
+                android:layout_gravity="bottom|center_vertical|fill_horizontal"
                 android:layout_margin="10dp"
-                android:gravity="center"
-                android:maxLength="400"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
                 android:onClick="onClickMenu"
                 android:text="Menu" />
         </LinearLayout>

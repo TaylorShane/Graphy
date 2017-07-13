@@ -56,8 +56,8 @@
                 android:id="@+id/triangleInstructions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="left"
                 android:layout_margin="5dp"
-                android:gravity="center"
                 android:text="@string/triangleInstruction1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
@@ -424,10 +424,9 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="fill_vertical|fill_horizontal"
+                    android:layout_gravity="bottom|center_vertical|fill_horizontal"
                     android:layout_margin="10dp"
-                    android:gravity="center"
-                    android:maxLength="400"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
                     android:onClick="onClickMenu"
                     android:text="Menu" />
             </LinearLayout>

@@ -60,17 +60,21 @@ public class Graph5 extends Activity {
 
     protected void createRandomTriangle(){ /** random triangle generator */
         Random generator = new Random();
+        randXA = 0;
+        randYA = 0;
+        while(randXA == 0 || randYA == 0){
+            randXA = -10 + generator.nextInt(20);
+            randYA = -10 + generator.nextInt(20);
 
-        randXA = -10 + generator.nextInt(20);
-        randYA = -10 + generator.nextInt(20);
+            randXB = randXA;
+            randYB = randYA * -3;
+            if( randXB < 1 )
+                randXC = randXB * -3;
+            else
+                randXC = randXB * 3;
+            randYC = randYA * -3;
+        }
 
-        randXB = randXA;
-        randYB = randYA * -3;
-        if( randXB < 1 )
-            randXC = randXB * -3;
-        else
-            randXC = randXB * 3;
-        randYC = randYA * -3;
 
         //randSlopeA = (randY1A - randY2A) / (randX1A - randX2A);  // Y2-Y1/X2-X1
         //randSlopeB = (randY1B - randY2B) / (randX1B - randX2B);  // Y2-Y1/X2-X1
@@ -149,19 +153,15 @@ public class Graph5 extends Activity {
         getRandTriangleSideLengths();
         populateTextViews();
 
-        /** for debugging
+        /** for debugging **/
          results = (TextView) findViewById(R.id.random_values_results);
          results.setText("PLEASE IGNORE THIS TEST DATA" + "\n" +
-         "randX1A: " + randX1A + " randY1A: " + randY1A  + "\n" +
-         "randX2A: " + randX2A + " randY2A: " + randY2A + "\n" +
-         "randX1B: " + randX1B + " randY1B: " + randY1B + "\n" +
-         "randX2B: " + randX2B + " randY2B: " + randY2B + "\n" +
-         "randX1C: " + randX1C + " randY1C; " + randY1C + "\n" +
-         "randX2C: " + randX2C + " randY2C: " + randY2C + "\n" +
+         "randXA: " + randXA + " randYA: " + randYA  + "\n" +
+         "randXB: " + randXB + " randYB: " + randYB + "\n" +
+         "randXC: " + randXC + " randYC: " + randYC + "\n" +
          "randClength" + randClength);
-         results = (TextView) findViewById(R.id.random_values_results);
-         results.setText("randClength: "+ randClength);
-         */
+
+
     }
 
     protected void getRandTriangleSideLengths(){
@@ -171,7 +171,7 @@ public class Graph5 extends Activity {
         randClength = round((sqrt( Math.pow(randXA - randXC, 2) + Math.pow(randYA - randYC, 2))), 2);
     }
 
-    public static double round(double value, int places) {
+    protected static double round(double value, int places) {
         if (places < 0) throw new IllegalArgumentException();
 
         long factor = (long) Math.pow(10, places);
@@ -180,7 +180,50 @@ public class Graph5 extends Activity {
         return (double) tmp / factor;
     }
 
+    protected double getMaxXvalue(){
+        if(randXA > randXB && randXA > randXC)
+            return randXA;
+        else if(randXB > randXA && randXB > randXC)
+             return randXB;
+        else
+            return randXC;
+    }
+
+    protected double getMinXvalue(){
+        if(randXA < randXB && randXA < randXC)
+            return randXA;
+        else if(randXB < randXA && randXB < randXC)
+            return randXB;
+        else
+            return randXC;
+    }
+
+    protected double getMaxYvalue(){
+        if(randYA > randYB && randYA > randYC)
+            return randYA;
+        else if(randYB > randYA && randYB > randYC)
+            return randYB;
+        else
+            return randYC;
+    }
+
+    protected double getMinYvalue(){
+        if(randYA < randYB && randYA < randYC)
+            return randYA;
+        else if(randYB < randYA && randYB < randYC)
+            return randYB;
+        else
+            return randYC;
+    }
+
     protected void setGraphScale(){
+        /*
+        int maxXvalue = (int)getMaxXvalue();
+        int minXvalue = (int)getMinXvalue();
+        int maxYvalue = (int)getMaxYvalue();
+        int minYvalue = (int)getMinYvalue();
+        */
+
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
         LineGraphSeries<DataPoint> Xaxis = new LineGraphSeries<>(new DataPoint[] {

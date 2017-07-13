@@ -60,6 +60,7 @@
 
             <TextView
                 android:id="@+id/AthenDollar"
+                style="@android:style/TextAppearance.DeviceDefault.Large"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
@@ -78,7 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="fill_vertical|fill_horizontal"
-        android:layout_margin="15dp"
+        android:layout_margin="5dp"
         android:onClick="onClickGraph1"
         android:text="@string/pointGraphs" />
 
@@ -86,7 +87,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="fill_vertical|fill_horizontal"
-        android:layout_margin="15dp"
+        android:layout_margin="5dp"
         android:onClick="onClickMenu"
         android:text="Menu" />
 </LinearLayout>

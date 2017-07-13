@@ -23,10 +23,10 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="pointInstruction2">Plot the blue point\'s reflection across the X axis</string>
     <string name="newPoint">Great Job!  Now hit the "Reset Graph" button for a new point</string>
     <string name="enter_x_and_y">Enter X and Y</string>
-    <string name="lineInstruction1">Create a line is parallel to the blue line above</string>
-    <string name="lineInstruction2">Create a line is perpendicular to the blue line above</string>
+    <string name="lineInstruction1">Create a line that is parallel to the blue line</string>
+    <string name="lineInstruction2">Create a line that is perpendicular to the blue line</string>
     <string name="newLine">Great Job!  Now hit the "Reset Graph" button for a new line</string>
-    <string name="triangle_graph">Triangle Graph</string>
+    <string name="triangle_graph">Reflexive Graph</string>
     <string name="line_a">Line A</string>
     <string name="x1">X1:</string>
     <string name="y1">Y1:</string>
@@ -45,9 +45,9 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="similarTriangleInstructions1">Given the length of each side of the triangle (SSS), enter three side lengths to create a similar triangle</string>
     <string name="similarTriangleInstructions2">Given the length of two sides and an angle between them (SAS), enter a new SAS to create a similar triangle</string>
     <string name="similarTriangles">Similar Triangles</string>
-    <string name="lineAlength">A:</string>
-    <string name="lineBlength">B:</string>
-    <string name="lineClength">C:</string>
+    <string name="A">A:</string>
+    <string name="B">B:</string>
+    <string name="C">C:</string>
     <string name="displayAlength">A length: </string>
     <string name="displayBlength">B length: </string>
     <string name="displayClength">C length: </string>
@@ -58,7 +58,7 @@ The statement will be true if I keep my promise and false if I don"'"t."
     <string name="linesTitle">Lines</string>
     <string name="reflexiveTriangleTitle">Reflexive Triangles</string>
     <string name="pythagorean">Pythagorean Theorem</string>
-    <string name="pythagoreanInstructions1">Given the lengths of sides A and B and the Angle between them, enter the length of side C</string>
+    <string name="pythagoreanInstructions1">Given the lengths of sides A and B, enter the length of side C</string>
     <string name="Graphy">Graphy</string>
 
 </resources>

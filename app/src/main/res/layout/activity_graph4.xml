@@ -55,8 +55,8 @@
                 android:id="@+id/similarInstructions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="left"
                 android:layout_margin="5dp"
-                android:gravity="center"
                 android:maxWidth="500dp"
                 android:text="@string/similarTriangleInstructions1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
@@ -73,6 +73,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:text="@string/displayAlength"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                 <TextView
@@ -80,6 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:text="@string/displayBlength"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                 <TextView
@@ -87,6 +89,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:text="@string/displayClength"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             </LinearLayout>
@@ -103,7 +106,7 @@
                     android:id="@+id/txtEnterAlength"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lineAlength"
+                    android:text="@string/A"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                 <EditText
@@ -119,7 +122,7 @@
                     android:id="@+id/txtEnterBlength"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lineBlength"
+                    android:text="@string/B"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                 <EditText
@@ -135,7 +138,7 @@
                     android:id="@+id/txtEnterClength"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lineClength"
+                    android:text="@string/C"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                 <EditText
@@ -203,10 +206,9 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="fill_vertical|fill_horizontal"
+                    android:layout_gravity="bottom|center_vertical|fill_horizontal"
                     android:layout_margin="10dp"
-                    android:gravity="center"
-                    android:maxLength="400"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
                     android:onClick="onClickMenu"
                     android:text="Menu" />
             </LinearLayout>

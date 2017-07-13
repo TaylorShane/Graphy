@@ -42,6 +42,7 @@ import java.util.Random;
  */
 
 // TODO: fix lengthC to become decimal after first if statement success https://stackoverflow.com/questions/2586301/set-inputtype-for-an-edittext
+// TODO: fix correct response that occurs after hitting submit with no data
 
 /**
  * Similar triangles
@@ -253,9 +254,6 @@ public class Graph4 extends Activity {
         randSlopeB = (randY1B - randY2B) / (randX1B - randX2B);  // Y2-Y1/X2-X1
         double rawRandAngle = Math.atan((randSlopeA - randSlopeB) / (1 - (randSlopeA * randSlopeB)));
         randAngle = Math.round(rawRandAngle*100.0)/100.0;
-        if(randAngle < 0){
-            randAngle = randAngle * -1;
-        }
     }
 
     protected void onClickVerify(View v){

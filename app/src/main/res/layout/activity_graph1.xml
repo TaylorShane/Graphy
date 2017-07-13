@@ -55,8 +55,9 @@
 
             <TextView
                 android:id="@+id/pointInstructions"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="left"
                 android:layout_margin="5dp"
                 android:maxWidth="500dp"
                 android:text="@string/pointInstruction1"
@@ -147,23 +148,22 @@
 
                 <Button
                     android:id="@+id/btnLineGraph"
+                    android:onClick="onClickLineGraph"
+                    android:text="@string/line_graphs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center_vertical|fill_horizontal"
                     android:layout_margin="5dp"
-                    android:onClick="onClickLineGraph"
-                    android:text="@string/line_graphs"
                     android:textAppearance="@style/TextAppearance.AppCompat.Button" />
                 <Button
+                    android:onClick="onClickMenu"
+                    android:text="Menu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="fill_vertical|fill_horizontal"
-                    android:layout_margin="10dp"
-                    android:gravity="center"
-                    android:maxLength="400"
-                    android:onClick="onClickMenu"
-                    android:text="Menu" />
-
+                    android:layout_gravity="bottom|center_vertical|fill_horizontal"
+                    android:layout_margin="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                     />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

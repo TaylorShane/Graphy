@@ -34,6 +34,7 @@ import java.util.Random;
 // TODO: fix random triangles that show up as lines
 // TODO: set focus back to Userx1A after plot attempt
 // TODO: figure out a way to remove last plot attempt if incorrect.
+// TODO:
 
 /**
  * Reflexive triangles
