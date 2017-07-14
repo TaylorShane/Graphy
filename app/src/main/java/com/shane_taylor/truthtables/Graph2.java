@@ -31,6 +31,7 @@ public class Graph2 extends Activity {
     private EditText x1, y1, x2, y2;
     private int Ux1, Uy1, Ux2, Uy2, X1rand, Y1rand, X2rand, Y2rand;
     double uSlope, RandSlope;
+
     private TextView lineInstructions;
 
     @Override
@@ -177,11 +178,12 @@ public class Graph2 extends Activity {
     }
 
     protected void getSlopes(){
-        RandSlope = (double) (Y2rand - Y1rand) / (double)(X2rand - X1rand);  // Y2-Y1/X2-X1
+        RandSlope = (double)(Y2rand - Y1rand) / (double)(X2rand - X1rand);  // Y2-Y1/X2-X1
         uSlope = (double)(Uy2 - Uy1) / (double)(Ux2 - Ux1);
+
         lineInstructions = (TextView) findViewById(R.id.lineInstructions);
 
-        if(RandSlope == uSlope && lineInstructions.getText() == getResources().getString(R.string.lineInstruction1)) {
+        if((RandSlope == uSlope) && lineInstructions.getText() == getResources().getString(R.string.lineInstruction1)) {
 
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
@@ -193,7 +195,7 @@ public class Graph2 extends Activity {
 
             clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
         }
-        else if(RandSlope * uSlope == -1 && lineInstructions.getText() == getResources().getString(R.string.lineInstruction2)){
+        else if( (RandSlope * uSlope == -1 ) && lineInstructions.getText() == getResources().getString(R.string.lineInstruction2)){
 
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
@@ -228,11 +230,11 @@ public class Graph2 extends Activity {
             Uy1 = Integer.parseInt(y1.getText().toString());
             Ux2 = Integer.parseInt(x2.getText().toString());
             Uy2 = Integer.parseInt(y2.getText().toString());
+            getSlopes();
         }
         catch(Exception e){
             Toast.makeText(this, "Please enter integer values", Toast.LENGTH_SHORT).show();
         }
-        getSlopes();
     }
 
     protected void onClickTriangleGraph(View view){

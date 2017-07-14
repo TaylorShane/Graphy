@@ -153,14 +153,14 @@ public class Graph5 extends Activity {
         getRandTriangleSideLengths();
         populateTextViews();
 
-        /** for debugging **/
+        /** for debugging
          results = (TextView) findViewById(R.id.random_values_results);
          results.setText("PLEASE IGNORE THIS TEST DATA" + "\n" +
          "randXA: " + randXA + " randYA: " + randYA  + "\n" +
          "randXB: " + randXB + " randYB: " + randYB + "\n" +
          "randXC: " + randXC + " randYC: " + randYC + "\n" +
          "randClength" + randClength);
-
+        */
 
     }
 
@@ -180,49 +180,7 @@ public class Graph5 extends Activity {
         return (double) tmp / factor;
     }
 
-    protected double getMaxXvalue(){
-        if(randXA > randXB && randXA > randXC)
-            return randXA;
-        else if(randXB > randXA && randXB > randXC)
-             return randXB;
-        else
-            return randXC;
-    }
-
-    protected double getMinXvalue(){
-        if(randXA < randXB && randXA < randXC)
-            return randXA;
-        else if(randXB < randXA && randXB < randXC)
-            return randXB;
-        else
-            return randXC;
-    }
-
-    protected double getMaxYvalue(){
-        if(randYA > randYB && randYA > randYC)
-            return randYA;
-        else if(randYB > randYA && randYB > randYC)
-            return randYB;
-        else
-            return randYC;
-    }
-
-    protected double getMinYvalue(){
-        if(randYA < randYB && randYA < randYC)
-            return randYA;
-        else if(randYB < randYA && randYB < randYC)
-            return randYB;
-        else
-            return randYC;
-    }
-
     protected void setGraphScale(){
-        /*
-        int maxXvalue = (int)getMaxXvalue();
-        int minXvalue = (int)getMinXvalue();
-        int maxYvalue = (int)getMaxYvalue();
-        int minYvalue = (int)getMinYvalue();
-        */
 
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
@@ -267,11 +225,14 @@ public class Graph5 extends Activity {
 
         try{
             userClengthDbl = Double.parseDouble(userClength.getText().toString());
+            verify();
         }
         catch(Exception e){
             Toast.makeText(this, "Please enter integer values", Toast.LENGTH_SHORT).show();
         }
+    }
 
+    protected void verify(){
         if (randClength == userClengthDbl){
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);

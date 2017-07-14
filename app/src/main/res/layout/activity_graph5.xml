@@ -110,18 +110,6 @@
                 android:nextFocusDown="@+id/submitUserData" />
         </LinearLayout>
 
-        
-        <TextView
-            android:id="@+id/random_values_results"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:layout_columnSpan="10"
-            android:layout_gravity="top|center_horizontal|fill_horizontal"
-            android:layout_row="11"
-            android:gravity="fill_horizontal|center"
-            android:textSize="18sp" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"

@@ -1,14 +1,12 @@
 <resources>
     <string name="app_name">Graphy</string>
     <string name="TruthTables">Truth Tables</string>
-    <string name="explained">"If you get an A, then I will give you a dollar."
-The statement will be true if I keep my promise and false if I don"'"t."
-
-"Suppose it"'"s true that you get an A and it"'"s true that I give you a dollar. Since I kept my promise, the implication is {\it true}. This corresponds to the first line in the table."
-
-"Suppose it"'"s true that you get an A but it"'"s false that I give you a dollar. Since I didn"'"t keep my promise, the implication is false. This corresponds to the second line in the table."
-
-"What if it"'"s false that you get an A? Whether or not I give you a dollar, I haven"'"t broken my promise. Thus, the implication can"'"t be false, so (since this is a two-valued logic) it must be true. This explains the last two lines of the table.
+    <string name="explained">\n"Consider the following two part statement: "\n
+        \n"If you get an A, then I will give you a dollar."\n
+        \n"In the corresponding truth table (if P then Q) the P (antecedent) represents the first part, \"If you get an A\".  The Q (consequent) represents the second part, \"then I will give you a dollar\".
+        \n"The entire statement will only be true if I keep my promise and false if I don\'t."
+        \n"Suppose you get an A and I give you a dollar. Since I kept my promise, the implication is it\'s true. This corresponds to the first line in the table."\n"Suppose you get an A but I don\'t give you a dollar. Since I didn\'t keep my promise, the implication is false. This corresponds to the second line in the table."
+        \n"What if you don\'t get an A? Whether or not I give you a dollar, I haven\'t broken my promise. Thus, the implication can\’t be false, so it must be true. This explains the last two lines of the table."\n
     </string>
     <string name="title_activity_graph1">Graph1</string>
     <string name="Plot">Plot</string>

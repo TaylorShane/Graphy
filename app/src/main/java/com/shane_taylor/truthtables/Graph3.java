@@ -279,7 +279,7 @@ public class Graph3 extends Activity {
         userResults.setText("X1A: " + Ux1A + " Y1A: " + Uy1A + " X2A: " + Ux2A + " Y2A: " + Uy2A + "\n"
                 + "Ux1B: " + Ux1B + " Uy1B: " + Uy1B + " X2B: " + Ux2B + " Y2B: " + Uy2B + "\n"
                 + "X1C: " + Ux1C + " Y1C; " + Uy1C + " X2C: " + Ux2C + " Y2C: " + Uy2C);
-         */
+        */
     }
 
     protected void createUserTriangle(){  // Using user coordinates to create user line
@@ -373,11 +373,13 @@ public class Graph3 extends Activity {
             Uy1C = Integer.parseInt(Usery1C.getText().toString());
             Ux2C = Integer.parseInt(Userx2C.getText().toString());
             Uy2C = Integer.parseInt(Usery2C.getText().toString());
+
+            reflexiveII();
         }
         catch(Exception e){
             Toast.makeText(this, "Please enter integer values", Toast.LENGTH_SHORT).show();
         }
-        reflexiveII();
+
     }
 
     protected void onClickReset(View view) {

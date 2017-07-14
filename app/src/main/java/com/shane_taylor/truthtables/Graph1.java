@@ -26,7 +26,7 @@ import com.jjoe64.graphview.series.PointsGraphSeries;
 public class Graph1 extends Activity {
 
     private EditText xcoordinate, ycoordinate;
-    private double X, Y, Xrand, Yrand;
+    private double Xuser, Yuser, Xrand, Yrand;
     private TextView pointInstructions;
 
     @Override
@@ -100,8 +100,11 @@ public class Graph1 extends Activity {
     protected void onClickPlot(View v) {
         getCoordinates();
         createUserPoint();
+    }
+    protected void validate(){
         pointInstructions = (TextView) findViewById(R.id.pointInstructions);
-        if(X == (Xrand * -1) && Y == Yrand && pointInstructions.getText() == getResources().getString(R.string.pointInstruction1)){
+        if(Xuser == (Xrand * -1) && Yuser == Yrand && pointInstructions.getText() == getResources().getString(R.string.pointInstruction1))
+        {
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
             view.setImageResource(R.drawable.correct_large);
@@ -111,7 +114,8 @@ public class Graph1 extends Activity {
             pointInstructions.setText(R.string.pointInstruction2);
             clearForm((ViewGroup) findViewById(R.id.pointsGridLayout));
         }
-        else if( X == Xrand  && Y == (Yrand *-1) && (pointInstructions.getText() == getResources().getString(R.string.pointInstruction2)) )
+
+        else if( Xuser == Xrand  && Yuser == (Yrand *-1) && (pointInstructions.getText() == getResources().getString(R.string.pointInstruction2)) )
         {
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
@@ -122,7 +126,8 @@ public class Graph1 extends Activity {
             pointInstructions.setText(R.string.newPoint);
             clearForm((ViewGroup) findViewById(R.id.pointsGridLayout));
         }
-        else{
+        else
+        {
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
             view.setImageResource(R.drawable.try_again_large);
@@ -131,13 +136,13 @@ public class Graph1 extends Activity {
             toast.show();
         }
     }
-
     protected void getCoordinates() {
         xcoordinate = (EditText) findViewById(R.id.xplot);
         ycoordinate = (EditText) findViewById(R.id.yplot);
         try{
-            X = Double.parseDouble(xcoordinate.getText().toString());
-            Y = Double.parseDouble(ycoordinate.getText().toString());
+            Xuser = Double.parseDouble(xcoordinate.getText().toString());
+            Yuser = Double.parseDouble(ycoordinate.getText().toString());
+            validate();
         }
         catch (Exception e){
             Toast.makeText(this, "Please enter integer values for X and Y ", Toast.LENGTH_SHORT).show();
@@ -147,7 +152,7 @@ public class Graph1 extends Activity {
     protected void createUserPoint(){
         GraphView graph = (GraphView) findViewById(R.id.graph);
         PointsGraphSeries<DataPoint> userSeries = new PointsGraphSeries<>(new DataPoint[] {
-                new DataPoint(X, Y)
+                new DataPoint(Xuser, Yuser)
         });
         graph.addSeries(userSeries);
         userSeries.setColor(Color.parseColor("#ff8a05"));

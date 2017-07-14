@@ -265,11 +265,13 @@ public class Graph4 extends Activity {
             userAlengthDbl = Double.parseDouble(userAlength.getText().toString());
             userBlengthDbl = Double.parseDouble(userBlength.getText().toString());
             userClengthDbl = Double.parseDouble(userClength.getText().toString());
+            verify();
         }
         catch(Exception e){
             Toast.makeText(this, "Please enter integer values", Toast.LENGTH_SHORT).show();
         }
-
+    }
+    protected void verify(){
         similarInstructions = (TextView) findViewById(R.id.similarInstructions);
 
         try{
