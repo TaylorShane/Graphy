@@ -9,7 +9,7 @@
     android:baselineAligned="false"
     android:configChanges="orientation|keyboardHidden"
     android:screenOrientation="landscape"
-    tools:context="com.shane_taylor.truthtables.Graph1">
+    tools:context="com.shane_taylor.Graphy.Graph1">
 
     <LinearLayout
         android:id="@+id/graphGridLayout"

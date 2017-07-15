@@ -1,4 +1,4 @@
-package com.shane_taylor.truthtables;
+package com.shane_taylor.Graphy;
 
 import org.junit.Test;
 

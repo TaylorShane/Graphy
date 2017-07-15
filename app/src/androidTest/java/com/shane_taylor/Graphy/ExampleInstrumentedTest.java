@@ -1,4 +1,4 @@
-package com.shane_taylor.truthtables;
+package com.shane_taylor.Graphy;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.shane_taylor.truthtables">
+    package="com.shane_taylor.Graphy">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Splash"
+            android:name="com.shane_taylor.Graphy.Splash"
             android:configChanges="keyboardHidden|orientation|screenSize"
             >
             <intent-filter>
@@ -20,32 +20,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MenuPageActivity"
+            android:name="com.shane_taylor.Graphy.MenuPageActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape">
         </activity>
         <activity
-            android:name=".Graph1"
+            android:name="com.shane_taylor.Graphy.Graph1"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Graph2"
+            android:name="com.shane_taylor.Graphy.Graph2"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Graph3"
+            android:name="com.shane_taylor.Graphy.Graph3"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Graph4"
+            android:name="com.shane_taylor.Graphy.Graph4"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Graph5"
+            android:name="com.shane_taylor.Graphy.Graph5"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".TruthTables"
+            android:name="com.shane_taylor.Graphy.TruthTables"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape" />
 

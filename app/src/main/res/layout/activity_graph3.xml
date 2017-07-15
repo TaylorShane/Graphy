@@ -9,7 +9,7 @@
     android:columnCount="2"
     android:configChanges="orientation|keyboardHidden"
     android:screenOrientation="landscape"
-    tools:context="com.shane_taylor.truthtables.Graph3">
+    tools:context="com.shane_taylor.Graphy.Graph3">
 
     <LinearLayout
         android:layout_width="0dp"

@@ -8,7 +8,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:screenOrientation="landscape"
-    tools:context="com.shane_taylor.truthtables.MenuPageActivity">
+    tools:context="com.shane_taylor.Graphy.MenuPageActivity">
 
     <ScrollView
         android:layout_width="match_parent"

@@ -9,7 +9,7 @@
     android:keepScreenOn="true"
     android:orientation="vertical"
     android:screenOrientation="landscape"
-    tools:context="com.shane_taylor.truthtables.TruthTables">
+    tools:context="com.shane_taylor.Graphy.TruthTables">
 
     <TextView
         android:id="@+id/textView"
