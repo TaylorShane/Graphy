@@ -115,8 +115,6 @@
                     android:gravity="center"
                     android:inputType="number|numberSigned"
                     android:nextFocusDown="@+id/x1B" />
-
-
             </LinearLayout>
 
             <TextView
@@ -187,7 +185,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|fill_horizontal|center"
-                    android:layout_margin="10dp"
+                    android:layout_margin="5dp"
                     android:gravity="center"
                     android:maxLength="600"
                     android:onClick="onClickPlot"
@@ -199,7 +197,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|fill_horizontal|center"
-                    android:layout_margin="10dp"
+                    android:layout_margin="5dp"
                     android:gravity="center"
                     android:maxLength="400"
                     android:onClick="onClickReset"
@@ -211,17 +209,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center_horizontal|fill_horizontal|center"
-                    android:layout_margin="10dp"
+                    android:layout_margin="5dp"
                     android:gravity="center"
                     android:maxLength="400"
-                    android:onClick="onClickTriangleGraph"
+                    android:onClick="onClickReflexive"
                     android:text="@string/triangle_graph"
                     android:textAppearance="@style/TextAppearance.AppCompat.Button" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center_vertical|fill_horizontal"
-                    android:layout_margin="10dp"
+                    android:layout_margin="5dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Button"
                     android:onClick="onClickMenu"
                     android:text="Menu" />

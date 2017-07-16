@@ -21,8 +21,8 @@
         android:gravity="center"
         android:padding="2dp"
         android:text="@string/TruthTables"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/colorPrimary" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="36sp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -69,8 +69,8 @@
                 android:maxLines="50"
                 android:scrollbars="vertical"
                 android:text="@string/explained"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimary"
+                android:textSize="22sp" />
         </ScrollView>
     </LinearLayout>
 

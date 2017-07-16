@@ -20,9 +20,8 @@ public class TruthTables extends Activity {
         startActivity(intent);
     }
 
-    protected void onClickMenu(View view){
+    public void onClickMenu(View view) {
         Intent intent = new Intent(this, MenuPageActivity.class);
         startActivity(intent);
     }
-
 }
