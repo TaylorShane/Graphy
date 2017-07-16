@@ -178,7 +178,7 @@
                     android:layout_gravity="top|fill_horizontal"
                     android:layout_margin="5dp"
                     android:gravity="center"
-                    android:onClick="onClickVerify"
+                    android:onClick="onClickSubmit"
                     android:text="@string/submit"
                     android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
