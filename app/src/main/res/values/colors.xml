@@ -9,11 +9,7 @@
     <color name="colorPrimaryDark">#454545</color>
     <color name="colorAccent">#ff8a05</color>
 
-
     <color name="dark_green">#037e03</color> <!-- 3,126,3 -->
-    <color name="pink">#e34242</color>
-
-    <color name="purple">#5e184d</color>
     <color name="grey.9">#bababa</color>
     <color name="grey1">#767676</color>
 
@@ -21,13 +17,10 @@
     <color name="grey4">#0f0f0f</color>
     <color name="grey3">#1c1c1c</color>
     <color name="grey2">#454545</color>
-    <color name="maroon">#5e0101</color>
     <color name="white">#ffffff</color>
     <color name="red">#ff0000</color>
     <color name="green">#037e03</color>
     <color name="blue">#0000ff</color>
-
-
     <color name="black_overlay">#66000000</color>
 
 </resources>

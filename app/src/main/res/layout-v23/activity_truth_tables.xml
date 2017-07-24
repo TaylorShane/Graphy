@@ -5,7 +5,6 @@
     android:layout_height="fill_parent"
     android:background="#454545"
     android:configChanges="orientation|keyboardHidden"
-    android:imeOptions="flagNoExtractUi"
     android:keepScreenOn="true"
     android:orientation="vertical"
     android:screenOrientation="landscape"

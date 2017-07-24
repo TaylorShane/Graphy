@@ -5,16 +5,15 @@
         \n"If you get an A, then I will give you a dollar."\n
         \n"In the corresponding truth table (if P then Q) the P (antecedent) represents the first part, \"If you get an A\".  The Q (consequent) represents the second part, \"then I will give you a dollar\".
         \n"The entire statement will only be true if I keep my promise and false if I don\'t."
-        \n"Suppose you get an A and I give you a dollar. Since I kept my promise, the implication is it\'s true. This corresponds to the first line in the table."\n"Suppose you get an A but I don\'t give you a dollar. Since I didn\'t keep my promise, the implication is false. This corresponds to the second line in the table."
+        \n"Suppose you get an A and I give you a dollar. Since I kept my promise, the implication is it\'s true. This corresponds to the first line in the table."
+        \n"Suppose you get an A but I don\'t give you a dollar. Since I didn\'t keep my promise, the implication is false. This corresponds to the second line in the table."
         \n"What if you don\'t get an A? Whether or not I give you a dollar, I haven\'t broken my promise. Thus, the implication can\’t be false, so it must be true. This explains the last two lines of the table."\n
     </string>
-    <string name="title_activity_graph1">Graph1</string>
     <string name="Plot">Plot</string>
     <string name="reset">Reset Graph</string>
     <string name="line_graphs">Line Graphs</string>
     <string name="line_start_coordinates">Line Start Coordinates</string>
     <string name="pointGraphs">Point Graph</string>
-    <string name="lineGraphs">Line Graph</string>
     <string name="line_end_coordinates">Line End Coordinates</string>
     <string name="PthenQ">image of a conditional if P then Q truth table</string>
     <string name="pointInstruction1">Plot the blue point\'s reflection across the Y axis</string>
@@ -30,15 +29,12 @@
     <string name="y1">Y1:</string>
     <string name="x2">X2:</string>
     <string name="y2">Y2:</string>
-    <string name="x3">X3:</string>
-    <string name="y3">Y3:</string>
     <string name="line_b">Line B</string>
     <string name="line_c">Line C</string>
     <string name="triangleInstruction1">Create a reflexive triangle in quadrant II</string>
     <string name="triangleInstruction2">Create a reflexive triangle in quadrant III</string>
     <string name="triangleInstruction3">Create a reflexive triangle in quadrant IV</string>
     <string name="newTriangle">Great Job!  Now hit the "Reset Graph" button for a new triangle</string>
-    <string name="title_activity_graph4">Graph4</string>
     <string name="similarTriangleHeader">Similar Triangles</string>
     <string name="similarTriangleInstructions1">Given the length of each side of the triangle (SSS), enter three side lengths to create a similar triangle</string>
     <string name="similarTriangleInstructions2">Given the length of two sides and an angle between them (SAS), enter a new SAS to create a similar triangle</string>
@@ -56,7 +52,13 @@
     <string name="linesTitle">Lines</string>
     <string name="reflexiveTriangleTitle">Reflexive Triangles</string>
     <string name="pythagorean">Pythagorean Theorem</string>
-    <string name="pythagoreanInstructions1">Given the lengths of sides A and B, enter the length of side C</string>
+    <string name="pythagoreanInstructions1">Given the lengths of sides A and B, enter the length of side C rounded to two decimal places</string>
     <string name="Graphy">Graphy</string>
-
+    <string name="descriptionTruthTable">an image of an if P then Q truth table</string>
+    <string name="descriptionPointGraph">A cartesian plane with a single dot</string>
+    <string name="descriptionLineGraph">A cartesian plane with a single line</string>
+    <string name="descriptionReflexiveGraph">A cartesian plane with a triangle within quadrant I</string>
+    <string name="descriptionSSS">A cartesian plane with a large triangle. Each side of hte triangle has a different color, red, green, and blue.</string>
+    <string name="descriptionPythag">A cartesian plane with a right triangle</string>
+    <string name="descriptionGraphyLogo">A large orange letter G sitting on a small cartesian plane</string>
 </resources>
