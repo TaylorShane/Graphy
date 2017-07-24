@@ -89,14 +89,13 @@
                     android:textColor="@color/black" />
 
                 <EditText
-                    android:id="@+id/xplot"
+                    android:id="@+id/xplotPoints"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:inputType="number|numberSigned|numberDecimal"
-                    android:nextFocusDown="@+id/yplot" />
+                    android:inputType="number|numberSigned" />
 
                 <TextView
                     android:id="@+id/EnterYtextView"
@@ -108,14 +107,13 @@
                     android:textColor="@color/black" />
 
                 <EditText
-                    android:id="@+id/yplot"
+                    android:id="@+id/yplotPoints"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:inputType="number|numberSigned|numberDecimal"
-                    android:nextFocusDown="@+id/btnPlot" />
+                    android:inputType="number|numberSigned" />
             </LinearLayout>
 
             <LinearLayout
@@ -127,7 +125,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/btnPlot"
+                    android:id="@+id/btnPlotPoints"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|fill_horizontal"

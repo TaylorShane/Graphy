@@ -169,7 +169,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:inputType="number|numberSigned"
-                    android:nextFocusDown="@+id/btnPlot" />
+                    android:nextFocusDown="@+id/btnPlotPoints" />
             </LinearLayout>
 
             <LinearLayout
@@ -180,7 +180,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/btnPlot"
+                    android:id="@+id/btnPlotPoints"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|fill_horizontal|center"

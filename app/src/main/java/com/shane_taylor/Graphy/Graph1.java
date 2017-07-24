@@ -125,8 +125,8 @@ public class Graph1 extends Activity {
     }
 
     private void getCoordinates() {
-        EditText xcoordinate = (EditText) findViewById(R.id.xplot);
-        EditText ycoordinate = (EditText) findViewById(R.id.yplot);
+        EditText xcoordinate = (EditText) findViewById(R.id.xplotPoints);
+        EditText ycoordinate = (EditText) findViewById(R.id.yplotPoints);
         try {
             Xuser = Double.parseDouble(xcoordinate.getText().toString());
             Yuser = Double.parseDouble(ycoordinate.getText().toString());
