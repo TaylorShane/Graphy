@@ -40,22 +40,22 @@ import static java.lang.Math.sqrt;
  */
 public class Graph5 extends Activity {
 
-    private int randXA;
-    private int randYA;
-    private int randXB;
-    private int randYB;
-    private int randXC;
-    private int randYC;
-    private int randAlength;
-    private int randBlength;
-    private double randClength;
-    private double userClengthDbl;
-    private TextView lineA;
-    private TextView lineB;
-    private TextView instructions;
-    private EditText userClength;
+    public int randXA;
+    public int randYA;
+    public int randXB;
+    public int randYB;
+    public int randXC;
+    public int randYC;
+    public int randAlength;
+    public int randBlength;
+    public double randClength;
+    public double userClengthDbl;
+    public TextView lineA;
+    public TextView lineB;
+    public TextView instructions;
+    public EditText userClength;
 
-    private static double round(double value, int places) {
+    public static double round(double value, int places) {
         if (places < 0) throw new IllegalArgumentException();
 
         long factor = (long) Math.pow(10, places);
@@ -73,7 +73,7 @@ public class Graph5 extends Activity {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
-    private void createRandomTriangle() { /* random triangle generator */
+    public void createRandomTriangle() { /* random triangle generator */
         Random generator = new Random();
         randXA = 0;
         randYA = 0;
@@ -179,14 +179,14 @@ public class Graph5 extends Activity {
 
     }
 
-    private void getRandTriangleSideLengths() {
+    public void getRandTriangleSideLengths() {
 
         randAlength = (int) Math.round(sqrt(Math.pow(randXB - randXA, 2) + Math.pow(randYB - randYA, 2)));
         randBlength = (int) Math.round(sqrt(Math.pow(randXC - randXB, 2) + Math.pow(randYC - randYB, 2)));
         randClength = round((sqrt(Math.pow(randXA - randXC, 2) + Math.pow(randYA - randYC, 2))), 2);
     }
 
-    private void setGraphScale() {
+    public void setGraphScale() {
 
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
@@ -214,7 +214,7 @@ public class Graph5 extends Activity {
         Yaxis.setThickness(0);
     }
 
-    private void clearForm(ViewGroup group) {
+    public void clearForm(ViewGroup group) {
         for (int i = 0, count = group.getChildCount(); i < count; ++i) {
             View view = group.getChildAt(i);
             if (view instanceof EditText) {
@@ -237,7 +237,7 @@ public class Graph5 extends Activity {
         }
     }
 
-    private void verify() {
+    public void verify() {
         if (randClength == userClengthDbl) {
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
@@ -258,7 +258,7 @@ public class Graph5 extends Activity {
         }
     }
 
-    private void populateTextViews() {
+    public void populateTextViews() {
         getRandTriangleSideLengths();
         lineA = (TextView) findViewById(R.id.txtLineA);
         lineB = (TextView) findViewById(R.id.txtLineB);

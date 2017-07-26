@@ -48,37 +48,37 @@ import static java.lang.Math.sqrt;
  */
 public class Graph4 extends Activity {
 
-    private double randX1A;
-    private double randY1A;
-    private double randX2A;
-    private double randY2A;
-    private double randX1B;
-    private double randY1B;
-    private double randX2B;
-    private double randY2B;
-    private double randX1C;
-    private double randY1C;
-    private double randX2C;
-    private double randY2C;
-    private double randAlength;
-    private double randBlength;
-    private double randClength;
-    private double userAlengthDbl;
-    private double userBlengthDbl;
-    private double userClengthDbl;
-    private double randSlopeA;
-    private double randSlopeB;
-    private double randAngle;
+    public double randX1A;
+    public double randY1A;
+    public double randX2A;
+    public double randY2A;
+    public double randX1B;
+    public double randY1B;
+    public double randX2B;
+    public double randY2B;
+    public double randX1C;
+    public double randY1C;
+    public double randX2C;
+    public double randY2C;
+    public double randAlength;
+    public double randBlength;
+    public double randClength;
+    public double userAlengthDbl;
+    public double userBlengthDbl;
+    public double userClengthDbl;
+    public double randSlopeA;
+    public double randSlopeB;
+    public double randAngle;
 
     // --Commented out by Inspection (7/24/2017 3:41 PM):public TextView results;
-    private TextView lineA;
-    private TextView lineB;
-    private TextView lineC;
-    private TextView similarInstructions;
-    private TextView txtEnterClength;
-    private EditText userAlength;
-    private EditText userBlength;
-    private EditText userClength;
+    public TextView lineA;
+    public TextView lineB;
+    public TextView lineC;
+    public TextView similarInstructions;
+    public TextView txtEnterClength;
+    public EditText userAlength;
+    public EditText userBlength;
+    public EditText userClength;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +90,7 @@ public class Graph4 extends Activity {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
-    private void setGraphScale() {
+    public void setGraphScale() {
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
         LineGraphSeries<DataPoint> Xaxis = new LineGraphSeries<>(new DataPoint[]{
@@ -146,7 +146,7 @@ public class Graph4 extends Activity {
         }
     }
 
-    private void createRandomTriangle() { /* random triangle generator - in quadrant I*/
+    public void createRandomTriangle() { /* random triangle generator - in quadrant I*/
 
         similarInstructions = (TextView) findViewById(R.id.similarInstructions);
         Random random = new Random();
@@ -252,13 +252,13 @@ public class Graph4 extends Activity {
         populateTextViews();
     }
 
-    private void getRandTriangleSideLengths() {
+    public void getRandTriangleSideLengths() {
         randAlength = Math.round(sqrt(Math.pow(randX2A - randX1A, 2) + Math.pow(randY2A - randY1A, 2)));
         randBlength = Math.round(sqrt(Math.pow(randX2B - randX1B, 2) + Math.pow(randY2B - randY1B, 2)));
         randClength = Math.round(sqrt(Math.pow(randX2C - randX1C, 2) + Math.pow(randY2C - randY1C, 2)));
     }
 
-    private void populateTextViews() {
+    public void populateTextViews() {
         getRandTriangleSideLengths();
         lineA = (TextView) findViewById(R.id.txtLineA);
         lineB = (TextView) findViewById(R.id.txtLineB);
@@ -272,14 +272,14 @@ public class Graph4 extends Activity {
         lineC.setText(getString(R.string.displayClength) + " " + (int) randClength);
     }
 
-    private void getSlopes() {
+    public void getSlopes() {
         randSlopeA = (randY1A - randY2A) / (randX1A - randX2A);  // Y2-Y1/X2-X1
         randSlopeB = (randY1B - randY2B) / (randX1B - randX2B);  // Y2-Y1/X2-X1
         double rawRandAngle = Math.atan((randSlopeA - randSlopeB) / (1 - (randSlopeA * randSlopeB)));
         randAngle = Math.round(rawRandAngle * 100.0) / 100.0;
     }
 
-    private void verify() {
+    public void verify() {
         similarInstructions = (TextView) findViewById(R.id.similarInstructions);
 
         if (randAlength == userAlengthDbl && randBlength == userBlengthDbl &&
@@ -342,7 +342,7 @@ public class Graph4 extends Activity {
 
     }
 
-    private void clearForm(ViewGroup group) {
+    public void clearForm(ViewGroup group) {
         for (int i = 0, count = group.getChildCount(); i < count; ++i) {
             View view = group.getChildAt(i);
             if (view instanceof EditText) {

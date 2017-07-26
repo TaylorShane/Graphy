@@ -28,7 +28,7 @@ import java.util.Random;
  */
 public class Graph2 extends Activity {
 
-    private int Ux1, Uy1, Ux2, Uy2, X1rand, Y1rand, X2rand, Y2rand;
+    public int Ux1, Uy1, Ux2, Uy2, X1rand, Y1rand, X2rand, Y2rand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +83,7 @@ public class Graph2 extends Activity {
         randomLine.setThickness(3);
     }
 
-    private void setGraphScale() {
+    public void setGraphScale() {
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
         LineGraphSeries<DataPoint> Xaxis = new LineGraphSeries<>(new DataPoint[]{
@@ -139,7 +139,7 @@ public class Graph2 extends Activity {
         }
     }
 
-    private void createUserLine() {  // Using user coordinates to create user line
+    public void createUserLine() {  // Using user coordinates to create user line
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
         /*
@@ -165,7 +165,7 @@ public class Graph2 extends Activity {
         userLine.setColor(Color.parseColor("#ff8a05"));
     }
 
-    private void getSlopes() {
+    public void getSlopes() {
         double randSlope = (double) (Y2rand - Y1rand) / (double) (X2rand - X1rand);
         double uSlope = (double) (Uy2 - Uy1) / (double) (Ux2 - Ux1);
 
@@ -205,7 +205,7 @@ public class Graph2 extends Activity {
 
     }
 
-    private void getUserCoordinates() {  // Getting user coordinates
+    public void getUserCoordinates() {  // Getting user coordinates
         EditText x1 = (EditText) findViewById(R.id.x1);
         EditText y1 = (EditText) findViewById(R.id.y1A);
         EditText x2 = (EditText) findViewById(R.id.x1B);
@@ -228,7 +228,7 @@ public class Graph2 extends Activity {
         startActivity(intent);
     }
 
-    private void clearForm(ViewGroup group) {
+    public void clearForm(ViewGroup group) {
         for (int i = 0, count = group.getChildCount(); i < count; ++i) {
             View view = group.getChildAt(i);
             if (view instanceof EditText) {
