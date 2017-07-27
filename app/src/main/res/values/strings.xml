@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Graphy</string>
     <string name="TruthTables">Truth Tables</string>
-    <string name="explained">\n"Consider the following two part statement: "\n
+    <string name="explained">"Consider the following two part statement: "\n
         \n"If you get an A, then I will give you a dollar."\n
         \n"In the corresponding truth table (if P then Q) the P (antecedent) represents the first part, \"If you get an A\".  The Q (consequent) represents the second part, \"then I will give you a dollar\".
         \n"The entire statement will only be true if I keep my promise and false if I don\'t."
