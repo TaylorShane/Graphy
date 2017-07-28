@@ -20,22 +20,9 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 import java.util.Random;
 
 /**
- * Graph3 method call order
- * <p>
- * createRandomTriangle
- * setGraphScale
- * hideSoftKeyboard
- * <p>
- * onClickPlot ->
- * createUserLine
- * getUserCoordinates ->
- * evaluate
- */
-// TODO: figure out a way to remove last plot attempt if incorrect.
-
-/**
  * Reflexive triangles
  */
+
 public class Graph3 extends Activity {
 
     private int Ux1A, Uy1A, Ux2A, Uy2A, Ux1B, Uy1B, Ux2B, Uy2B, Ux1C, Uy1C, Ux2C, Uy2C;
@@ -209,12 +196,6 @@ public class Graph3 extends Activity {
         }
     }
 
-    public void onClickPlot(View v) { /* button click method **/
-
-        getUserCoordinates();
-
-    }
-
     public void evaluate() { // y=y, x= -1*x
         TextView triangleInstructions = (TextView) findViewById(R.id.triangleInstructions);
 
@@ -381,12 +362,25 @@ public class Graph3 extends Activity {
             Uy1C = Integer.parseInt(usery1C.getText().toString());
             Ux2C = Integer.parseInt(userx2C.getText().toString());
             Uy2C = Integer.parseInt(usery2C.getText().toString());
-
+        } catch (Exception e) {
+            Toast.makeText(this, "Don't forget to plot any points!", Toast.LENGTH_SHORT).show();
+        }
+        if(Ux1A > 10 || Uy1A > 10 || Ux2A > 10 || Uy2A > 10 ||
+                Ux1B > 10 || Uy1B > 10 || Ux2B > 10 || Uy2B > 10 ||
+                Ux1C > 10 || Uy1C > 10 || Ux2C > 10 || Uy2C > 10){
+            Toast.makeText(this, "Please enter integer values of 10 or less", Toast.LENGTH_SHORT).show();
+        }
+        else{
             createUserTriangle();
             evaluate();
-        } catch (Exception e) {
-            Toast.makeText(this, "Please enter integer values", Toast.LENGTH_SHORT).show();
         }
+
+
+    }
+
+    public void onClickPlot(View v) { /* button click method **/
+
+        getUserCoordinates();
 
     }
 

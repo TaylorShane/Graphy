@@ -19,13 +19,10 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.Random;
 
-/*
-   TODO: fix reset graph to work with chromebook
- */
-
 /**
  * Lines Graph
  */
+
 public class Graph2 extends Activity {
 
     public int Ux1, Uy1, Ux2, Uy2, X1rand, Y1rand, X2rand, Y2rand;
@@ -172,7 +169,6 @@ public class Graph2 extends Activity {
         TextView lineInstructions = (TextView) findViewById(R.id.lineInstructions);
 
         if ((randSlope == uSlope) && lineInstructions.getText() == getResources().getString(R.string.lineInstruction1)) {
-
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
             view.setImageResource(R.drawable.correct_large);
@@ -183,7 +179,6 @@ public class Graph2 extends Activity {
 
             clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
         } else if ((randSlope * uSlope == -1) && lineInstructions.getText() == getResources().getString(R.string.lineInstruction2)) {
-
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
             view.setImageResource(R.drawable.correct_large);
@@ -194,7 +189,6 @@ public class Graph2 extends Activity {
 
             clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
         } else {
-
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
             view.setImageResource(R.drawable.try_again_large);
@@ -216,10 +210,15 @@ public class Graph2 extends Activity {
             Uy1 = Integer.parseInt(y1.getText().toString());
             Ux2 = Integer.parseInt(x2.getText().toString());
             Uy2 = Integer.parseInt(y2.getText().toString());
-            createUserLine();
-            getSlopes();
         } catch (Exception e) {
             Toast.makeText(this, "Please enter integer values", Toast.LENGTH_SHORT).show();
+        }
+        if(Ux1> 10 || Ux2 > 10 || Uy1 > 10 || Uy2 > 10) {
+            Toast.makeText(this, "Please enter integer values of 10 or less", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            getSlopes();
+            createUserLine();
         }
     }
 

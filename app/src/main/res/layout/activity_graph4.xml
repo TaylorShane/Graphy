@@ -115,7 +115,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:inputType="number|numberDecimal"
-                    android:nextFocusDown="@+id/userLineB" />
+                    android:nextFocusDown="@+id/userLineB"
+                    android:imeOptions="flagNoExtractUi"/>
 
                 <TextView
                     android:id="@+id/txtEnterBlength"
@@ -131,7 +132,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:inputType="number|numberDecimal"
-                    android:nextFocusDown="@+id/userLineC" />
+                    android:nextFocusDown="@+id/userLineC"
+                    android:imeOptions="flagNoExtractUi"/>
 
                 <TextView
                     android:id="@+id/txtEnterClength"
@@ -147,7 +149,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:inputType="number|numberSigned|numberDecimal"
-                    android:nextFocusDown="@+id/submitUserData" />
+                    android:nextFocusDown="@+id/submitUserData"
+                    android:imeOptions="flagNoExtractUi"/>
 
             </LinearLayout>
             <!-- for debugging

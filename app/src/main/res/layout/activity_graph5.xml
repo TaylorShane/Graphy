@@ -106,7 +106,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:inputType="number|numberDecimal"
-                android:nextFocusDown="@+id/submitUserData" />
+                android:nextFocusDown="@+id/submitUserData"
+                android:imeOptions="flagNoExtractUi"/>
         </LinearLayout>
 
         <LinearLayout

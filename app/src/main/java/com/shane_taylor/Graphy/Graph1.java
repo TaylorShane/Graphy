@@ -23,6 +23,7 @@ import java.util.Random;
 /**
  * Points Graph
  */
+
 public class Graph1 extends Activity {
 
     public double Xuser, Yuser, Xrand, Yrand;
@@ -121,6 +122,7 @@ public class Graph1 extends Activity {
             toast.setView(view);
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
+            createUserPoint();
         }
     }
 
@@ -130,10 +132,16 @@ public class Graph1 extends Activity {
         try {
             Xuser = Double.parseDouble(xcoordinate.getText().toString());
             Yuser = Double.parseDouble(ycoordinate.getText().toString());
-            createUserPoint();
-            validate();
         } catch (Exception e) {
             Toast.makeText(this, "Please enter integer values for X and Y ", Toast.LENGTH_SHORT).show();
+        }
+        if (Xuser > 10 || Yuser > 10) {
+            Toast.makeText(this, "Please enter integer values of 10 or less", Toast.LENGTH_SHORT).show();
+
+        }
+        else{
+            validate();
+            createUserPoint();
         }
     }
 

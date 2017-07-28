@@ -96,7 +96,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:inputType="number|numberSigned|numberDecimal"
-                    android:nextFocusDown="@+id/yplot" />
+                    android:nextFocusDown="@+id/yplot"
+                    android:imeOptions="flagNoExtractUi"/>
 
                 <TextView
                     android:id="@+id/EnterYtextView"
@@ -115,7 +116,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:inputType="number|numberSigned|numberDecimal"
-                    android:nextFocusDown="@+id/btnPlot" />
+                    android:nextFocusDown="@+id/btnPlot"
+                    android:imeOptions="flagNoExtractUi"/>
             </LinearLayout>
 
             <LinearLayout

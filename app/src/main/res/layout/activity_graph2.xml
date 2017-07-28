@@ -94,7 +94,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:inputType="number|numberSigned"
-                    android:nextFocusDown="@+id/y1A" />
+                    android:nextFocusDown="@+id/y1A"
+                    android:imeOptions="flagNoExtractUi"/>
 
                 <TextView
                     android:id="@+id/EnterYtextView"
@@ -113,7 +114,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:inputType="number|numberSigned"
-                    android:nextFocusDown="@+id/x1B" />
+                    android:nextFocusDown="@+id/x1B"
+                    android:imeOptions="flagNoExtractUi"/>
             </LinearLayout>
 
             <TextView
@@ -150,7 +152,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:inputType="number|numberSigned"
-                    android:nextFocusDown="@+id/y1B" />
+                    android:nextFocusDown="@+id/y1B"
+                    android:imeOptions="flagNoExtractUi"/>
 
                 <TextView
                     android:id="@+id/EnterYtextView2"
@@ -169,7 +172,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:inputType="number|numberSigned"
-                    android:nextFocusDown="@+id/btnPlot" />
+                    android:nextFocusDown="@+id/btnPlot"
+                    android:imeOptions="flagNoExtractUi"/>
             </LinearLayout>
 
             <LinearLayout
