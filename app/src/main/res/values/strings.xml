@@ -25,10 +25,10 @@
     <string name="newLine">Great Job!  Now hit the "Reset Graph" button for a new line</string>
     <string name="triangle_graph">Reflexive Graph</string>
     <string name="line_a">Line A</string>
-    <string name="x1">X1:</string>
-    <string name="y1">Y1:</string>
-    <string name="x2">X2:</string>
-    <string name="y2">Y2:</string>
+    <string name="x1">X<sub><small>1</small></sub>:</string>
+    <string name="y1">Y<sub><small>1</small></sub>:</string>
+    <string name="x2">X<sub><small>2</small></sub>:</string>
+    <string name="y2">Y<sub><small>2</small></sub>:</string>
     <string name="line_b">Line B</string>
     <string name="line_c">Line C</string>
     <string name="triangleInstruction1">Create a reflexive triangle in quadrant II</string>

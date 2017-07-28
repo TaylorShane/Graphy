@@ -68,7 +68,8 @@
                 android:layout_margin="5dp"
                 android:gravity="bottom"
                 android:text="@string/line_start_coordinates"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -80,42 +81,44 @@
                 <TextView
                     android:id="@+id/EnterXtextView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
-                    android:gravity="end"
-                    android:text="@string/x1" />
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/x1"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/x1"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center|start"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:imeOptions="flagNoExtractUi"
                     android:inputType="number|numberSigned"
-                    android:nextFocusDown="@+id/y1A"
-                    android:imeOptions="flagNoExtractUi"/>
+                    android:nextFocusDown="@+id/y1A" />
 
                 <TextView
                     android:id="@+id/EnterYtextView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
-                    android:gravity="end"
-                    android:text="@string/y1" />
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/y1"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/y1A"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center|start"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:imeOptions="flagNoExtractUi"
                     android:inputType="number|numberSigned"
-                    android:nextFocusDown="@+id/x1B"
-                    android:imeOptions="flagNoExtractUi"/>
+                    android:nextFocusDown="@+id/x1B" />
             </LinearLayout>
 
             <TextView
@@ -126,7 +129,8 @@
                 android:layout_margin="5dp"
                 android:gravity="bottom"
                 android:text="@string/line_end_coordinates"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -138,42 +142,44 @@
                 <TextView
                     android:id="@+id/EnterXtextView2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
-                    android:gravity="end"
-                    android:text="@string/x2" />
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/x2"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/x1B"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center|start"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:imeOptions="flagNoExtractUi"
                     android:inputType="number|numberSigned"
-                    android:nextFocusDown="@+id/y1B"
-                    android:imeOptions="flagNoExtractUi"/>
+                    android:nextFocusDown="@+id/y1B" />
 
                 <TextView
                     android:id="@+id/EnterYtextView2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
-                    android:gravity="end"
-                    android:text="@string/y2" />
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/y2"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/y1B"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center|start"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:imeOptions="flagNoExtractUi"
                     android:inputType="number|numberSigned"
-                    android:nextFocusDown="@+id/btnPlot"
-                    android:imeOptions="flagNoExtractUi"/>
+                    android:nextFocusDown="@+id/btnPlot" />
             </LinearLayout>
 
             <LinearLayout

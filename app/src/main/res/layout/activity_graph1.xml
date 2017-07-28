@@ -69,7 +69,8 @@
                 android:layout_gravity="left"
                 android:layout_margin="5dp"
                 android:text="@string/enter_x_and_y"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -82,7 +83,7 @@
                 <TextView
                     android:id="@+id/EnterXtextView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="@string/x1"
@@ -91,33 +92,33 @@
                 <EditText
                     android:id="@+id/xplot"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:inputType="number|numberSigned|numberDecimal"
-                    android:nextFocusDown="@+id/yplot"
-                    android:imeOptions="flagNoExtractUi"/>
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="number|numberSigned"
+                    android:nextFocusDown="@+id/yplot" />
 
                 <TextView
                     android:id="@+id/EnterYtextView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:gravity="center_horizontal"
+                    android:gravity="center"
                     android:text="@string/y1"
                     android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/yplot"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:inputType="number|numberSigned|numberDecimal"
-                    android:nextFocusDown="@+id/btnPlot"
-                    android:imeOptions="flagNoExtractUi"/>
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="number|numberSigned"
+                    android:nextFocusDown="@+id/btnPlot" />
             </LinearLayout>
 
             <LinearLayout

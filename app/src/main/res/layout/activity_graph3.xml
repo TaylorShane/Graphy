@@ -82,38 +82,40 @@
                 <TextView
                     android:id="@+id/EnterX1A"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="1dp"
-                    android:gravity="end"
-                    android:text="@string/x1" />
+                    android:gravity="center"
+                    android:text="@string/x1"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/x1A"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center|start"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:imeOptions="flagNoExtractUi"
                     android:inputType="number|numberSigned"
-                    android:nextFocusDown="@+id/y1A"
-                    android:imeOptions="flagNoExtractUi"/>
+                    android:nextFocusDown="@+id/y1A" />
 
                 <TextView
                     android:id="@+id/EnterY1A"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="1dp"
-                    android:gravity="end"
-                    android:text="@string/y1" />
+                    android:gravity="center"
+                    android:text="@string/y1"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/y1A"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center|start"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -124,17 +126,18 @@
                 <TextView
                     android:id="@+id/EnterX2A"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="1dp"
-                    android:gravity="end"
-                    android:text="@string/x2" />
+                    android:gravity="center"
+                    android:text="@string/x2"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/x2A"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center|start"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -145,17 +148,18 @@
                 <TextView
                     android:id="@+id/EnterY2A"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="1dp"
-                    android:gravity="end"
-                    android:text="@string/y2" />
+                    android:gravity="center"
+                    android:text="@string/y2"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/y2A"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center|start"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -185,17 +189,18 @@
                 <TextView
                     android:id="@+id/EnterX1B"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="1dp"
-                    android:gravity="end"
-                    android:text="@string/x1" />
+                    android:gravity="center"
+                    android:text="@string/x1"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/x1B"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center|start"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -206,17 +211,18 @@
                 <TextView
                     android:id="@+id/EnterY1B"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="1dp"
-                    android:gravity="end"
-                    android:text="@string/y1" />
+                    android:gravity="center"
+                    android:text="@string/y1"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/y1B"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center|start"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -227,17 +233,18 @@
                 <TextView
                     android:id="@+id/EnterX2B"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="1dp"
-                    android:gravity="end"
-                    android:text="@string/x2" />
+                    android:gravity="center"
+                    android:text="@string/x2"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/x2B"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center|start"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -248,17 +255,18 @@
                 <TextView
                     android:id="@+id/EnterY2B"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="1dp"
-                    android:gravity="end"
-                    android:text="@string/y2" />
+                    android:gravity="center"
+                    android:text="@string/y2"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/y2B"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center|start"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -288,38 +296,40 @@
                 <TextView
                     android:id="@+id/EnterX1C"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="1dp"
-                    android:gravity="end"
-                    android:text="@string/x1" />
+                    android:gravity="center"
+                    android:text="@string/x1"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/x1C"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center|start"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:imeOptions="flagNoExtractUi"
                     android:inputType="number|numberSigned"
-                    android:nextFocusDown="@+id/y1C"
-                    android:imeOptions="flagNoExtractUi"/>
+                    android:nextFocusDown="@+id/y1C" />
 
                 <TextView
                     android:id="@+id/EnterY1C"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="1dp"
-                    android:gravity="end"
-                    android:text="@string/y1" />
+                    android:gravity="center"
+                    android:text="@string/y1"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/y1C"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center|start"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -330,17 +340,18 @@
                 <TextView
                     android:id="@+id/EnterX2C"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="1dp"
-                    android:gravity="end"
-                    android:text="@string/x2" />
+                    android:gravity="center"
+                    android:text="@string/x2"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/x2C"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center|start"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -351,17 +362,18 @@
                 <TextView
                     android:id="@+id/EnterY2C"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|end"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="1dp"
-                    android:gravity="end"
-                    android:text="@string/y2" />
+                    android:gravity="center"
+                    android:text="@string/y2"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/y2C"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center|start"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:gravity="center"

@@ -94,20 +94,23 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:layout_margin="5dp"
+                android:gravity="center"
                 android:text="@string/C"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/dark_green" />
 
             <EditText
                 android:id="@+id/userLineClength"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:imeOptions="flagNoExtractUi"
                 android:inputType="number|numberDecimal"
-                android:nextFocusDown="@+id/submitUserData"
-                android:imeOptions="flagNoExtractUi"/>
+                android:nextFocusDown="@+id/submitUserData" />
         </LinearLayout>
 
         <LinearLayout
