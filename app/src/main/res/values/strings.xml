@@ -61,4 +61,6 @@
     <string name="descriptionSSS">A cartesian plane with a large triangle. Each side of hte triangle has a different color, red, green, and blue.</string>
     <string name="descriptionPythag">A cartesian plane with a right triangle</string>
     <string name="descriptionGraphyLogo">A large orange letter G sitting on a small cartesian plane</string>
+    <string name="outOfBounds">Please enter integer values from -10 to 10</string>
+    <string name="blank">Please enter integer values for X and Y</string>
 </resources>

@@ -363,12 +363,12 @@ public class Graph3 extends Activity {
             Ux2C = Integer.parseInt(userx2C.getText().toString());
             Uy2C = Integer.parseInt(usery2C.getText().toString());
         } catch (Exception e) {
-            Toast.makeText(this, "Don't forget to plot any points!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.blank, Toast.LENGTH_SHORT).show();
         }
         if(Ux1A > 10 || Uy1A > 10 || Ux2A > 10 || Uy2A > 10 ||
                 Ux1B > 10 || Uy1B > 10 || Ux2B > 10 || Uy2B > 10 ||
                 Ux1C > 10 || Uy1C > 10 || Ux2C > 10 || Uy2C > 10){
-            Toast.makeText(this, "Please enter integer values of 10 or less", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,  R.string.outOfBounds, Toast.LENGTH_SHORT).show();
         }
         else{
             createUserTriangle();

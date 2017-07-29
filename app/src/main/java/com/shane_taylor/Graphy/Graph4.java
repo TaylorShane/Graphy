@@ -380,7 +380,7 @@ public class Graph4 extends Activity {
             userClengthDbl = Double.parseDouble(userClength.getText().toString());
             verify();
         } catch (Exception e) {
-            Toast.makeText(this, "Please enter integer values", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.blank, Toast.LENGTH_SHORT).show();
         }
     }
 }
