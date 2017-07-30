@@ -47,7 +47,6 @@
             android:name="com.shane_taylor.Graphy.TruthTables"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape" />
-
     </application>
 
 </manifest>

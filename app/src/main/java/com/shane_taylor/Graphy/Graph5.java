@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -19,21 +18,6 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 import java.util.Random;
 
 import static java.lang.Math.sqrt;
-
-/*
- Graph5 method call order
-
-  onCreate ->
-   hideSoftKeyboard
-   createRandomTriangle ->
-   	graph.removeAllSeries
-       setGraphScale
-       getRandTriangleSideLengths
-       populateTextViews
-
-  onClickVerify ->
-   clearForm
- */
 
 /**
  * Pythagorean theorem triangle
@@ -89,7 +73,6 @@ public class Graph5 extends Activity {
                 randXC = randXB * 3;
             randYC = randYA * -3;
         }
-
 
         //randSlopeA = (randY1A - randY2A) / (randX1A - randX2A);  // Y2-Y1/X2-X1
         //randSlopeB = (randY1B - randY2B) / (randX1B - randX2B);  // Y2-Y1/X2-X1
@@ -176,13 +159,12 @@ public class Graph5 extends Activity {
          "randXC: " + randXC + " randYC: " + randYC + "\n" +
          "randClength" + randClength);
         */
-
     }
 
     public void getRandTriangleSideLengths() {
 
-        randAlength = (int) Math.round(sqrt(Math.pow(randXB - randXA, 2) + Math.pow(randYB - randYA, 2)));
-        randBlength = (int) Math.round(sqrt(Math.pow(randXC - randXB, 2) + Math.pow(randYC - randYB, 2)));
+        randAlength = (int) Math.round(sqrt(Math.pow(randXC - randXB, 2) + Math.pow(randYC - randYB, 2)));
+        randBlength = (int) Math.round(sqrt(Math.pow(randXB - randXA, 2) + Math.pow(randYB - randYA, 2)));
         randClength = round((sqrt(Math.pow(randXA - randXC, 2) + Math.pow(randYA - randYC, 2))), 2);
     }
 

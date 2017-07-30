@@ -210,16 +210,17 @@ public class Graph2 extends Activity {
             Uy1 = Integer.parseInt(y1.getText().toString());
             Ux2 = Integer.parseInt(x2.getText().toString());
             Uy2 = Integer.parseInt(y2.getText().toString());
+            if(Ux1> 10 || Ux2 > 10 || Uy1 > 10 || Uy2 > 10) {
+                Toast.makeText(this,  R.string.outOfBounds, Toast.LENGTH_SHORT).show();
+            }
+            else {
+                getSlopes();
+                createUserLine();
+            }
         } catch (Exception e) {
             Toast.makeText(this, R.string.blank, Toast.LENGTH_SHORT).show();
         }
-        if(Ux1> 10 || Ux2 > 10 || Uy1 > 10 || Uy2 > 10) {
-            Toast.makeText(this,  R.string.outOfBounds, Toast.LENGTH_SHORT).show();
-        }
-        else {
-            getSlopes();
-            createUserLine();
-        }
+
     }
 
     public void onClickReflexive(View view) {

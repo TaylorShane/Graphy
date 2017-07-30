@@ -122,7 +122,6 @@ public class Graph1 extends Activity {
             toast.setView(view);
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
-            createUserPoint();
         }
     }
 
@@ -132,16 +131,16 @@ public class Graph1 extends Activity {
         try {
             Xuser = Double.parseDouble(xcoordinate.getText().toString());
             Yuser = Double.parseDouble(ycoordinate.getText().toString());
+            if (Xuser > 10 || Yuser > 10) {
+                Toast.makeText(this, R.string.outOfBounds, Toast.LENGTH_SHORT).show();
+
+            }
+            else {
+                validate();
+                createUserPoint();
+            }
         } catch (Exception e) {
             Toast.makeText(this, R.string.blank, Toast.LENGTH_SHORT).show();
-        }
-        if (Xuser > 10 || Yuser > 10) {
-            Toast.makeText(this, R.string.outOfBounds, Toast.LENGTH_SHORT).show();
-
-        }
-        else{
-            validate();
-            createUserPoint();
         }
     }
 

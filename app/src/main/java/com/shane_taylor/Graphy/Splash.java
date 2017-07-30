@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 
-import com.winsontan520.wversionmanager.library.WVersionManager;
-
 public class Splash extends Activity {
 
     @Override
@@ -14,8 +12,6 @@ public class Splash extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_splash);
-
-        checkVersion();
 
         Thread splash = new Thread() {
             @Override
@@ -35,9 +31,4 @@ public class Splash extends Activity {
 
     }
 
-    private void checkVersion() {
-        WVersionManager versionManager = new WVersionManager(this);
-        versionManager.setVersionContentUrl("http://www.shane-taylor.com/Graphy_version.txt"); // your update content url, see the response format below
-        versionManager.checkVersion();
-    }
 }

@@ -234,11 +234,11 @@ public class Graph3 extends Activity {
             clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
 
         } else if (((((Ux1A == randX1A) || (Ux1A == randX2A)) && ((Uy1A == randY1A * -1) || (Uy1A == randY2A * -1))) &&
-                (((Ux2A == randX2A) || (Ux2A == randX1A)) && ((Uy2A == randY2A * -1) || (Uy2A == randY1A * -1))) &&
-                (((Ux1B == randX2B) || (Ux1B == randX2B)) && ((Uy1B == randY1B * -1) || (Uy1B == randY2B * -1))) &&
-                (((Ux2B == randX2B) || (Ux2B == randX1B)) && ((Uy2B == randY2B * -1) || (Uy2B == randY1B * -1))) &&
+                (((Ux2A == randX1A) || (Ux2A == randX2A)) && ((Uy2A == randY2A * -1) || (Uy2A == randY1A * -1))) &&
+                (((Ux1B == randX1B) || (Ux1B == randX2B)) && ((Uy1B == randY1B * -1) || (Uy1B == randY2B * -1))) &&
+                (((Ux2B == randX1B) || (Ux2B == randX2B)) && ((Uy2B == randY2B * -1) || (Uy2B == randY1B * -1))) &&
                 (((Ux1C == randX1C) || (Ux1C == randX2C)) && ((Uy1C == randY1C * -1) || (Uy1C == randY2C * -1))) &&
-                (((Ux2C == randX2C) || (Ux2C == randX1C)) && ((Uy2C == randY2C * -1) || (Uy2C == randY1C * -1)))) &&
+                (((Ux2C == randX1C) || (Ux2C == randX2C)) && ((Uy2C == randY2C * -1) || (Uy2C == randY1C * -1)))) &&
                 triangleInstructions.getText() == getResources().getString(R.string.triangleInstruction3)) {
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
@@ -362,19 +362,18 @@ public class Graph3 extends Activity {
             Uy1C = Integer.parseInt(usery1C.getText().toString());
             Ux2C = Integer.parseInt(userx2C.getText().toString());
             Uy2C = Integer.parseInt(usery2C.getText().toString());
+            if(Ux1A > 10 || Uy1A > 10 || Ux2A > 10 || Uy2A > 10 ||
+                    Ux1B > 10 || Uy1B > 10 || Ux2B > 10 || Uy2B > 10 ||
+                    Ux1C > 10 || Uy1C > 10 || Ux2C > 10 || Uy2C > 10){
+                Toast.makeText(this,  R.string.outOfBounds, Toast.LENGTH_SHORT).show();
+            }
+            else{
+                createUserTriangle();
+                evaluate();
+            }
         } catch (Exception e) {
             Toast.makeText(this, R.string.blank, Toast.LENGTH_SHORT).show();
         }
-        if(Ux1A > 10 || Uy1A > 10 || Ux2A > 10 || Uy2A > 10 ||
-                Ux1B > 10 || Uy1B > 10 || Ux2B > 10 || Uy2B > 10 ||
-                Ux1C > 10 || Uy1C > 10 || Ux2C > 10 || Uy2C > 10){
-            Toast.makeText(this,  R.string.outOfBounds, Toast.LENGTH_SHORT).show();
-        }
-        else{
-            createUserTriangle();
-            evaluate();
-        }
-
 
     }
 
