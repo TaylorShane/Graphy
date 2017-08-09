@@ -8,8 +8,8 @@ android {
         applicationId "com.shane_taylor.Graphy"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 26
-        versionName "2.6"
+        versionCode 27
+        versionName "2.7"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
