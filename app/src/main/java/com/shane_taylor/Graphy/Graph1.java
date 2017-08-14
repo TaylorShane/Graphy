@@ -26,7 +26,10 @@ import java.util.Random;
 
 public class Graph1 extends Activity {
 
-    public double Xuser, Yuser, Xrand, Yrand;
+    private double Xuser;
+    private double Yuser;
+    private double Xrand;
+    private double Yrand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +41,7 @@ public class Graph1 extends Activity {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
-    public void createRandomPoint() {
+    private void createRandomPoint() {
         Random generator = new Random();
         Xrand = -10 + generator.nextInt(20);
         Yrand = -10 + generator.nextInt(20);
@@ -53,7 +56,7 @@ public class Graph1 extends Activity {
         randomPoint.setSize(7);
     }
 
-    public void createGraphScale() {
+    private void createGraphScale() {
         GraphView graph = (GraphView) findViewById(R.id.graph);
 
         PointsGraphSeries<DataPoint> graphScale = new PointsGraphSeries<DataPoint>(new DataPoint[]{
@@ -95,7 +98,7 @@ public class Graph1 extends Activity {
         }
     }
 
-    public void validate() {
+    private void validate() {
         TextView pointInstructions = (TextView) findViewById(R.id.pointInstructions);
         if (Xuser == (Xrand * -1) && Yuser == Yrand && pointInstructions.getText() == getResources().getString(R.string.pointInstruction1)) {
             Toast toast = new Toast(this);
@@ -125,7 +128,7 @@ public class Graph1 extends Activity {
         }
     }
 
-    public void getCoordinates() {
+    private void getCoordinates() {
         EditText xcoordinate = (EditText) findViewById(R.id.xplot);
         EditText ycoordinate = (EditText) findViewById(R.id.yplot);
         try {
@@ -144,7 +147,7 @@ public class Graph1 extends Activity {
         }
     }
 
-    public void createUserPoint() {
+    private void createUserPoint() {
         GraphView graph = (GraphView) findViewById(R.id.graph);
         PointsGraphSeries<DataPoint> userSeries = new PointsGraphSeries<>(new DataPoint[]{
                 new DataPoint(Xuser, Yuser)
@@ -165,7 +168,7 @@ public class Graph1 extends Activity {
         */
     }
 
-    public void clearForm(ViewGroup group) {
+    private void clearForm(ViewGroup group) {
         for (int i = 0, count = group.getChildCount(); i < count; ++i) {
             View view = group.getChildAt(i);
             if (view instanceof EditText) {

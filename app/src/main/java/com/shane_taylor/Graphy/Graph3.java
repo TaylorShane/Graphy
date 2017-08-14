@@ -196,7 +196,7 @@ public class Graph3 extends Activity {
         }
     }
 
-    public void evaluate() { // y=y, x= -1*x
+    private void evaluate() { // y=y, x= -1*x
         TextView triangleInstructions = (TextView) findViewById(R.id.triangleInstructions);
 
         if (((((Ux1A == randX1A * -1) || (Ux1A == randX2A * -1)) && ((Uy1A == randY1A) || (Uy1A == randY2A))) &&
@@ -268,7 +268,7 @@ public class Graph3 extends Activity {
         */
     }
 
-    public void createUserTriangle() {  // Using user coordinates to create user line
+    private void createUserTriangle() {  // Using user coordinates to create user line
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
         /*
@@ -331,7 +331,7 @@ public class Graph3 extends Activity {
         userLineC.setThickness(3);
     }
 
-    public void getUserCoordinates() {  // Getting user coordinates
+    private void getUserCoordinates() {  // Getting user coordinates
         EditText userx1A = (EditText) findViewById(R.id.x1A);
         EditText usery1A = (EditText) findViewById(R.id.y1A);
         EditText userx2A = (EditText) findViewById(R.id.x2A);
@@ -394,7 +394,7 @@ public class Graph3 extends Activity {
         startActivity(intent);
     }
 
-    public void clearForm(ViewGroup group) {
+    private void clearForm(ViewGroup group) {
         for (int i = 0, count = group.getChildCount(); i < count; ++i) {
             View view = group.getChildAt(i);
             if (view instanceof EditText) {

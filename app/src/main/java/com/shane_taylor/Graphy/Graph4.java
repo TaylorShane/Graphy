@@ -26,37 +26,28 @@ import static java.lang.Math.sqrt;
  */
 public class Graph4 extends Activity {
 
-    public double randX1A;
-    public double randY1A;
-    public double randX2A;
-    public double randY2A;
-    public double randX1B;
-    public double randY1B;
-    public double randX2B;
-    public double randY2B;
-    public double randX1C;
-    public double randY1C;
-    public double randX2C;
-    public double randY2C;
-    public double randAlength;
-    public double randBlength;
-    public double randClength;
-    public double userAlengthDbl;
-    public double userBlengthDbl;
-    public double userClengthDbl;
-    public double randSlopeA;
-    public double randSlopeB;
-    public double randAngle;
+    private double randX1A;
+    private double randY1A;
+    private double randX2A;
+    private double randY2A;
+    private double randX1B;
+    private double randY1B;
+    private double randX2B;
+    private double randY2B;
+    private double randX1C;
+    private double randY1C;
+    private double randX2C;
+    private double randY2C;
+    private double randAlength;
+    private double randBlength;
+    private double randClength;
+    private double userAlengthDbl;
+    private double userBlengthDbl;
+    private double userClengthDbl;
+    private double randAngle;
 
-    // --Commented out by Inspection (7/24/2017 3:41 PM):public TextView results;
-    public TextView lineA;
-    public TextView lineB;
-    public TextView lineC;
-    public TextView similarInstructions;
-    public TextView txtEnterClength;
-    public EditText userAlength;
-    public EditText userBlength;
-    public EditText userClength;
+    private TextView lineC;
+    private TextView similarInstructions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +59,7 @@ public class Graph4 extends Activity {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
-    public void setGraphScale() {
+    private void setGraphScale() {
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
         LineGraphSeries<DataPoint> Xaxis = new LineGraphSeries<>(new DataPoint[]{
@@ -124,7 +115,7 @@ public class Graph4 extends Activity {
         }
     }
 
-    public void createRandomTriangle() { /* random triangle generator - in quadrant I*/
+    private void createRandomTriangle() { /* random triangle generator - in quadrant I*/
 
         similarInstructions = (TextView) findViewById(R.id.similarInstructions);
         Random random = new Random();
@@ -230,16 +221,16 @@ public class Graph4 extends Activity {
         populateTextViews();
     }
 
-    public void getRandTriangleSideLengths() {
+    private void getRandTriangleSideLengths() {
         randAlength = Math.round(sqrt(Math.pow(randX2A - randX1A, 2) + Math.pow(randY2A - randY1A, 2)));
         randBlength = Math.round(sqrt(Math.pow(randX2B - randX1B, 2) + Math.pow(randY2B - randY1B, 2)));
         randClength = Math.round(sqrt(Math.pow(randX2C - randX1C, 2) + Math.pow(randY2C - randY1C, 2)));
     }
 
-    public void populateTextViews() {
+    private void populateTextViews() {
         getRandTriangleSideLengths();
-        lineA = (TextView) findViewById(R.id.txtLineA);
-        lineB = (TextView) findViewById(R.id.txtLineB);
+        TextView lineA = (TextView) findViewById(R.id.txtLineA);
+        TextView lineB = (TextView) findViewById(R.id.txtLineB);
         lineC = (TextView) findViewById(R.id.txtLineC);
         lineA.setTextColor(Color.BLUE);
         lineB.setTextColor(Color.RED);
@@ -250,9 +241,9 @@ public class Graph4 extends Activity {
         lineC.setText(getString(R.string.displayClength) + " " + (int) randClength);
     }
 
-    public void getSlopes() {
-        randSlopeA = (randY1A - randY2A) / (randX1A - randX2A);  // Y2-Y1/X2-X1
-        randSlopeB = (randY1B - randY2B) / (randX1B - randX2B);  // Y2-Y1/X2-X1
+    private void getSlopes() {
+        double randSlopeA = (randY1A - randY2A) / (randX1A - randX2A);
+        double randSlopeB = (randY1B - randY2B) / (randX1B - randX2B);
         double rawRandAngle = Math.atan((randSlopeA - randSlopeB) / (1 - (randSlopeA * randSlopeB)));
         randAngle = Math.round(rawRandAngle * 100.0) / 100.0;
         if(randAngle == 0.00){
@@ -261,7 +252,7 @@ public class Graph4 extends Activity {
         }
     }
 
-    public void verify() {
+    private void verify() {
         similarInstructions = (TextView) findViewById(R.id.similarInstructions);
 
         if (randAlength == userAlengthDbl && randBlength == userBlengthDbl &&
@@ -293,7 +284,7 @@ public class Graph4 extends Activity {
                 getSlopes();
                 lineC.setTextColor(Color.BLACK);
                 lineC.setText(getString(R.string.theirAngleIs) + " " + randAngle);  //"The angle between line A and B is: "
-                txtEnterClength = (TextView) findViewById(R.id.txtEnterClength);
+                TextView txtEnterClength = (TextView) findViewById(R.id.txtEnterClength);
                 txtEnterClength.setText(getString(R.string.angle));
 
             } else if (similarInstructions.getText() == getResources().getString(R.string.similarTriangleInstructions2) &&
@@ -324,7 +315,7 @@ public class Graph4 extends Activity {
 
     }
 
-    public void clearForm(ViewGroup group) {
+    private void clearForm(ViewGroup group) {
         for (int i = 0, count = group.getChildCount(); i < count; ++i) {
             View view = group.getChildAt(i);
             if (view instanceof EditText) {
@@ -352,9 +343,9 @@ public class Graph4 extends Activity {
     }
 
     public void onClickSubmit(View view) {
-        userAlength = (EditText) findViewById(R.id.userLineA);
-        userBlength = (EditText) findViewById(R.id.userLineB);
-        userClength = (EditText) findViewById(R.id.userLineC);
+        EditText userAlength = (EditText) findViewById(R.id.userLineA);
+        EditText userBlength = (EditText) findViewById(R.id.userLineB);
+        EditText userClength = (EditText) findViewById(R.id.userLineC);
 
         try {
             userAlengthDbl = Double.parseDouble(userAlength.getText().toString());

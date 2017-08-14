@@ -1,5 +1,7 @@
 # NEIU2017SummerInternship
-Android Studio App created for educational math module designed for middle school students.
+Graphy is an Android App created for an educational geometry module designed for middle school students.
+
+This material is based upon work supported by the National Science Foundation under Grant Number DRL-1640041
 
 Graphy is licensed under the
  GNU GENERAL PUBLIC LICENSE

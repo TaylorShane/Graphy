@@ -24,22 +24,19 @@ import static java.lang.Math.sqrt;
  */
 public class Graph5 extends Activity {
 
-    public int randXA;
-    public int randYA;
-    public int randXB;
-    public int randYB;
-    public int randXC;
-    public int randYC;
-    public int randAlength;
-    public int randBlength;
-    public double randClength;
-    public double userClengthDbl;
-    public TextView lineA;
-    public TextView lineB;
-    public TextView instructions;
-    public EditText userClength;
+    private int randXA;
+    private int randYA;
+    private int randXB;
+    private int randYB;
+    private int randXC;
+    private int randYC;
+    private int randAlength;
+    private int randBlength;
+    private double randClength;
+    private double userClengthDbl;
+    private TextView instructions;
 
-    public static double round(double value, int places) {
+    private static double round(double value, int places) {
         if (places < 0) throw new IllegalArgumentException();
 
         long factor = (long) Math.pow(10, places);
@@ -57,7 +54,7 @@ public class Graph5 extends Activity {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
-    public void createRandomTriangle() { /* random triangle generator */
+    private void createRandomTriangle() { /* random triangle generator */
         Random generator = new Random();
         randXA = 0;
         randYA = 0;
@@ -161,14 +158,14 @@ public class Graph5 extends Activity {
         */
     }
 
-    public void getRandTriangleSideLengths() {
+    private void getRandTriangleSideLengths() {
 
         randAlength = (int) Math.round(sqrt(Math.pow(randXC - randXB, 2) + Math.pow(randYC - randYB, 2)));
         randBlength = (int) Math.round(sqrt(Math.pow(randXB - randXA, 2) + Math.pow(randYB - randYA, 2)));
         randClength = round((sqrt(Math.pow(randXA - randXC, 2) + Math.pow(randYA - randYC, 2))), 2);
     }
 
-    public void setGraphScale() {
+    private void setGraphScale() {
 
         GraphView graph = (GraphView) findViewById(R.id.linegraph);
 
@@ -196,7 +193,7 @@ public class Graph5 extends Activity {
         Yaxis.setThickness(0);
     }
 
-    public void clearForm(ViewGroup group) {
+    private void clearForm(ViewGroup group) {
         for (int i = 0, count = group.getChildCount(); i < count; ++i) {
             View view = group.getChildAt(i);
             if (view instanceof EditText) {
@@ -208,7 +205,7 @@ public class Graph5 extends Activity {
     }
 
     public void onClickVerify(View v) {
-        userClength = (EditText) findViewById(R.id.userLineClength);
+        EditText userClength = (EditText) findViewById(R.id.userLineClength);
         instructions = (TextView) findViewById(R.id.pythagoreaninstructions);
 
         try {
@@ -219,7 +216,7 @@ public class Graph5 extends Activity {
         }
     }
 
-    public void verify() {
+    private void verify() {
         if (randClength == userClengthDbl) {
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
@@ -240,10 +237,10 @@ public class Graph5 extends Activity {
         }
     }
 
-    public void populateTextViews() {
+    private void populateTextViews() {
         getRandTriangleSideLengths();
-        lineA = (TextView) findViewById(R.id.txtLineA);
-        lineB = (TextView) findViewById(R.id.txtLineB);
+        TextView lineA = (TextView) findViewById(R.id.txtLineA);
+        TextView lineB = (TextView) findViewById(R.id.txtLineB);
 
         lineA.setTextColor(Color.BLUE);
         lineB.setTextColor(Color.RED);
