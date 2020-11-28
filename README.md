@@ -1,4 +1,4 @@
-# NEIU2017SummerInternship
+# NEIU2017SummerInternship / Graphy
 Graphy is an Android App created for an educational geometry module designed for middle school students.
 
 This material is based upon work supported by the National Science Foundation under Grant Number DRL-1640041
