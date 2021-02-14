@@ -17,15 +17,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:gravity="center">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -57,7 +56,8 @@
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
                         android:minLines="2"
                         android:text="@string/TruthTables"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
@@ -67,9 +67,11 @@
                         android:id="@+id/truth"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:contentDescription="@string/descriptionTruthTable"
+                        android:focusable="true"
                         android:onClick="onClickTruth"
                         android:src="@drawable/truth" />
                 </LinearLayout>
@@ -86,6 +88,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:minLines="2"
                         android:text="Point Graph"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
@@ -95,9 +98,11 @@
                         android:id="@+id/points"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:contentDescription="@string/descriptionPointGraph"
+                        android:focusable="true"
                         android:onClick="onClickPoint"
                         android:src="@drawable/points" />
                 </LinearLayout>
@@ -114,6 +119,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:minLines="2"
                         android:text="Line Graph"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
@@ -123,9 +129,11 @@
                         android:id="@+id/lines"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:contentDescription="@string/descriptionLineGraph"
+                        android:focusable="true"
                         android:onClick="onClickLine"
                         android:src="@drawable/lines" />
                 </LinearLayout>
@@ -134,7 +142,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
                 android:baselineAligned="false"
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -151,6 +159,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:minLines="2"
                         android:text="Reflexive Triangles"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
@@ -160,9 +169,11 @@
                         android:id="@+id/reflexive"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:contentDescription="@string/descriptionReflexiveGraph"
+                        android:focusable="true"
                         android:onClick="onClickReflexive"
                         android:src="@drawable/reflexive" />
                 </LinearLayout>
@@ -179,6 +190,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:minLines="2"
                         android:text="SSS and SAS"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
@@ -188,9 +200,11 @@
                         android:id="@+id/sss"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:contentDescription="@string/descriptionSSS"
+                        android:focusable="true"
                         android:onClick="onClickSSS"
                         android:src="@drawable/sss" />
                 </LinearLayout>
@@ -207,6 +221,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:minLines="2"
                         android:text="Pythagorean Theorem"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
@@ -216,9 +231,11 @@
                         android:id="@+id/pythag"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:contentDescription="@string/descriptionPythag"
+                        android:focusable="true"
                         android:onClick="onClickPythag"
                         android:src="@drawable/pythag" />
                 </LinearLayout>
@@ -230,7 +247,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/GrantText"
@@ -238,9 +255,24 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
+                    android:padding="5dp"
                     android:text="@string/GrantInfo"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/privacyLink"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:padding="5dp"
+
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/white"></TextView>
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

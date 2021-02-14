@@ -63,5 +63,6 @@
     <string name="descriptionGraphyLogo">A large orange letter G sitting on a small cartesian plane</string>
     <string name="outOfBounds">Please enter integer values from -10 to 10</string>
     <string name="blank">Please enter integer values for X and Y</string>
-    <string name="GrantInfo">This material is based upon work supported by the National Science Foundation under Grant Number DRL-1640041</string>
+    <string name="GrantInfo">This material is based upon work supported by the National Science Foundation under Grant Number DRL-1640041.</string>
+    <string name="privacyLink"><a href='https://www.shanetaylor.dev/#/graphy-privacy-terms'>Privacy policy here</a></string>
 </resources>
