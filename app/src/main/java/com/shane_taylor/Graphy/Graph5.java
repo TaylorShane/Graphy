@@ -225,7 +225,7 @@ public class Graph5 extends Activity {
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
             clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
-            instructions.setText(getResources().getString(R.string.newTriangle));
+            instructions.setText(getResources().getString(R.string.new_triangle));
         } else {
             // Try again toast image
             Toast toast = new Toast(this);

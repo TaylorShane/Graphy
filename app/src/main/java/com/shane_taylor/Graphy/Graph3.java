@@ -205,14 +205,14 @@ public class Graph3 extends Activity {
                 (((Ux2B == randX2B * -1) || (Ux2B == randX1B * -1)) && ((Uy2B == randY2B) || (Uy2B == randY1B))) &&
                 (((Ux1C == randX1C * -1) || (Ux1C == randX2C * -1)) && ((Uy1C == randY1C) || (Uy1C == randY2C))) &&
                 (((Ux2C == randX2C * -1) || (Ux2C == randX1C * -1)) && ((Uy2C == randY2C) || (Uy2C == randY1C)))) &&
-                triangleInstructions.getText() == getResources().getString(R.string.triangleInstruction1)) {
+                triangleInstructions.getText() == getResources().getString(R.string.triangle_instruction_1)) {
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
             view.setImageResource(R.drawable.correct_large);
             toast.setView(view);
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
-            triangleInstructions.setText(getResources().getString(R.string.triangleInstruction2));
+            triangleInstructions.setText(getResources().getString(R.string.triangle_instruction_2));
             //Userx1A.setText("");, Usery1A, Userx2A, Usery2A, Userx1B, Usery1B, Userx2B, Usery2B, Userx1C, Usery1C, Userx2C, Usery2C;
 
             clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
@@ -222,14 +222,14 @@ public class Graph3 extends Activity {
                 (((Ux2B == randX2B * -1) || (Ux2B == randX1B * -1)) && ((Uy2B == randY2B * -1) || (Uy2B == randY1B * -1))) &&
                 (((Ux1C == randX1C * -1) || (Ux1C == randX2C * -1)) && ((Uy1C == randY1C * -1) || (Uy1C == randY2C * -1))) &&
                 (((Ux2C == randX2C * -1) || (Ux2C == randX1C * -1)) && ((Uy2C == randY2C * -1) || (Uy2C == randY1C * -1)))) &&
-                triangleInstructions.getText() == getResources().getString(R.string.triangleInstruction2)) {
+                triangleInstructions.getText() == getResources().getString(R.string.triangle_instruction_2)) {
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
             view.setImageResource(R.drawable.correct_large);
             toast.setView(view);
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
-            triangleInstructions.setText(getResources().getString(R.string.triangleInstruction3));
+            triangleInstructions.setText(getResources().getString(R.string.triangle_instruction_3));
 
             clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
 
@@ -239,14 +239,14 @@ public class Graph3 extends Activity {
                 (((Ux2B == randX1B) || (Ux2B == randX2B)) && ((Uy2B == randY2B * -1) || (Uy2B == randY1B * -1))) &&
                 (((Ux1C == randX1C) || (Ux1C == randX2C)) && ((Uy1C == randY1C * -1) || (Uy1C == randY2C * -1))) &&
                 (((Ux2C == randX1C) || (Ux2C == randX2C)) && ((Uy2C == randY2C * -1) || (Uy2C == randY1C * -1)))) &&
-                triangleInstructions.getText() == getResources().getString(R.string.triangleInstruction3)) {
+                triangleInstructions.getText() == getResources().getString(R.string.triangle_instruction_3)) {
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
             view.setImageResource(R.drawable.correct_large);
             toast.setView(view);
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
-            triangleInstructions.setText(getResources().getString(R.string.newTriangle));
+            triangleInstructions.setText(getResources().getString(R.string.new_triangle));
 
             clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
         } else {
@@ -365,7 +365,7 @@ public class Graph3 extends Activity {
             if(Ux1A > 10 || Uy1A > 10 || Ux2A > 10 || Uy2A > 10 ||
                     Ux1B > 10 || Uy1B > 10 || Ux2B > 10 || Uy2B > 10 ||
                     Ux1C > 10 || Uy1C > 10 || Ux2C > 10 || Uy2C > 10){
-                Toast.makeText(this,  R.string.outOfBounds, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,  R.string.out_of_bounds, Toast.LENGTH_SHORT).show();
             }
             else{
                 createUserTriangle();

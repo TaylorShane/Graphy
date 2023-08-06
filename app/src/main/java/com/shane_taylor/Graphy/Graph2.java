@@ -175,24 +175,24 @@ public class Graph2 extends Activity {
 
         TextView lineInstructions = (TextView) findViewById(R.id.lineInstructions);
 
-        if ((randSlope == uSlope) && lineInstructions.getText() == getResources().getString(R.string.lineInstruction1)) {
+        if ((randSlope == uSlope) && lineInstructions.getText() == getResources().getString(R.string.line_instruction_1)) {
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
             view.setImageResource(R.drawable.correct_large);
             toast.setView(view);
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
-            lineInstructions.setText(getResources().getString(R.string.lineInstruction2));
+            lineInstructions.setText(getResources().getString(R.string.line_instruction_2));
 
             clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
-        } else if ((randSlope * uSlope == -1) && lineInstructions.getText() == getResources().getString(R.string.lineInstruction2)) {
+        } else if ((randSlope * uSlope == -1) && lineInstructions.getText() == getResources().getString(R.string.line_instruction_2)) {
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
             view.setImageResource(R.drawable.correct_large);
             toast.setView(view);
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
-            lineInstructions.setText(getResources().getString(R.string.newLine));
+            lineInstructions.setText(getResources().getString(R.string.new_line));
 
             clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
         } else {
@@ -218,7 +218,7 @@ public class Graph2 extends Activity {
             Ux2 = Integer.parseInt(x2.getText().toString());
             Uy2 = Integer.parseInt(y2.getText().toString());
             if(Ux1> 10 || Ux2 > 10 || Uy1 > 10 || Uy2 > 10) {
-                Toast.makeText(this,  R.string.outOfBounds, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,  R.string.out_of_bounds, Toast.LENGTH_SHORT).show();
             }
             else {
                 getSlopes();

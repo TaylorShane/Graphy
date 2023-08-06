@@ -100,23 +100,23 @@ public class Graph1 extends Activity {
 
     private void validate() {
         TextView pointInstructions = (TextView) findViewById(R.id.pointInstructions);
-        if (Xuser == (Xrand * -1) && Yuser == Yrand && pointInstructions.getText() == getResources().getString(R.string.pointInstruction1)) {
+        if (Xuser == (Xrand * -1) && Yuser == Yrand && pointInstructions.getText() == getResources().getString(R.string.point_instruction_1)) {
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
             view.setImageResource(R.drawable.correct_large);
             toast.setView(view);
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
-            pointInstructions.setText(R.string.pointInstruction2);
+            pointInstructions.setText(R.string.point_instruction_2);
             clearForm((ViewGroup) findViewById(R.id.pointsGridLayout));
-        } else if (Xuser == Xrand && Yuser == (Yrand * -1) && (pointInstructions.getText() == getResources().getString(R.string.pointInstruction2))) {
+        } else if (Xuser == Xrand && Yuser == (Yrand * -1) && (pointInstructions.getText() == getResources().getString(R.string.point_instruction_2))) {
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
             view.setImageResource(R.drawable.correct_large);
             toast.setView(view);
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.show();
-            pointInstructions.setText(R.string.newPoint);
+            pointInstructions.setText(R.string.new_point);
             clearForm((ViewGroup) findViewById(R.id.pointsGridLayout));
         } else {
             Toast toast = new Toast(this);
@@ -135,7 +135,7 @@ public class Graph1 extends Activity {
             Xuser = Double.parseDouble(xcoordinate.getText().toString());
             Yuser = Double.parseDouble(ycoordinate.getText().toString());
             if (Xuser > 10 || Yuser > 10) {
-                Toast.makeText(this, R.string.outOfBounds, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.out_of_bounds, Toast.LENGTH_SHORT).show();
 
             }
             else {

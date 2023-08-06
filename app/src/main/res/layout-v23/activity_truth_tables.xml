@@ -33,7 +33,7 @@
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:contentDescription="@string/PthenQ"
+            android:contentDescription="@string/p_then_q"
             android:gravity="center_vertical|center_horizontal"
             android:src="@drawable/truth_table_large_2" />
         <!--TODO: change image to interactive activity with dropdowns to choose resulting truth values -->
@@ -74,7 +74,7 @@
         android:layout_gravity="fill_vertical|fill_horizontal"
         android:layout_margin="5dp"
         android:onClick="onClickGraph1"
-        android:text="@string/pointGraphs" />
+        android:text="@string/point_graphs" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

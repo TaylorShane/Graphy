@@ -57,7 +57,7 @@
                 android:layout_gravity="left"
                 android:layout_margin="5dp"
                 android:maxWidth="500dp"
-                android:text="@string/lineInstruction1"
+                android:text="@string/line_instruction_1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
             <TextView
@@ -198,7 +198,7 @@
                     android:gravity="center"
                     android:maxLength="600"
                     android:onClick="onClickPlot"
-                    android:text="@string/Plot"
+                    android:text="@string/plot"
                     android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
                 <Button

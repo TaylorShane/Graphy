@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:gravity="center"
-                android:text="@string/similarTriangleHeader"
+                android:text="@string/similar_triangle_header"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
             <TextView
@@ -57,7 +57,7 @@
                 android:layout_gravity="left"
                 android:layout_margin="5dp"
                 android:maxWidth="500dp"
-                android:text="@string/similarTriangleInstructions1"
+                android:text="@string/similar_triangle_instructions_1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
             <LinearLayout

@@ -14,7 +14,7 @@
         android:layout_gravity="center_vertical|center_horizontal"
         android:layout_margin="20sp"
         android:layout_weight="1"
-        android:contentDescription="@string/descriptionGraphyLogo"
+        android:contentDescription="@string/description_graphy_logo"
         android:src="@drawable/graphy_icon_small_size_dark" />
 
     <ProgressBar

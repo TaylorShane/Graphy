@@ -5,12 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
-import static android.content.ContentValues.TAG;
 import static com.shane_taylor.Graphy.R.id.privacyLink;
 
 public class MenuPageActivity extends Activity {

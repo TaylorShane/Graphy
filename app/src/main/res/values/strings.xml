@@ -9,20 +9,20 @@
         \n"Suppose you get an A but I don\'t give you a dollar. Since I didn\'t keep my promise, the implication is false. This corresponds to the second line in the table."
         \n"What if you don\'t get an A? Whether or not I give you a dollar, I haven\'t broken my promise. Thus, the implication can\’t be false, so it must be true. This explains the last two lines of the table."\n
     </string>
-    <string name="Plot">Plot</string>
+    <string name="plot">Plot</string>
     <string name="reset">Reset Graph</string>
     <string name="line_graphs">Line Graphs</string>
     <string name="line_start_coordinates">Line Start Coordinates</string>
-    <string name="pointGraphs">Point Graph</string>
+    <string name="point_graphs">Point Graph</string>
     <string name="line_end_coordinates">Line End Coordinates</string>
-    <string name="PthenQ">image of a conditional if P then Q truth table</string>
-    <string name="pointInstruction1">Plot the blue point\'s reflection across the Y axis</string>
-    <string name="pointInstruction2">Plot the blue point\'s reflection across the X axis</string>
-    <string name="newPoint">Great Job!  Now hit the "Reset Graph" button for a new point</string>
+    <string name="p_then_q">image of a conditional if P then Q truth table</string>
+    <string name="point_instruction_1">Plot the blue point\'s reflection across the Y axis</string>
+    <string name="point_instruction_2">Plot the blue point\'s reflection across the X axis</string>
+    <string name="new_point">Great Job!  Now hit the "Reset Graph" button for a new point</string>
     <string name="enter_x_and_y">Enter X and Y</string>
-    <string name="lineInstruction1">Create a line that is parallel to the blue line</string>
-    <string name="lineInstruction2">Create a line that is perpendicular to the blue line</string>
-    <string name="newLine">Great Job!  Now hit the "Reset Graph" button for a new line</string>
+    <string name="line_instruction_1">Create a line that is parallel to the blue line</string>
+    <string name="line_instruction_2">Create a line that is perpendicular to the blue line</string>
+    <string name="new_line">Great Job!  Now hit the "Reset Graph" button for a new line</string>
     <string name="triangle_graph">Reflexive Graph</string>
     <string name="line_a">Line A</string>
     <string name="x1">X<sub><small>1</small></sub>:</string>
@@ -31,14 +31,14 @@
     <string name="y2">Y<sub><small>2</small></sub>:</string>
     <string name="line_b">Line B</string>
     <string name="line_c">Line C</string>
-    <string name="triangleInstruction1">Create a reflexive triangle in quadrant II</string>
-    <string name="triangleInstruction2">Create a reflexive triangle in quadrant III</string>
-    <string name="triangleInstruction3">Create a reflexive triangle in quadrant IV</string>
-    <string name="newTriangle">Great Job!  Now hit the "Reset Graph" button for a new triangle</string>
-    <string name="similarTriangleHeader">Similar Triangles</string>
-    <string name="similarTriangleInstructions1">Given the length of each side of the triangle (SSS), enter three side lengths to create a similar triangle</string>
-    <string name="similarTriangleInstructions2">Given the length of two sides and an angle between them (SAS), enter a new SAS to create a similar triangle</string>
-    <string name="similarTriangles">Similar Triangles</string>
+    <string name="triangle_instruction_1">Create a reflexive triangle in quadrant II</string>
+    <string name="triangle_instruction_2">Create a reflexive triangle in quadrant III</string>
+    <string name="triangle_instruction_3">Create a reflexive triangle in quadrant IV</string>
+    <string name="new_triangle">Great Job!  Now hit the "Reset Graph" button for a new triangle</string>
+    <string name="similar_triangle_header">Similar Triangles</string>
+    <string name="similar_triangle_instructions_1">Given the length of each side of the triangle (SSS), enter three side lengths to create a similar triangle</string>
+    <string name="similar_triangle_instructions_2">Given the length of two sides and an angle between them (SAS), enter a new SAS to create a similar triangle</string>
+    <string name="similar_triangles">Similar Triangles</string>
     <string name="A">A:</string>
     <string name="B">B:</string>
     <string name="C">C:</string>
@@ -53,16 +53,17 @@
     <string name="reflexiveTriangleTitle">Reflexive Triangles</string>
     <string name="pythagorean">Pythagorean Theorem</string>
     <string name="pythagoreanInstructions1">Given the lengths of sides A and B, enter the length of side C rounded to two decimal places</string>
-    <string name="Graphy">Graphy</string>
-    <string name="descriptionTruthTable">an image of an if P then Q truth table</string>
-    <string name="descriptionPointGraph">A cartesian plane with a single dot</string>
-    <string name="descriptionLineGraph">A cartesian plane with a single line</string>
-    <string name="descriptionReflexiveGraph">A cartesian plane with a triangle within quadrant I</string>
-    <string name="descriptionSSS">A cartesian plane with a large triangle. Each side of hte triangle has a different color, red, green, and blue.</string>
-    <string name="descriptionPythag">A cartesian plane with a right triangle</string>
-    <string name="descriptionGraphyLogo">A large orange letter G sitting on a small cartesian plane</string>
-    <string name="outOfBounds">Please enter integer values from -10 to 10</string>
+    <string name="graphy">Graphy</string>
+    <string name="description_truth_table">an image of an if P then Q truth table</string>
+    <string name="description_point_graph">A cartesian plane with a single dot</string>
+    <string name="description_line_graph">A cartesian plane with a single line</string>
+    <string name="description_reflexive_graph">A cartesian plane with a triangle within quadrant I</string>
+    <string name="description_sss">A cartesian plane with a large triangle. Each side of hte triangle has a different color, red, green, and blue.</string>
+    <string name="description_pythag">A cartesian plane with a right triangle</string>
+    <string name="description_graphy_logo">A large orange letter G sitting on a small cartesian plane</string>
+    <string name="out_of_bounds">Please enter integer values from -10 to 10</string>
     <string name="blank">Please enter integer values for X and Y</string>
-    <string name="GrantInfo">This material is based upon work supported by the National Science Foundation under Grant Number DRL-1640041.</string>
-    <string name="privacyLink"><a href='https://www.shanetaylor.dev/#/graphy-privacy-terms'>Privacy policy here</a></string>
+    <string name="grant_info">This material is based upon work supported by the National Science Foundation under Grant Number DRL-1640041.</string>
+    <string name="privacy_link"><a href='https://www.shanetaylor.dev/#/graphy-privacy-terms'>Privacy policy here</a></string>
+    <string name="privacy_link_description">A web link to the privacy policy</string>
 </resources>

@@ -194,7 +194,7 @@ public class Graph4 extends Activity {
         }
 
         if (similarInstructions.getText()
-                == getResources().getString(R.string.similarTriangleInstructions1)) {
+                == getResources().getString(R.string.similar_triangle_instructions_1)) {
             LineGraphSeries<DataPoint> LineC = new LineGraphSeries<>(new DataPoint[]{
 
                     new DataPoint(randX1C, randY1C),
@@ -264,7 +264,7 @@ public class Graph4 extends Activity {
                     randAlength / userAlengthDbl == randClength / userClengthDbl &&
                     randBlength / userBlengthDbl == randClength / userClengthDbl &&
                     (similarInstructions.getText()
-                            == getResources().getString(R.string.similarTriangleInstructions1))
+                            == getResources().getString(R.string.similar_triangle_instructions_1))
                     ) {
                 Toast toast = new Toast(this);
                 ImageView view = new ImageView(this);
@@ -272,7 +272,7 @@ public class Graph4 extends Activity {
                 toast.setView(view);
                 toast.setDuration(Toast.LENGTH_SHORT);
                 toast.show();
-                similarInstructions.setText(getResources().getString(R.string.similarTriangleInstructions2));
+                similarInstructions.setText(getResources().getString(R.string.similar_triangle_instructions_2));
                 clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
 
                     /*
@@ -287,7 +287,7 @@ public class Graph4 extends Activity {
                 TextView txtEnterClength = (TextView) findViewById(R.id.txtEnterClength);
                 txtEnterClength.setText(getString(R.string.angle));
 
-            } else if (similarInstructions.getText() == getResources().getString(R.string.similarTriangleInstructions2) &&
+            } else if (similarInstructions.getText() == getResources().getString(R.string.similar_triangle_instructions_2) &&
                     randAlength / userAlengthDbl == randBlength / userBlengthDbl && userClengthDbl == randAngle
                     ) {
                 //TODO: change labels to ask for degree - change decimal to degree.
@@ -297,7 +297,7 @@ public class Graph4 extends Activity {
                 toast.setView(view);
                 toast.setDuration(Toast.LENGTH_SHORT);
                 toast.show();
-                similarInstructions.setText(getResources().getString(R.string.newTriangle));
+                similarInstructions.setText(getResources().getString(R.string.new_triangle));
                 clearForm((ViewGroup) findViewById(R.id.enterCoordinatesLayout));
 
 
